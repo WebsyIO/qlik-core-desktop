@@ -1,0 +1,6 @@
+<!-- Get a list of all measures -->
+<ul ng-repeat="head in data.headers">
+	<li style="margin-left:30px;">
+		{{head.qFallbackTitle}}: {{data.rows[0].measures[$index].qText}}
+	</li>
+</ul>

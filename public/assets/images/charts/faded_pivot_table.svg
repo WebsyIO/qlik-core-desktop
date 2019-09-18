@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+  <g fill="none" fill-rule="evenodd" transform="translate(0 9)">
+    <path fill="#E5E5E5" d="M5,0 L135,0 C137.761424,-5.07265313e-16 140,2.23857625 140,5 L140,117 C140,119.761424 137.761424,122 135,122 L5,122 C2.23857625,122 3.38176876e-16,119.761424 0,117 L0,5 C-3.38176876e-16,2.23857625 2.23857625,5.07265313e-16 5,0 Z M33.5,22 C31.5670034,22 30,23.6010687 30,25.576087 L30,112.423913 C30,114.398931 31.5670034,116 33.5,116 L130.5,116 C132.432997,116 134,114.398931 134,112.423913 L134,25.576087 C134,23.6010687 132.432997,22 130.5,22 L33.5,22 Z M6,6 L6,20 L24,20 L24,6 L6,6 Z"/>
+    <rect width="48" height="16" x="80" y="50" fill="#E5E5E5"/>
+    <rect width="48" height="16" x="80" y="28" fill="#DDD"/>
+    <rect width="48" height="16" x="80" y="72" fill="#DDD"/>
+    <rect width="48" height="16" x="80" y="94" fill="#E5E5E5"/>
+    <rect width="36" height="16" x="36" y="50" fill="#DDD"/>
+    <rect width="36" height="16" x="36" y="28" fill="#E5E5E5"/>
+    <rect width="36" height="16" x="36" y="72" fill="#E5E5E5"/>
+    <rect width="36" height="16" x="36" y="94" fill="#DDD"/>
+  </g>
+</svg>

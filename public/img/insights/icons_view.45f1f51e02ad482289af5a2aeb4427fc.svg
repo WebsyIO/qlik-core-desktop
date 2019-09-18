@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.1 (72631) - https://sketchapp.com -->
+    <title>DLSicons /Generic /view</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path fill="#595959" d="M9.3,8 C9.5,8 9.8,7.9 10,7.8 C10,7.9 10,7.9 10,8 C10,9.1 9.1,10 8,10 C6.9,10 6,9.1 6,8 C6,6.9 6.9,6 8,6 C8.1,6 8.1,6 8.2,6 C8.1,6.2 8,6.4 8,6.7 C8,7.4 8.6,8 9.3,8 L9.3,8 Z M7.99857167,2 C10.5435717,2 12.5068575,3.54285714 13.888429,5 C14.6882862,5.85714286 15.415429,6.88571429 15.9971433,8 C15.415429,9.11428571 14.6882862,10.1428571 13.888429,11 C12.5068575,12.4571429 10.5435717,14 7.99857167,14 C5.45357159,14 3.49028582,12.4571429 2.10871435,11 C1.30885718,10.1428571 0.581714303,9.11428571 0,8 C0.581714303,6.88571429 1.30885718,5.85714286 2.10871435,5 C3.49028582,3.54285714 5.45357159,2 7.99857167,2 L7.99857167,2 Z M10.8,10.8 C11.6,10.1 12,9.1 12,8 C12,6.9 11.6,5.9 10.8,5.2 C10.1,4.4 9.1,4 8,4 C6.9,4 5.9,4.4 5.2,5.2 C4.4,5.9 4,6.9 4,8 C4,9.1 4.4,10.1 5.2,10.8 C5.9,11.6 6.9,12 8,12 C9.1,12 10.1,11.6 10.8,10.8 L10.8,10.8 Z" id="path-1"></path>
+    </defs>
+    <g id="DLSicons-/Generic-/view" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Shape" fill="#595959" fill-rule="nonzero" xlink:href="#path-1"></use>
+        <g id="Greyscale-/25" mask="url(#mask-2)" fill="#404040">
+            <polygon id="Greyscale-25" points="0 0 16 0 16 16 0 16"></polygon>
+        </g>
+    </g>
+</svg>

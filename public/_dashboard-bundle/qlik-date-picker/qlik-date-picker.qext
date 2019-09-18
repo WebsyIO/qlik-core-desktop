@@ -1,0 +1,22 @@
+{
+    "name": "Date picker",
+    "type": "visualization",
+    "description": "A calendar object that allows a user to make selections in a date field.",
+    "version": "2.3.0",
+    "icon": "calendar",
+    "preview": "preview.png",
+    "keywords": "qlik-sense, visualization",
+    "author": "Nodier Torres",
+    "homepage": "http://branch.qlik.com/#/project/5697a878dcc497f80ed514bf",
+    "license": "MIT",
+    "repository": "https://github.com/qlik-oss/SenseDateRangePicker/tree/qlik-date-picker",
+    "installer": "QlikExtensionBundler",
+    "bundle": {
+        "id": "qlik-dashboard-bundle",
+        "name": "Qlik Dashboard bundle",
+        "description": "This is a set of supported extensions that will facilitate dashboard creation in Qlik Sense: A navigation button, a date picker, a slider, a demand-reporting button, a share button and two different container objects. These can be used in addition to the native objects found under \"Charts\".\n\nFor limitations and support conditions, see the documentation."
+    },
+    "dependencies": {
+        "qlik-sense": ">=5.5.x"
+    }
+}

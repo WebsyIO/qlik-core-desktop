@@ -1,0 +1,99 @@
+{
+	"snippets": [
+		{
+			"name": "LUI Button",
+			"key": "lui_button",
+			"description": "Button using Leonardo-UI"
+		},
+		{
+			"name": "LUI Button (Error)",
+			"key": "lui_button_error",
+			"description": "Error button using Leonardo-UI"
+		},
+		{
+			"name": "LUI Button (Success)",
+			"key": "lui_button_success",
+			"description": "Success button using Leonardo-UI"
+		},
+		{
+			"name": "LUI Button (Warning)",
+			"key": "lui_button_warning",
+			"description": "Warning button using Leonardo-UI"
+		},
+		{
+			"name": "LUI Button group",
+			"key": "lui_buttongroup",
+			"description": "Button group using Leonardo-UI (pure CSS)"
+		},
+		{
+			"name": "LUI Checkbox",
+			"key": "lui_checkbox",
+			"description": "Checkbox using Leonardo-UI (pure CSS)"
+		},
+		{
+			"name": "LUI Input field",
+			"key": "lui_input",
+			"description": "Input field using Leonardo-UI (pure CSS)"
+		},
+		{
+			"name": "LUI Input group",
+			"key": "lui_inputgroup",
+			"description": "Input group using Leonardo-UI (pure CSS)"
+		},
+		{
+			"name": "LUI Radio button",
+			"key": "lui_radiobutton",
+			"description": "Radio button using Leonardo-UI (pure CSS)"
+		},
+		{
+			"name": "LUI Select",
+			"key": "lui_select",
+			"description": "Select object (drop-down) using Leonardo-UI"
+		},
+		{
+			"name": "LUI Switch",
+			"key": "lui_switch",
+			"description": "Switch control using Leonardo-UI (pure CSS)"
+		},
+		{
+			"name": "LUI Tab View",
+			"key": "lui_tab_view",
+			"description": "A tab view using angular-leonardo-UI"
+		},
+		{
+			"name": "LUI Tab View (Inverse)",
+			"key": "lui_tab_view_inverse",
+			"description": "A tab view using angular-leonardo-UI"
+		},
+		{
+			"name": "Buttons with actions",
+			"key": "buttons_with_actions",
+			"description": "Examples how to use Leonardo-UI with pre-defined actions."
+		},
+		{
+			"name": "Table created based on dimensions and measures.",
+			"key": "dimensions_measures_table",
+			"description": "An example how to create a table based on dimensions and measures."
+		},
+		{
+			"name": "Hide/Show conditions",
+			"key": "hide_show_conditions",
+			"description": "An example how to hide/show objects depending on properties defined in the property-panel."
+		},
+		{
+			"name": "Measures and values.",
+			"key": "list_measures",
+			"description": "List all measures and their values in an unordered list."
+		},
+		{
+			"name": "Sys-Info: List dimensions and measures.",
+			"key": "sysinfo_dimensions_measures",
+			"description": "This snippet demonstrates how to work with multiple entities using the qw-sys-info component."
+		},
+		{
+			"name": "Sys-Info: List sheets.",
+			"key": "sysinfo_sheets",
+			"description": "Snippet how to get a list of sheets using the qw-sys-info component."
+		}
+	]
+}

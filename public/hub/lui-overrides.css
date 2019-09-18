@@ -1,0 +1,36 @@
+
+.q-hub-sidebar .lui-list__item {
+  padding-left: 5px;
+}
+.lui-dialog.lui-dialog--hub-lui {
+  min-height: 178px;
+  min-width: 200px;
+  max-width: 500px;
+  width: 100%;
+}
+.lui-dialog.lui-dialog--hub-lui .lui-dialog__body {
+  word-wrap: break-word;
+}
+@media screen and (max-width: 640px), screen and (max-height: 480px) {
+  #q-hub-menu-override-small .lui-list__hub-small {
+    font-size: 15px;
+    color: #FFFFFF;
+    background-color: #404040;
+  }
+  #q-hub-menu-override-small .lui-list__hub-small:hover {
+    background-color: #4D4D4D;
+  }
+  #q-hub-menu-override-small .lui-list__hub-small .lui-icon {
+    font-size: 22px;
+  }
+  .q-hub-sidebar .lui-list__item {
+    height: 44px;
+    line-height: 44px;
+  }
+}
+#q-hub-user-popover-override {
+  width: 250px;
+}
+.lui-icon--published:before {
+  content: "\270E";
+}

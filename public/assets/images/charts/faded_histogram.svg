@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="140" height="140" viewBox="0 0 140 140">
+  <defs>
+    <rect id="faded_histogram-a" width="6" height="56" x="10" y="84"/>
+    <rect id="faded_histogram-b" width="10" height="44" y="96"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(1)">
+    <use fill="#E5E5E5" xlink:href="#faded_histogram-a"/>
+    <rect width="6" height="73" x="26" y="67" fill="#E5E5E5"/>
+    <rect width="6" height="47" x="42" y="93" fill="#E5E5E5"/>
+    <rect width="6" height="62" x="58" y="78" fill="#E5E5E5"/>
+    <rect width="6" height="110" x="74" y="30" fill="#E5E5E5"/>
+    <rect width="6" height="126" x="90" y="14" fill="#E5E5E5"/>
+    <rect width="6" height="47" x="106" y="93" fill="#E5E5E5"/>
+    <use fill="#DDD" xlink:href="#faded_histogram-b"/>
+    <rect width="10" height="84" x="16" y="56" fill="#D5D5D5"/>
+    <rect width="10" height="54" x="32" y="86" fill="#DDD"/>
+    <rect width="10" height="70" x="48" y="70" fill="#DDD"/>
+    <rect width="10" height="114" x="64" y="26" fill="#D5D5D5"/>
+    <rect width="10" height="140" x="80" fill="#D5D5D5"/>
+    <rect width="10" height="79" x="96" y="61" fill="#DDD"/>
+    <rect width="10" height="56" x="112" y="84" fill="#DDD"/>
+    <rect width="10" height="64" x="128" y="76" fill="#DDD"/>
+    <rect width="6" height="40" x="122" y="100" fill="#E5E5E5"/>
+  </g>
+</svg>

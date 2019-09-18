@@ -1,0 +1,19 @@
+<table border="1">
+	<thead>
+	<tr>
+		<th ng-repeat="head in data.headers">
+			{{head.qFallbackTitle}}
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="row in data.rows">
+		<td ng-repeat="cell in row.cells">
+			{{cell.qText}}
+		</td>
+	</tr>
+	</tbody>
+</table>
+<div ng-if="data.rows.length === 0">
+	Please add dimensions and measures.
+</div>

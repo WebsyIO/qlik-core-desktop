@@ -1,0 +1,22 @@
+{
+    "author": "Ivan Felipe Asensio <ivan.felipe@qlik.com>",
+    "bundle": {
+        "id": "qlik-visualization-bundle",
+        "name": "Qlik Visualization bundle",
+        "description": "This is a set of supported extensions that expands the visualization capabilities of Qlik Sense. These can be used in addition to the native objects found under 'Charts'. For support conditions and limitations, see the documentation."
+    },
+    "dependencies": {
+        "qlik-sense": ">=5.5.x"
+    },
+    "description": "Profit & Loss reporting with color and font customizations.\nVersion: 0.50.0",
+    "homepage": "",
+    "icon": "pivot-table",
+    "installer": "QlikExtensionBundler",
+    "keywords": "qlik-sense, visualization",
+    "license": "MIT",
+    "name": "P&L pivot",
+    "preview": "qlik-smart-pivot.png",
+    "repository": "https://github.com/iviasensio/PLSmartPivot",
+    "type": "visualization",
+    "version": "0.50.0"
+}

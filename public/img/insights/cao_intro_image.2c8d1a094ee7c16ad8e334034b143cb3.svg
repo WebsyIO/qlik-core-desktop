@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="170" height="153" viewBox="0 0 170 153">
+  <defs>
+    <path id="overlay-illustration2-b" d="M132,6 L132,1.5 C132,0.749808734 132.568805,1.66915043e-12 133.5,0 L154.5,0 C155.431194,-1.27336356e-16 156,0.749808734 156,1.5 L156.027283,6 L160,6 C160.931194,6 162,7.2498087 162,8 L162,116 C162,116.750192 160.931194,118 160,118 L15,118 C14.0688059,118 13,116.750192 13,116 L13,8 C13,7.2498087 14.0688059,6 15,6 L132,6 Z"/>
+    <filter id="overlay-illustration2-a" width="110.7%" height="113.6%" x="-5.4%" y="-5.9%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0"/>
+    </filter>
+    <path id="overlay-illustration2-d" d="M46,32 L95,32 C95.5522847,32 96,32.4477153 96,33 L96,65 C96,65.5522847 95.5522847,66 95,66 L46,66 C45.4477153,66 45,65.5522847 45,65 L45,33 C45,32.4477153 45.4477153,32 46,32 Z"/>
+    <filter id="overlay-illustration2-c" width="105.9%" height="108.8%" x="-2.9%" y="-4.4%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0"/>
+    </filter>
+    <polygon id="overlay-illustration2-f" points="45 71 96 71 96 105 45 105"/>
+    <filter id="overlay-illustration2-e" width="105.9%" height="108.8%" x="-2.9%" y="-4.4%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0"/>
+    </filter>
+    <path id="overlay-illustration2-h" d="M102,32 L151,32 C151.552285,32 152,32.4477153 152,33 L152,65 C152,65.5522847 151.552285,66 151,66 L102,66 C101.447715,66 101,65.5522847 101,65 L101,33 C101,32.4477153 101.447715,32 102,32 Z"/>
+    <filter id="overlay-illustration2-g" width="105.9%" height="108.8%" x="-2.9%" y="-4.4%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0"/>
+    </filter>
+    <polygon id="overlay-illustration2-j" points="101 71 152 71 152 105 101 105"/>
+    <filter id="overlay-illustration2-i" width="105.9%" height="108.8%" x="-2.9%" y="-4.4%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0"/>
+    </filter>
+    <path id="overlay-illustration2-l" d="M64,16 L133,16 C133.552285,16 134,16.4477153 134,17 L134,20 C134,20.5522847 133.552285,21 133,21 L64,21 C63.4477153,21 63,20.5522847 63,20 L63,17 C63,16.4477153 63.4477153,16 64,16 Z"/>
+    <filter id="overlay-illustration2-k" width="104.2%" height="160%" x="-2.1%" y="-30%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0"/>
+    </filter>
+    <path id="overlay-illustration2-n" d="M2,0.56236526 L33,0.56236526 C34.1045695,0.56236526 35,1.45779576 35,2.56236526 L35,88.5623653 C35,89.6669348 34.1045695,90.5623653 33,90.5623653 L2,90.5623653 C0.8954305,90.5623653 1.3527075e-16,89.6669348 0,88.5623653 L0,2.56236526 C-1.3527075e-16,1.45779576 0.8954305,0.56236526 2,0.56236526 Z"/>
+    <filter id="overlay-illustration2-m" width="128.6%" height="111.1%" x="-14.3%" y="-4.4%" filterUnits="objectBoundingBox">
+      <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="1.5"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0"/>
+    </filter>
+    <polygon id="overlay-illustration2-o" points="1.5 2.5 3.25 .75 3.75 1.25 2 3 1.5 3.5 .25 2.25 .75 1.75"/>
+    <polygon id="overlay-illustration2-q" points="1.5 2.5 3.25 .75 3.75 1.25 2 3 1.5 3.5 .25 2.25 .75 1.75"/>
+    <polygon id="overlay-illustration2-s" points="1.5 2.5 3.25 .75 3.75 1.25 2 3 1.5 3.5 .25 2.25 .75 1.75"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(3 4)">
+    <g fill-rule="nonzero">
+      <use fill="#000" filter="url(#overlay-illustration2-a)" xlink:href="#overlay-illustration2-b"/>
+      <use fill="#F2F2F2" xlink:href="#overlay-illustration2-b"/>
+    </g>
+    <g fill-rule="nonzero">
+      <use fill="#000" filter="url(#overlay-illustration2-c)" xlink:href="#overlay-illustration2-d"/>
+      <use fill="#FFF" xlink:href="#overlay-illustration2-d"/>
+    </g>
+    <g fill-rule="nonzero">
+      <use fill="#000" filter="url(#overlay-illustration2-e)" xlink:href="#overlay-illustration2-f"/>
+      <use fill="#FFF" xlink:href="#overlay-illustration2-f"/>
+    </g>
+    <g fill-rule="nonzero">
+      <use fill="#000" filter="url(#overlay-illustration2-g)" xlink:href="#overlay-illustration2-h"/>
+      <use fill="#FFF" xlink:href="#overlay-illustration2-h"/>
+    </g>
+    <g fill-rule="nonzero">
+      <use fill="#000" filter="url(#overlay-illustration2-i)" xlink:href="#overlay-illustration2-j"/>
+      <use fill="#FFF" xlink:href="#overlay-illustration2-j"/>
+    </g>
+    <g fill-rule="nonzero">
+      <use fill="#000" filter="url(#overlay-illustration2-k)" xlink:href="#overlay-illustration2-l"/>
+      <use fill="#FFF" xlink:href="#overlay-illustration2-l"/>
+    </g>
+    <rect width="8.765" height="2.191" x="65.735" y="17.354" fill="#D9D9D9" rx="1"/>
+    <rect width="11.394" height="2.191" x="77.129" y="17.354" fill="#D9D9D9" rx="1"/>
+    <rect width="7.888" height="2.191" x="91.153" y="17.354" fill="#D9D9D9" rx="1"/>
+    <g transform="translate(45.138 31.553)">
+      <polyline stroke="#019845" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.28" points="9.939 14.078 18.122 18.097 26.63 15.855 35.157 8.793 43.462 13.882 44.018 13.883"/>
+      <g transform="translate(8.048 12.001)">
+        <ellipse cx="1.891" cy="1.813" fill="#F1F1F1" rx="1.569" ry="1.594"/>
+        <ellipse cx="1.891" cy="1.813" stroke="#019845" stroke-width="1.28" rx="1.006" ry="1"/>
+      </g>
+      <g transform="translate(16.096 16.002)">
+        <ellipse cx="2.213" cy="2.063" fill="#F1F1F1" rx="1.569" ry="1.594"/>
+        <ellipse cx="2.213" cy="2.063" stroke="#019845" stroke-width="1.28" rx="1.006" ry="1"/>
+      </g>
+      <g transform="translate(24.842 14.001)">
+        <ellipse cx="1.838" cy="1.938" fill="#F1F1F1" rx="1.569" ry="1.594"/>
+        <ellipse cx="1.838" cy="1.938" stroke="#019845" stroke-width="1.28" rx="1.006" ry="1"/>
+      </g>
+      <g transform="translate(33.199 7)">
+        <ellipse cx="1.851" cy="2.031" fill="#F1F1F1" rx="1.569" ry="1.594"/>
+        <ellipse cx="1.851" cy="2.031" stroke="#019845" stroke-width="1.28" rx="1.006" ry="1"/>
+      </g>
+      <g transform="translate(41.247 12.001)">
+        <ellipse cx="2.173" cy="1.813" fill="#F1F1F1" rx="1.569" ry="1.594"/>
+        <ellipse cx="2.173" cy="1.813" stroke="#019845" stroke-width="1.28" rx="1.006" ry="1"/>
+      </g>
+      <polygon fill="#000" fill-opacity=".104" fill-rule="nonzero" points="3 11.447 4.292 11.447 4.292 19.948 3 19.948"/>
+      <polygon fill="#000" fill-opacity=".104" fill-rule="nonzero" points="24.591 25.389 26.152 25.389 26.152 34.467 24.591 34.467" transform="rotate(90 25.372 29.928)"/>
+    </g>
+    <g fill-rule="nonzero" transform="translate(101.232 31.553)">
+      <path fill="#019845" d="M10.9366445,9.00089676 L12.9186489,9.00089676 L12.9186489,23.7784884 L10.9366445,23.7784884 L10.9366445,9.00089676 Z M14.0583014,11.9564151 L16.0403058,11.9564151 L16.0403058,23.7784884 L14.0583014,23.7784884 L14.0583014,11.9564151 Z M17.1799583,14.419347 L19.1619628,14.419347 L19.1619628,23.7784884 L17.1799583,23.7784884 L17.1799583,14.419347 Z M20.3016153,9.98606954 L22.2836197,9.98606954 L22.2836197,23.7784884 L20.3016153,23.7784884 L20.3016153,9.98606954 Z M23.4232722,18.3600382 L25.4052767,18.3600382 L25.4052767,23.7784884 L23.4232722,23.7784884 L23.4232722,18.3600382 Z M26.5449292,15.4045198 L28.5269336,15.4045198 L28.5269336,23.7784884 L26.5449292,23.7784884 L26.5449292,15.4045198 Z M29.6665861,12.9415879 L31.6485905,12.9415879 L31.6485905,23.7784884 L29.6665861,23.7784884 L29.6665861,12.9415879 Z M32.7882431,10.4786559 L34.7702475,10.4786559 L34.7702475,23.7784884 L32.7882431,23.7784884 L32.7882431,10.4786559 Z M35.9099,14.419347 L37.8919045,14.419347 L37.8919045,23.7784884 L35.9099,23.7784884 L35.9099,14.419347 Z M39.031557,11.9564151 L41.0135613,11.9564151 L41.0135613,23.7784884 L39.031557,23.7784884 L39.031557,11.9564151 Z M42.1532139,15.4045198 L44.1352183,15.4045198 L44.1352183,23.7784884 L42.1532139,23.7784884 L42.1532139,15.4045198 Z"/>
+      <rect width="1.292" height="8.501" x="3" y="11.447" fill="#000" fill-opacity=".104"/>
+      <polygon fill="#000" fill-opacity=".104" points="25.468 25.389 27.029 25.389 27.029 34.467 25.468 34.467" transform="rotate(90 26.248 29.928)"/>
+    </g>
+    <g fill-rule="nonzero" transform="translate(45.138 70.855)">
+      <path fill="#019845" d="M17.1022956,-2.00019928 L18.738879,-2.00019928 L18.738879,33.0032881 L17.1022956,33.0032881 L17.1022956,-2.00019928 Z M20.0152535,5.0004982 L21.6518367,5.0004982 L21.6518367,33.0032881 L20.0152535,33.0032881 L20.0152535,5.0004982 Z M22.9282113,10.8344127 L24.5647946,10.8344127 L24.5647946,33.0032881 L22.9282113,33.0032881 L22.9282113,10.8344127 Z M25.8411692,0.333366546 L27.4777524,0.333366546 L27.4777524,33.0032881 L25.8411692,33.0032881 L25.8411692,0.333366546 Z M28.754127,20.1686761 L30.3907103,20.1686761 L30.3907103,33.0032881 L28.754127,33.0032881 L28.754127,20.1686761 Z M31.6670849,13.1679786 L33.3036681,13.1679786 L33.3036681,33.0032881 L31.6670849,33.0032881 L31.6670849,13.1679786 Z M34.5800426,7.33406402 L36.216626,7.33406402 L36.216626,33.0032881 L34.5800426,33.0032881 L34.5800426,7.33406402 Z" transform="rotate(90 26.66 15.502)"/>
+      <polygon fill="#000" fill-opacity=".104" points="3 11.145 4.292 11.145 4.292 19.646 3 19.646"/>
+      <polygon fill="#000" fill-opacity=".104" points="24.59 25.087 26.152 25.087 26.152 34.165 24.59 34.165" transform="rotate(90 25.371 29.626)"/>
+    </g>
+    <g fill-rule="nonzero" transform="translate(101.232 70.855)">
+      <path fill="#019845" d="M10.0601739,9.00089676 L12.0421783,9.00089676 L12.0421783,23.7784884 L10.0601739,23.7784884 L10.0601739,9.00089676 Z M13.1818309,11.9564151 L15.1638352,11.9564151 L15.1638352,23.7784884 L13.1818309,23.7784884 L13.1818309,11.9564151 Z M16.3034877,14.419347 L18.2854922,14.419347 L18.2854922,23.7784884 L16.3034877,23.7784884 L16.3034877,14.419347 Z M19.4251447,9.98606954 L21.4071491,9.98606954 L21.4071491,23.7784884 L19.4251447,23.7784884 L19.4251447,9.98606954 Z M22.5468017,18.3600382 L24.5288061,18.3600382 L24.5288061,23.7784884 L22.5468017,23.7784884 L22.5468017,18.3600382 Z M25.6684586,15.4045198 L27.650463,15.4045198 L27.650463,23.7784884 L25.6684586,23.7784884 L25.6684586,15.4045198 Z M28.7901155,12.9415879 L30.7721199,12.9415879 L30.7721199,23.7784884 L28.7901155,23.7784884 L28.7901155,12.9415879 Z M31.9117725,10.4786559 L33.8937769,10.4786559 L33.8937769,23.7784884 L31.9117725,23.7784884 L31.9117725,10.4786559 Z M35.0334294,14.419347 L37.0154339,14.419347 L37.0154339,23.7784884 L35.0334294,23.7784884 L35.0334294,14.419347 Z M38.1550864,11.9564151 L40.1370908,11.9564151 L40.1370908,23.7784884 L38.1550864,23.7784884 L38.1550864,11.9564151 Z M41.2767433,15.4045198 L43.2587477,15.4045198 L43.2587477,23.7784884 L41.2767433,23.7784884 L41.2767433,15.4045198 Z"/>
+      <polygon fill="#000" fill-opacity=".104" points="3 11.145 4.292 11.145 4.292 19.646 3 19.646"/>
+      <polygon fill="#000" fill-opacity=".104" points="25.466 25.087 27.028 25.087 27.028 34.165 25.466 34.165" transform="rotate(90 26.247 29.626)"/>
+    </g>
+    <g fill-rule="nonzero" transform="translate(100 83)">
+      <rect width="12" height="3" x="33" y="37" fill="#4C4C4C" transform="rotate(-135 39 38.5)"/>
+      <circle cx="20.5" cy="20.5" r="18.5" fill="#FFF" fill-opacity=".164"/>
+      <path fill="#4C4C4C" d="M21,42 C9.40202025,42 0,32.5979797 0,21 C0,9.40202025 9.40202025,0 21,0 C32.5979797,0 42,9.40202025 42,21 C42,32.5979797 32.5979797,42 21,42 Z M21,37.5789474 C30.1562998,37.5789474 37.5789474,30.1562998 37.5789474,21 C37.5789474,11.8437002 30.1562998,4.42105263 21,4.42105263 C11.8437002,4.42105263 4.42105263,11.8437002 4.42105263,21 C4.42105263,30.1562998 11.8437002,37.5789474 21,37.5789474 Z"/>
+      <path fill="#019845" d="M57.0165976,64.9101287 L38.0898713,45.9834024 C36.6367096,44.5302406 36.6367096,42.1738588 38.0898713,40.7204863 L40.7204863,38.0898713 C42.1736481,36.6367096 44.5300298,36.6367096 45.9834024,38.0898713 L64.9101287,57.0165976 C66.3632904,58.4697594 66.3632904,60.8261412 64.9101287,62.2795137 L62.2795137,64.9101287 C60.8263519,66.3632904 58.470181,66.3632904 57.0165976,64.9101287 Z"/>
+      <path fill="#000" fill-opacity=".103" d="M60.0653156,61.6927819 L41.24325,42.9213971 C39.8909859,41.5727742 39.8211822,39.4495972 40.9990417,38 C40.8990526,38.0809048 40.7929844,38.1507297 40.6999128,38.2435507 L38.0838446,40.8525748 C36.6387185,42.2940188 36.6387185,44.6308515 38.0838446,46.0722955 L56.9059102,64.8436803 C58.3512459,66.2851243 60.6943878,66.2851243 62.1397235,64.8436803 L64.7557917,62.2346562 C64.8488634,62.1418351 64.9190864,62.0362616 65,61.9365417 C63.5466987,63.1112297 61.4175797,63.0411958 60.0653156,61.6927819 Z"/>
+    </g>
+    <g transform="translate(0 16.438)">
+      <g fill-rule="nonzero">
+        <use fill="#000" filter="url(#overlay-illustration2-m)" xlink:href="#overlay-illustration2-n"/>
+        <use fill="#FFF" xlink:href="#overlay-illustration2-n"/>
+      </g>
+      <path fill="#E9E9E9" fill-rule="nonzero" d="M5 4.56236526L30 4.56236526C30.5522847 4.56236526 31 5.01008051 31 5.56236526L31 9.56236526C31 10.11465 30.5522847 10.5623653 30 10.5623653L5 10.5623653C4.44771525 10.5623653 4 10.11465 4 9.56236526L4 5.56236526C4 5.01008051 4.44771525 4.56236526 5 4.56236526zM5 12.5623653L30 12.5623653C30.5522847 12.5623653 31 13.0100805 31 13.5623653L31 17.5623653C31 18.11465 30.5522847 18.5623653 30 18.5623653L5 18.5623653C4.44771525 18.5623653 4 18.11465 4 17.5623653L4 13.5623653C4 13.0100805 4.44771525 12.5623653 5 12.5623653zM5 20.5623653L30 20.5623653C30.5522847 20.5623653 31 21.0100805 31 21.5623653L31 25.5623653C31 26.11465 30.5522847 26.5623653 30 26.5623653L5 26.5623653C4.44771525 26.5623653 4 26.11465 4 25.5623653L4 21.5623653C4 21.0100805 4.44771525 20.5623653 5 20.5623653zM5 28.5623653L30 28.5623653C30.5522847 28.5623653 31 29.0100805 31 29.5623653L31 33.5623653C31 34.11465 30.5522847 34.5623653 30 34.5623653L5 34.5623653C4.44771525 34.5623653 4 34.11465 4 33.5623653L4 29.5623653C4 29.0100805 4.44771525 28.5623653 5 28.5623653zM5 36.5623653L30 36.5623653C30.5522847 36.5623653 31 37.0100805 31 37.5623653L31 41.5623653C31 42.11465 30.5522847 42.5623653 30 42.5623653L5 42.5623653C4.44771525 42.5623653 4 42.11465 4 41.5623653L4 37.5623653C4 37.0100805 4.44771525 36.5623653 5 36.5623653zM5 44.5623653L30 44.5623653C30.5522847 44.5623653 31 45.0100805 31 45.5623653L31 49.5623653C31 50.11465 30.5522847 50.5623653 30 50.5623653L5 50.5623653C4.44771525 50.5623653 4 50.11465 4 49.5623653L4 45.5623653C4 45.0100805 4.44771525 44.5623653 5 44.5623653zM5 52.5623653L30 52.5623653C30.5522847 52.5623653 31 53.0100805 31 53.5623653L31 57.5623653C31 58.11465 30.5522847 58.5623653 30 58.5623653L5 58.5623653C4.44771525 58.5623653 4 58.11465 4 57.5623653L4 53.5623653C4 53.0100805 4.44771525 52.5623653 5 52.5623653zM5 60.5623653L30 60.5623653C30.5522847 60.5623653 31 61.0100805 31 61.5623653L31 65.5623653C31 66.11465 30.5522847 66.5623653 30 66.5623653L5 66.5623653C4.44771525 66.5623653 4 66.11465 4 65.5623653L4 61.5623653C4 61.0100805 4.44771525 60.5623653 5 60.5623653z"/>
+      <g transform="translate(5 5.562)">
+        <polygon fill="#000" points="1.5 2.5 3.25 .75 3.75 1.25 2 3 1.5 3.5 .25 2.25 .75 1.75"/>
+        <mask id="overlay-illustration2-p" fill="#fff">
+          <use xlink:href="#overlay-illustration2-o"/>
+        </mask>
+        <g fill="#019845" mask="url(#overlay-illustration2-p)">
+          <rect width="4" height="4"/>
+        </g>
+      </g>
+      <g transform="translate(5 21.562)">
+        <polygon fill="#000" points="1.5 2.5 3.25 .75 3.75 1.25 2 3 1.5 3.5 .25 2.25 .75 1.75"/>
+        <mask id="overlay-illustration2-r" fill="#fff">
+          <use xlink:href="#overlay-illustration2-q"/>
+        </mask>
+        <g fill="#019845" mask="url(#overlay-illustration2-r)">
+          <rect width="4" height="4"/>
+        </g>
+      </g>
+      <g transform="translate(5 29.562)">
+        <polygon fill="#000" points="1.5 2.5 3.25 .75 3.75 1.25 2 3 1.5 3.5 .25 2.25 .75 1.75"/>
+        <mask id="overlay-illustration2-t" fill="#fff">
+          <use xlink:href="#overlay-illustration2-s"/>
+        </mask>
+        <g fill="#019845" mask="url(#overlay-illustration2-t)">
+          <rect width="4" height="4"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

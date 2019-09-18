@@ -1,0 +1,1553 @@
+.qv-object-qsstatistic {
+  width: 100%;
+  height: 100%;
+}
+
+.qv-object-qsstatistic.edit-mode {
+  overflow-y: hidden;
+}
+
+.qv-object-qsstatistic {
+  /*!
+ * # Semantic UI - Item
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Copyright 2015 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+  /*!
+ * # Semantic UI - Statistic
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Copyright 2015 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+  /*!
+ * # Semantic UI - Segment
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Copyright 2015 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+}
+
+.qv-object-qsstatistic .ui.card,.qv-object-qsstatistic .ui.cards>.card {
+  max-width: 100%;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 290px;
+  min-height: 0;
+  background: #fff;
+  padding: 1em;
+  border: 1px solid rgba(34,36,38,.15);
+  border-radius: .28571429rem;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  transition: "default";
+  z-index: "";
+}
+
+.qv-object-qsstatistic .ui.card {
+  margin: 1rem 0;
+}
+
+.qv-object-qsstatistic .ui.card a,.qv-object-qsstatistic .ui.cards>.card a {
+  cursor: pointer;
+}
+
+.qv-object-qsstatistic .ui.card:first-child {
+  margin-top: 0;
+}
+
+.qv-object-qsstatistic .ui.card:last-child {
+  margin-bottom: 0;
+}
+
+.qv-object-qsstatistic .ui.cards {
+  margin: 1em -1.5em 0;
+}
+
+.qv-object-qsstatistic .ui.cards>.card {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 .75em;
+  float: none;
+}
+
+.qv-object-qsstatistic .ui.card:after,.qv-object-qsstatistic .ui.cards:after {
+  display: block;
+  content: " ";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.qv-object-qsstatistic .ui.cards~.ui.cards {
+  margin-top: 0;
+}
+
+.qv-object-qsstatistic .ui.card>:first-child,.qv-object-qsstatistic .ui.cards>.card>:first-child {
+  border-radius: .28571429rem .28571429rem 0 0!important;
+  border-top: none!important;
+}
+
+.qv-object-qsstatistic .ui.card>:last-child,.qv-object-qsstatistic .ui.cards>.card>:last-child {
+  border-radius: 0 0 .28571429rem .28571429rem!important;
+}
+
+.qv-object-qsstatistic .ui.card>:only-child,.qv-object-qsstatistic .ui.cards>.card>:only-child {
+  border-radius: .28571429rem!important;
+}
+
+.qv-object-qsstatistic .ui.card>.image,.qv-object-qsstatistic .ui.cards>.card>.image {
+  position: relative;
+  display: block;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: 0;
+  background: rgba(0,0,0,.05);
+}
+
+.qv-object-qsstatistic .ui.card>.content,.qv-object-qsstatistic .ui.cards>.card>.content {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  border: none;
+  border-top: 1px solid rgba(34,36,38,.1);
+  background: none;
+  margin: 0;
+  padding: 1em;
+  box-shadow: none;
+  font-size: 1em;
+  border-radius: 0;
+}
+
+.qv-object-qsstatistic .ui.card>.content:after,.qv-object-qsstatistic .ui.cards>.card>.content:after {
+  display: block;
+  content: " ";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.qv-object-qsstatistic .ui.card>.content>.header,.qv-object-qsstatistic .ui.cards>.card>.content>.header {
+  display: block;
+  margin: calc(2rem - .14285em) 0 1rem;
+  font-family: icons,Helvetica Neue,Arial,Helvetica,sans-serif;
+  color: rgba(0,0,0,.85);
+}
+
+.qv-object-qsstatistic .ui.card>.content>.header:not(.ui),.qv-object-qsstatistic .ui.cards>.card>.content>.header:not(.ui) {
+  font-weight: 700;
+  font-size: 1.28571429em;
+  margin-top: .14285em;
+  line-height: 1.2857em;
+}
+
+.qv-object-qsstatistic .ui.card [class*="left floated"],.qv-object-qsstatistic .ui.cards>.card [class*="left floated"] {
+  float: left;
+}
+
+.qv-object-qsstatistic .ui.card [class*="right floated"],.qv-object-qsstatistic .ui.cards>.card [class*="right floated"] {
+  float: right;
+}
+
+.qv-object-qsstatistic .ui.card [class*="left aligned"],.qv-object-qsstatistic .ui.cards>.card [class*="left aligned"] {
+  text-align: left;
+}
+
+.qv-object-qsstatistic .ui.card [class*="center aligned"],.qv-object-qsstatistic .ui.cards>.card [class*="center aligned"] {
+  text-align: center;
+}
+
+.qv-object-qsstatistic .ui.card [class*="right aligned"],.qv-object-qsstatistic .ui.cards>.card [class*="right aligned"] {
+  text-align: right;
+}
+
+.qv-object-qsstatistic .ui.card>.content p,.qv-object-qsstatistic .ui.cards>.card>.content p {
+  margin: 0 0 .5em;
+}
+
+.qv-object-qsstatistic .ui.card>.content p:last-child,.qv-object-qsstatistic .ui.cards>.card>.content p:last-child {
+  margin-bottom: 0;
+}
+
+.qv-object-qsstatistic .ui.card>.content a:not(.ui),.qv-object-qsstatistic .ui.cards>.card>.content a:not(.ui) {
+  color: "";
+  transition: color .1s ease;
+}
+
+.qv-object-qsstatistic .ui.card>.content a:not(.ui):hover,.qv-object-qsstatistic .ui.cards>.card>.content a:not(.ui):hover {
+  color: "";
+}
+
+.qv-object-qsstatistic .ui.card>.content>a.header,.qv-object-qsstatistic .ui.cards>.card>.content>a.header {
+  color: rgba(0,0,0,.85);
+}
+
+.qv-object-qsstatistic .ui.card>.content>a.header:hover,.qv-object-qsstatistic .ui.cards>.card>.content>a.header:hover {
+  color: #1e70bf;
+}
+
+.qv-object-qsstatistic .ui.card>.button,.qv-object-qsstatistic .ui.cards>.card>.button {
+  margin: 0 -1px;
+  width: calc(100% + 2px);
+}
+
+.qv-object-qsstatistic .ui.card>.content .star.icon,.qv-object-qsstatistic .ui.cards>.card>.content .star.icon {
+  cursor: pointer;
+  opacity: .75;
+  transition: color .1s ease;
+}
+
+.qv-object-qsstatistic .ui.card>.content .star.icon:hover,.qv-object-qsstatistic .ui.cards>.card>.content .star.icon:hover {
+  opacity: 1;
+  color: #ffb70a;
+}
+
+.qv-object-qsstatistic .ui.card>.content .active.star.icon,.qv-object-qsstatistic .ui.cards>.card>.content .active.star.icon {
+  color: #ffe623;
+}
+
+.qv-object-qsstatistic .ui.card>.extra,.qv-object-qsstatistic .ui.cards>.card>.extra {
+  max-width: 100%;
+  min-height: 0!important;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  border-top: 1px solid rgba(0,0,0,.05)!important;
+  position: static;
+  background: none;
+  width: auto;
+  margin: 0;
+  padding: .75em 1em;
+  top: 0;
+  left: 0;
+  color: rgba(0,0,0,.4);
+  box-shadow: none;
+  transition: color .1s ease;
+}
+
+.qv-object-qsstatistic .ui.card>.extra a:not(.ui),.qv-object-qsstatistic .ui.cards>.card>.extra a:not(.ui) {
+  color: rgba(0,0,0,.4);
+}
+
+.qv-object-qsstatistic .ui.card>.extra a:not(.ui):hover,.qv-object-qsstatistic .ui.cards>.card>.extra a:not(.ui):hover {
+  color: #1e70bf;
+}
+
+.qv-object-qsstatistic .ui.cards a.card,.qv-object-qsstatistic .ui.link.card,.qv-object-qsstatistic .ui.link.cards .card,.qv-object-qsstatistic a.ui.card {
+  transform: none;
+}
+
+.qv-object-qsstatistic .ui.cards a.card:hover,.qv-object-qsstatistic .ui.link.card:hover,.qv-object-qsstatistic .ui.link.cards .card:hover,.qv-object-qsstatistic a.ui.card:hover {
+  cursor: pointer;
+  z-index: 5;
+  background: #fff;
+  border: 1px solid rgba(34,36,38,.15);
+  box-shadow: 0 1px 3px 0 #bcbdbd,0 0 0 1px #d4d4d5;
+  transform: translateY(-3px);
+}
+
+.qv-object-qsstatistic .ui.cards>.red.card,.qv-object-qsstatistic .ui.red.card,.qv-object-qsstatistic .ui.red.cards>.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #db2828,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.cards>.red.card:hover,.qv-object-qsstatistic .ui.red.card:hover,.qv-object-qsstatistic .ui.red.cards>.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #d01919,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.cards>.orange.card,.qv-object-qsstatistic .ui.orange.card,.qv-object-qsstatistic .ui.orange.cards>.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #f2711c,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.cards>.orange.card:hover,.qv-object-qsstatistic .ui.orange.card:hover,.qv-object-qsstatistic .ui.orange.cards>.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #f26202,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.cards>.yellow.card,.qv-object-qsstatistic .ui.yellow.card,.qv-object-qsstatistic .ui.yellow.cards>.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #fbbd08,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.cards>.yellow.card:hover,.qv-object-qsstatistic .ui.yellow.card:hover,.qv-object-qsstatistic .ui.yellow.cards>.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #eaae00,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.cards>.olive.card,.qv-object-qsstatistic .ui.olive.card,.qv-object-qsstatistic .ui.olive.cards>.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #b5cc18,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.cards>.olive.card:hover,.qv-object-qsstatistic .ui.olive.card:hover,.qv-object-qsstatistic .ui.olive.cards>.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #a7bd0d,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.cards>.green.card,.qv-object-qsstatistic .ui.green.card,.qv-object-qsstatistic .ui.green.cards>.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #21ba45,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.cards>.green.card:hover,.qv-object-qsstatistic .ui.green.card:hover,.qv-object-qsstatistic .ui.green.cards>.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #16ab39,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.cards>.teal.card,.qv-object-qsstatistic .ui.teal.card,.qv-object-qsstatistic .ui.teal.cards>.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #00b5ad,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.cards>.teal.card:hover,.qv-object-qsstatistic .ui.teal.card:hover,.qv-object-qsstatistic .ui.teal.cards>.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #009c95,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.blue.card,.qv-object-qsstatistic .ui.blue.cards>.card,.qv-object-qsstatistic .ui.cards>.blue.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #2185d0,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.blue.card:hover,.qv-object-qsstatistic .ui.blue.cards>.card:hover,.qv-object-qsstatistic .ui.cards>.blue.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #1678c2,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.cards>.violet.card,.qv-object-qsstatistic .ui.violet.card,.qv-object-qsstatistic .ui.violet.cards>.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #6435c9,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.cards>.violet.card:hover,.qv-object-qsstatistic .ui.violet.card:hover,.qv-object-qsstatistic .ui.violet.cards>.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #5829bb,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.cards>.purple.card,.qv-object-qsstatistic .ui.purple.card,.qv-object-qsstatistic .ui.purple.cards>.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #a333c8,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.cards>.purple.card:hover,.qv-object-qsstatistic .ui.purple.card:hover,.qv-object-qsstatistic .ui.purple.cards>.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #9627ba,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.cards>.pink.card,.qv-object-qsstatistic .ui.pink.card,.qv-object-qsstatistic .ui.pink.cards>.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #e03997,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.cards>.pink.card:hover,.qv-object-qsstatistic .ui.pink.card:hover,.qv-object-qsstatistic .ui.pink.cards>.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #e61a8d,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.brown.card,.qv-object-qsstatistic .ui.brown.cards>.card,.qv-object-qsstatistic .ui.cards>.brown.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #a5673f,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.brown.card:hover,.qv-object-qsstatistic .ui.brown.cards>.card:hover,.qv-object-qsstatistic .ui.cards>.brown.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #975b33,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.cards>.grey.card,.qv-object-qsstatistic .ui.grey.card,.qv-object-qsstatistic .ui.grey.cards>.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #767676,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.cards>.grey.card:hover,.qv-object-qsstatistic .ui.grey.card:hover,.qv-object-qsstatistic .ui.grey.cards>.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #838383,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.black.card,.qv-object-qsstatistic .ui.black.cards>.card,.qv-object-qsstatistic .ui.cards>.black.card {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #1b1c1d,0 1px 3px 0 #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.black.card:hover,.qv-object-qsstatistic .ui.black.cards>.card:hover,.qv-object-qsstatistic .ui.cards>.black.card:hover {
+  box-shadow: 0 0 0 1px #d4d4d5,0 2px 0 0 #27292a,0 1px 3px 0 #bcbdbd;
+}
+
+.qv-object-qsstatistic .ui.one.cards {
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.one.cards>.card {
+  width: 100%;
+}
+
+.qv-object-qsstatistic .ui.two.cards {
+  margin: -1em;
+}
+
+.qv-object-qsstatistic .ui.two.cards>.card {
+  width: calc(50% - 2em - 2px);
+  margin: 1em;
+}
+
+.qv-object-qsstatistic .ui.three.cards {
+  margin: -1em;
+}
+
+.qv-object-qsstatistic .ui.three.cards>.card {
+  width: calc(33.33333333% - 2em - 2px);
+  margin: 1em;
+}
+
+.qv-object-qsstatistic .ui.four.cards {
+  margin: -.75em;
+}
+
+.qv-object-qsstatistic .ui.four.cards>.card {
+  width: calc(25% - 1.5em - 2px);
+  margin: .75em;
+}
+
+.qv-object-qsstatistic .ui.five.cards {
+  margin: -.75em;
+}
+
+.qv-object-qsstatistic .ui.five.cards>.card {
+  width: calc(20% - 1.5em - 2px);
+  margin: .75em;
+}
+
+.qv-object-qsstatistic .ui.six.cards {
+  margin: -.75em;
+}
+
+.qv-object-qsstatistic .ui.six.cards>.card {
+  width: calc(16.66666667% - 1.5em - 2px);
+  margin: .75em;
+}
+
+.qv-object-qsstatistic .ui.seven.cards {
+  margin: -.5em;
+}
+
+.qv-object-qsstatistic .ui.seven.cards>.card {
+  width: calc(14.28571429% - 1em - 2px);
+  margin: .5em;
+}
+
+.qv-object-qsstatistic .ui.eight.cards {
+  margin: -.5em;
+}
+
+.qv-object-qsstatistic .ui.eight.cards>.card {
+  width: calc(12.5% - 1em - 2px);
+  margin: .5em;
+  font-size: 11px;
+}
+
+.qv-object-qsstatistic .ui.nine.cards {
+  margin: -.5em;
+}
+
+.qv-object-qsstatistic .ui.nine.cards>.card {
+  width: calc(11.11111111% - 1em - 2px);
+  margin: .5em;
+  font-size: 10px;
+}
+
+.qv-object-qsstatistic .ui.ten.cards {
+  margin: -.5em;
+}
+
+.qv-object-qsstatistic .ui.ten.cards>.card {
+  width: calc(10% - 1em - 2px);
+  margin: .5em;
+}
+
+@media only screen and (max-width:767px) {
+  .qv-object-qsstatistic .ui.stackable.cards {
+    display: block!important;
+  }
+
+  .qv-object-qsstatistic .ui.stackable.cards .card:first-child {
+    margin-top: 0!important;
+  }
+
+  .qv-object-qsstatistic .ui.stackable.cards>.card {
+    display: block!important;
+    height: auto!important;
+    margin: 1em;
+    padding: 0!important;
+    width: calc(100% - 2em)!important;
+  }
+}
+
+.qv-object-qsstatistic .ui.cards>.card {
+  font-size: 1em;
+}
+
+.qv-object-qsstatistic .ui.statistic {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 1rem 0;
+  max-width: auto;
+}
+
+.qv-object-qsstatistic .ui.statistic+.ui.statistic {
+  margin: 0 0 0 1.5em;
+}
+
+.qv-object-qsstatistic .ui.statistic:first-child {
+  margin-top: 0;
+}
+
+.qv-object-qsstatistic .ui.statistic:last-child {
+  margin-bottom: 0;
+}
+
+.qv-object-qsstatistic .ui.statistics {
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.qv-object-qsstatistic .ui.statistics>.statistic {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0 1.5em;
+  max-width: auto;
+}
+
+.qv-object-qsstatistic .ui.statistics {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1em -1.5em 0;
+}
+
+.qv-object-qsstatistic .ui.statistics:after {
+  display: block;
+  content: " ";
+  height: 0;
+  clear: both;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.qv-object-qsstatistic .ui.statistics:first-child {
+  margin-top: 0;
+}
+
+.qv-object-qsstatistic .ui.statistics:last-child {
+  margin-bottom: 0;
+}
+
+.qv-object-qsstatistic .ui.statistic>.value,.qv-object-qsstatistic .ui.statistics .statistic>.value {
+  font-family: icons,Helvetica Neue,Arial,Helvetica,sans-serif;
+  font-weight: 400;
+  line-height: 1em;
+  color: #1b1c1d;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.qv-object-qsstatistic .ui.statistic>.label,.qv-object-qsstatistic .ui.statistics .statistic>.label {
+  font-family: icons,Helvetica Neue,Arial,Helvetica,sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  color: rgba(0,0,0,.87);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.qv-object-qsstatistic .ui.statistic>.label~.value,.qv-object-qsstatistic .ui.statistic>.value~.label,.qv-object-qsstatistic .ui.statistics .statistic>.label~.value,.qv-object-qsstatistic .ui.statistics .statistic>.value~.label {
+  margin-top: 0;
+}
+
+.qv-object-qsstatistic .ui.statistic>.value .icon,.qv-object-qsstatistic .ui.statistics .statistic>.value .icon {
+  opacity: 1;
+  width: auto;
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.statistic>.text.value,.qv-object-qsstatistic .ui.statistics .statistic>.text.value {
+  line-height: 1em;
+  min-height: 2em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.qv-object-qsstatistic .ui.statistic>.text.value+.label,.qv-object-qsstatistic .ui.statistics .statistic>.text.value+.label {
+  text-align: center;
+}
+
+.qv-object-qsstatistic .ui.ten.statistics {
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.ten.statistics .statistic {
+  min-width: 10%;
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.nine.statistics {
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.nine.statistics .statistic {
+  min-width: 11.11111111%;
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.eight.statistics {
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.eight.statistics .statistic {
+  min-width: 12.5%;
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.seven.statistics {
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.seven.statistics .statistic {
+  min-width: 14.28571429%;
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.six.statistics {
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.six.statistics .statistic {
+  min-width: 16.66666667%;
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.five.statistics {
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.five.statistics .statistic {
+  min-width: 20%;
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.four.statistics {
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.four.statistics .statistic {
+  min-width: 25%;
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.three.statistics {
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.three.statistics .statistic {
+  min-width: 33.33333333%;
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.two.statistics {
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.two.statistics .statistic {
+  min-width: 50%;
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.one.statistics {
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.one.statistics .statistic {
+  min-width: 100%;
+  margin: 0;
+}
+
+.qv-object-qsstatistic .ui.horizontal.statistic {
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
+.qv-object-qsstatistic .ui.horizontal.statistics {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  max-width: none;
+}
+
+.qv-object-qsstatistic .ui.horizontal.statistics .statistic {
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  max-width: none;
+  margin: 1em 0;
+}
+
+.qv-object-qsstatistic .ui.horizontal.statistic>.text.value,.qv-object-qsstatistic .ui.horizontal.statistics>.statistic>.text.value {
+  min-height: 0!important;
+}
+
+.qv-object-qsstatistic .ui.horizontal.statistic>.value .icon,.qv-object-qsstatistic .ui.horizontal.statistics .statistic>.value .icon {
+  width: 1.18em;
+}
+
+.qv-object-qsstatistic .ui.horizontal.statistic>.value,.qv-object-qsstatistic .ui.horizontal.statistics .statistic>.value {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.qv-object-qsstatistic .ui.horizontal.statistic>.label,.qv-object-qsstatistic .ui.horizontal.statistics .statistic>.label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 0 .75em;
+}
+
+.qv-object-qsstatistic .ui.red.statistic>.value,.qv-object-qsstatistic .ui.red.statistics .statistic>.value,.qv-object-qsstatistic .ui.statistics .red.statistic>.value {
+  color: #db2828;
+}
+
+.qv-object-qsstatistic .ui.orange.statistic>.value,.qv-object-qsstatistic .ui.orange.statistics .statistic>.value,.qv-object-qsstatistic .ui.statistics .orange.statistic>.value {
+  color: #f2711c;
+}
+
+.qv-object-qsstatistic .ui.statistics .yellow.statistic>.value,.qv-object-qsstatistic .ui.yellow.statistic>.value,.qv-object-qsstatistic .ui.yellow.statistics .statistic>.value {
+  color: #fbbd08;
+}
+
+.qv-object-qsstatistic .ui.olive.statistic>.value,.qv-object-qsstatistic .ui.olive.statistics .statistic>.value,.qv-object-qsstatistic .ui.statistics .olive.statistic>.value {
+  color: #b5cc18;
+}
+
+.qv-object-qsstatistic .ui.green.statistic>.value,.qv-object-qsstatistic .ui.green.statistics .statistic>.value,.qv-object-qsstatistic .ui.statistics .green.statistic>.value {
+  color: #21ba45;
+}
+
+.qv-object-qsstatistic .ui.statistics .teal.statistic>.value,.qv-object-qsstatistic .ui.teal.statistic>.value,.qv-object-qsstatistic .ui.teal.statistics .statistic>.value {
+  color: #00b5ad;
+}
+
+.qv-object-qsstatistic .ui.blue.statistic>.value,.qv-object-qsstatistic .ui.blue.statistics .statistic>.value,.qv-object-qsstatistic .ui.statistics .blue.statistic>.value {
+  color: #2185d0;
+}
+
+.qv-object-qsstatistic .ui.statistics .violet.statistic>.value,.qv-object-qsstatistic .ui.violet.statistic>.value,.qv-object-qsstatistic .ui.violet.statistics .statistic>.value {
+  color: #6435c9;
+}
+
+.qv-object-qsstatistic .ui.purple.statistic>.value,.qv-object-qsstatistic .ui.purple.statistics .statistic>.value,.qv-object-qsstatistic .ui.statistics .purple.statistic>.value {
+  color: #a333c8;
+}
+
+.qv-object-qsstatistic .ui.pink.statistic>.value,.qv-object-qsstatistic .ui.pink.statistics .statistic>.value,.qv-object-qsstatistic .ui.statistics .pink.statistic>.value {
+  color: #e03997;
+}
+
+.qv-object-qsstatistic .ui.brown.statistic>.value,.qv-object-qsstatistic .ui.brown.statistics .statistic>.value,.qv-object-qsstatistic .ui.statistics .brown.statistic>.value {
+  color: #a5673f;
+}
+
+.qv-object-qsstatistic .ui.grey.statistic>.value,.qv-object-qsstatistic .ui.grey.statistics .statistic>.value,.qv-object-qsstatistic .ui.statistics .grey.statistic>.value {
+  color: #767676;
+}
+
+.qv-object-qsstatistic .ui[class*="left floated"].statistic {
+  float: left;
+  margin: 0 2em 1em 0;
+}
+
+.qv-object-qsstatistic .ui[class*="right floated"].statistic {
+  float: right;
+  margin: 0 0 1em 2em;
+}
+
+.qv-object-qsstatistic .ui.mini.horizontal.statistic>.value,.qv-object-qsstatistic .ui.mini.horizontal.statistics .statistic>.value,.qv-object-qsstatistic .ui.mini.statistic>.value,.qv-object-qsstatistic .ui.mini.statistics .statistic>.value {
+  font-size: 1.5rem;
+}
+
+.qv-object-qsstatistic .ui.mini.statistic>.text.value,.qv-object-qsstatistic .ui.mini.statistics .statistic>.text.value {
+  font-size: 1rem;
+}
+
+.qv-object-qsstatistic .ui.mini.statistic>.label,.qv-object-qsstatistic .ui.mini.statistics .statistic>.label {
+  font-size: .75rem;
+}
+
+.qv-object-qsstatistic .ui.tiny.horizontal.statistic>.value,.qv-object-qsstatistic .ui.tiny.horizontal.statistics .statistic>.value,.qv-object-qsstatistic .ui.tiny.statistic>.value,.qv-object-qsstatistic .ui.tiny.statistics .statistic>.value {
+  font-size: 2rem;
+}
+
+.qv-object-qsstatistic .ui.tiny.statistic>.text.value,.qv-object-qsstatistic .ui.tiny.statistics .statistic>.text.value {
+  font-size: 1rem;
+}
+
+.qv-object-qsstatistic .ui.tiny.statistic>.label,.qv-object-qsstatistic .ui.tiny.statistics .statistic>.label {
+  font-size: .8rem;
+}
+
+.qv-object-qsstatistic .ui.small.statistic>.value,.qv-object-qsstatistic .ui.small.statistics .statistic>.value {
+  font-size: 3rem;
+}
+
+.qv-object-qsstatistic .ui.small.horizontal.statistic>.value,.qv-object-qsstatistic .ui.small.horizontal.statistics .statistic>.value {
+  font-size: 2rem;
+}
+
+.qv-object-qsstatistic .ui.small.statistic>.label,.qv-object-qsstatistic .ui.small.statistic>.text.value,.qv-object-qsstatistic .ui.small.statistics .statistic>.label,.qv-object-qsstatistic .ui.small.statistics .statistic>.text.value {
+  font-size: 1rem;
+}
+
+.qv-object-qsstatistic .ui.statistic>.value,.qv-object-qsstatistic .ui.statistics .statistic>.value {
+  font-size: 4rem;
+}
+
+.qv-object-qsstatistic .ui.horizontal.statistic>.value,.qv-object-qsstatistic .ui.horizontal.statistics .statistic>.value {
+  font-size: 3rem;
+}
+
+.qv-object-qsstatistic .ui.statistic>.text.value,.qv-object-qsstatistic .ui.statistics .statistic>.text.value {
+  font-size: 2rem;
+}
+
+.qv-object-qsstatistic .ui.statistic>.label,.qv-object-qsstatistic .ui.statistics .statistic>.label {
+  font-size: 1.25rem;
+}
+
+.qv-object-qsstatistic .ui.large.statistic>.value,.qv-object-qsstatistic .ui.large.statistics .statistic>.value {
+  font-size: 5rem;
+}
+
+.qv-object-qsstatistic .ui.large.horizontal.statistic>.value,.qv-object-qsstatistic .ui.large.horizontal.statistics .statistic>.value {
+  font-size: 4rem;
+}
+
+.qv-object-qsstatistic .ui.large.statistic>.text.value,.qv-object-qsstatistic .ui.large.statistics .statistic>.text.value {
+  font-size: 2.5rem;
+}
+
+.qv-object-qsstatistic .ui.large.statistic>.label,.qv-object-qsstatistic .ui.large.statistics .statistic>.label {
+  font-size: 1.5rem;
+}
+
+.qv-object-qsstatistic .ui.huge.statistic>.value,.qv-object-qsstatistic .ui.huge.statistics .statistic>.value {
+  font-size: 6rem;
+}
+
+.qv-object-qsstatistic .ui.huge.horizontal.statistic>.value,.qv-object-qsstatistic .ui.huge.horizontal.statistics .statistic>.value {
+  font-size: 5rem;
+}
+
+.qv-object-qsstatistic .ui.huge.statistic>.text.value,.qv-object-qsstatistic .ui.huge.statistics .statistic>.text.value {
+  font-size: 2.5rem;
+}
+
+.qv-object-qsstatistic .ui.huge.statistic>.label,.qv-object-qsstatistic .ui.huge.statistics .statistic>.label {
+  font-size: 2rem;
+}
+
+.qv-object-qsstatistic .ui.segment {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  margin: 1rem 0;
+  padding: 1em;
+  border-radius: .28571429rem;
+  border: 1px solid rgba(34,36,38,.15);
+}
+
+.qv-object-qsstatistic .ui.segment:first-child {
+  margin-top: 0;
+}
+
+.qv-object-qsstatistic .ui.segment:last-child {
+  margin-bottom: 0;
+}
+
+.qv-object-qsstatistic .ui.vertical.segment {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background: none transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid rgba(34,36,38,.15);
+}
+
+.qv-object-qsstatistic .ui.vertical.segment:last-child {
+  border-bottom: none;
+}
+
+.qv-object-qsstatistic .ui[class*="bottom attached"].segment>[class*="top attached"].label {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.qv-object-qsstatistic .ui[class*="top attached"].segment>[class*="bottom attached"].label {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.qv-object-qsstatistic .ui.attached.segment:not(.top):not(.bottom)>[class*="top attached"].label {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.qv-object-qsstatistic .ui.attached.segment:not(.top):not(.bottom)>[class*="bottom attached"].label {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.qv-object-qsstatistic .ui.grid.segment {
+  margin: 1rem 0;
+  border-radius: .28571429rem;
+}
+
+.qv-object-qsstatistic .ui[class*="very basic"].table.segment {
+  padding: 1em;
+}
+
+.qv-object-qsstatistic .ui[class*="very padded"].segment {
+  padding: 3em;
+}
+
+.qv-object-qsstatistic .ui.circular.segment {
+  display: table-cell;
+  padding: 2em;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 500em;
+}
+
+.qv-object-qsstatistic .ui.segments {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  margin: 1rem 0;
+  border: 1px solid rgba(34,36,38,.15);
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  border-radius: .28571429rem;
+}
+
+.qv-object-qsstatistic .ui.segments:first-child {
+  margin-top: 0;
+}
+
+.qv-object-qsstatistic .ui.segments:last-child {
+  margin-bottom: 0;
+}
+
+.qv-object-qsstatistic .ui.segments>.segment {
+  top: 0;
+  bottom: 0;
+  border-radius: 0;
+  margin: 0;
+  width: auto;
+  box-shadow: none;
+  border: none;
+  border-top: 1px solid rgba(34,36,38,.15);
+}
+
+.qv-object-qsstatistic .ui.segments:not(.horizontal)>.segment:first-child {
+  border-top: none;
+  margin-top: 0;
+  bottom: 0;
+  margin-bottom: 0;
+  top: 0;
+  border-radius: .28571429rem .28571429rem 0 0;
+}
+
+.qv-object-qsstatistic .ui.segments:not(.horizontal)>.segment:last-child {
+  top: 0;
+  bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15),none;
+  border-radius: 0 0 .28571429rem .28571429rem;
+}
+
+.qv-object-qsstatistic .ui.segments>.ui.segments {
+  border-top: 1px solid rgba(34,36,38,.15);
+  margin: 1rem;
+}
+
+.qv-object-qsstatistic .ui.segments>.segments:first-child {
+  border-top: none;
+}
+
+.qv-object-qsstatistic .ui.segments>.segment+.segments:not(.horizontal) {
+  margin-top: 0;
+}
+
+.qv-object-qsstatistic .ui.horizontal.segments {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  margin: 1rem 0;
+  border-radius: .28571429rem;
+  border: 1px solid rgba(34,36,38,.15);
+}
+
+.qv-object-qsstatistic .ui.segments>.horizontal.segments {
+  margin: 0;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  border-top: 1px solid rgba(34,36,38,.15);
+}
+
+.qv-object-qsstatistic .ui.horizontal.segments>.segment {
+  flex: 1 1 auto;
+  -ms-flex: 1 1 0px;
+  margin: 0;
+  min-width: 0;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  border-left: 1px solid rgba(34,36,38,.15);
+}
+
+.qv-object-qsstatistic .ui.horizontal.segments>.segment:first-child {
+  border-left: none;
+}
+
+.qv-object-qsstatistic .ui.disabled.segment {
+  opacity: .45;
+  color: rgba(40,40,40,.3);
+}
+
+.qv-object-qsstatistic .ui.loading.segment {
+  position: relative;
+  cursor: default;
+  point-events: none;
+  text-shadow: none!important;
+  color: transparent!important;
+  transition: all 0s linear;
+}
+
+.qv-object-qsstatistic .ui.loading.segment:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background: hsla(0,0%,100%,.8);
+  width: 100%;
+  height: 100%;
+  border-radius: .28571429rem;
+  z-index: 100;
+}
+
+.qv-object-qsstatistic .ui.loading.segment:after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  margin: -1.5em 0 0 -1.5em;
+  width: 3em;
+  height: 3em;
+  animation: a .6s linear;
+  animation-iteration-count: infinite;
+  border-radius: 500rem;
+  border-color: #767676 rgba(0,0,0,.1) rgba(0,0,0,.1);
+  border-style: solid;
+  border-width: .2em;
+  box-shadow: 0 0 0 1px transparent;
+  visibility: visible;
+  z-index: 101;
+}
+
+@keyframes a {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.qv-object-qsstatistic .ui[class*="left aligned"].segment {
+  text-align: left;
+}
+
+.qv-object-qsstatistic .ui[class*="right aligned"].segment {
+  text-align: right;
+}
+
+.qv-object-qsstatistic .ui[class*="center aligned"].segment {
+  text-align: center;
+}
+
+.qv-object-qsstatistic .ui[class*="left floated"].segment {
+  float: left;
+  margin-right: 1em;
+}
+
+.qv-object-qsstatistic .ui[class*="right floated"].segment {
+  float: right;
+  margin-left: 1em;
+}
+
+.qv-object-qsstatistic .ui.attached.segment {
+  top: 0;
+  bottom: 0;
+  border-radius: 0;
+  margin: 0 -1px;
+  width: calc(100% + 2px);
+  max-width: calc(100% + 2px);
+  box-shadow: none;
+  border: 1px solid #d4d4d5;
+}
+
+.qv-object-qsstatistic .ui.attached+.ui.attached.segment:not(.top) {
+  border-top: none;
+}
+
+.qv-object-qsstatistic .ui[class*="top attached"].segment {
+  bottom: 0;
+  margin-bottom: 0;
+  top: 0;
+  margin-top: 1rem;
+  border-radius: .28571429rem .28571429rem 0 0;
+}
+
+.qv-object-qsstatistic .ui.segment[class*="top attached"]:first-child {
+  margin-top: 0;
+}
+
+.qv-object-qsstatistic .ui.segment[class*="bottom attached"] {
+  bottom: 0;
+  margin-top: 0;
+  top: 0;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15),none;
+  border-radius: 0 0 .28571429rem .28571429rem;
+}
+
+.qv-object-qsstatistic .ui.segment[class*="bottom attached"]:last-child {
+  margin-bottom: 0;
+}
+
+.qv-object-qsstatistic * {
+  box-sizing: border-box;
+}
+
+.qv-object-qsstatistic .infographic-icon-set-wrapper {
+  line-height: 0;
+  display: -ms-grid;
+  display: grid;
+}
+
+.qv-object-qsstatistic .top-aligned-items {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  overflow: auto;
+}
+
+.qv-object-qsstatistic .bottom-aligned-items {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  overflow: auto;
+}
+
+.qv-object-qsstatistic .center-aligned-items {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.qv-object-qsstatistic .stretched-items {
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.qv-object-qsstatistic .ui.segments,.qv-object-qsstatistic .ui.stackable.cards,.qv-object-qsstatistic .ui.statistics {
+  width: 100%;
+}
+
+.qv-object-qsstatistic .ui.segment.infographics {
+  min-width: 170px!important;
+}
+
+.qv-object-qsstatistic .ui.segment.infographics.normal {
+  min-width: 200px!important;
+}
+
+.qv-object-qsstatistic .ui.segment.infographics.large {
+  min-width: 240px!important;
+}
+
+.qv-object-qsstatistic .ui.segment.infographics.huge {
+  min-width: 300px!important;
+}
+
+.qv-object-qsstatistic .ui.horizontal.segments {
+  margin: 0;
+  height: auto;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  overflow-x: auto;
+}
+
+@media (max-width:767px) {
+  .qv-object-qsstatistic .ui.horizontal.segments {
+    display: block;
+  }
+}
+
+.qv-object-qsstatistic .ui.horizontal.segments .segment {
+  min-width: 200px;
+}
+
+.qv-object-qsstatistic .ui.statistic>.label,.qv-object-qsstatistic .ui.statistic>.value,.qv-object-qsstatistic .ui.statistics .statistic>.label {
+  width: 100%;
+}
+
+.qv-object-qsstatistic .ui.segment>.label[class*="center aligned"] {
+  text-align: center;
+}
+
+.qv-object-qsstatistic .ui.center.aligned.statistics>div>div>div>.label,.qv-object-qsstatistic .ui.center.aligned.statistics>div>div>div>.value {
+  text-align: center!important;
+}
+
+.qv-object-qsstatistic .ui.segment,.qv-object-qsstatistic .ui.segments {
+  background-color: transparent!important;
+}
+
+.qv-object-qsstatistic .ui.statistic .label .infographic-icon-set-wrapper+span {
+  width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.qv-object-qsstatistic .value--icon--wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 8px;
+  bottom: 0;
+}
+
+.qv-object-qsstatistic .value--icon--wrapper.infographic {
+  margin: 10px 0;
+}
+
+.qv-object-qsstatistic .value--icon--wrapper.infographic.huge,.qv-object-qsstatistic .value--icon--wrapper.infographic.large {
+  margin: 20px 0;
+}
+
+.qv-object-qsstatistic .value--icon--wrapper.on-value {
+  display: inline-block;
+  position: relative;
+  margin: 8px;
+  bottom: 0;
+}
+
+.qv-object-qsstatistic .value--icon--wrapper.on-value.infographic {
+  margin: 10px 0;
+}
+
+@media (max-width:763px) {
+  .qv-object-qsstatistic .ui.statistic,  .qv-object-qsstatistic .ui.statistics .statistic {
+    display: block;
+  }
+}
+
+.qv-object-qsstatistic .ui.statistic>.label,.qv-object-qsstatistic .ui.statistics .statistic>.label {
+  text-transform: none;
+}
+
+.qv-object-qsstatistic .ui.statistic>.value,.qv-object-qsstatistic .ui.statistics .statistic>.value {
+  width: 100%;
+  text-transform: none;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.qv-object-qsstatistic .ui.vertical.segments {
+  height: 100%;
+}
+
+.qv-object-qsstatistic .ui.cards.edit-mode,.qv-object-qsstatistic .ui.segments.edit-mode {
+  overflow: hidden;
+}
+
+.qv-object-qsstatistic .ui.cards {
+  margin: 0!important;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+@media (max-width:767px) {
+  .qv-object-qsstatistic .ui.cards {
+    height: 100%;
+  }
+}
+
+.qv-object-qsstatistic .ui.cards.one>.card {
+  margin: .5rem .75rem;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.segment .ui.statistics {
+  display: block;
+}
+
+.qv-object-qsstatistic .ui.card,.qv-object-qsstatistic .ui.cards>.card {
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+  padding: 0 10px;
+  -ms-flex: 1;
+  flex: 1;
+  white-space: nowrap;
+  background-color: transparent!important;
+  -ms-flex-preferred-size: 20%;
+  min-width: 150px;
+  border: none;
+  box-shadow: none;
+}
+
+.qv-object-qsstatistic .ui.card:first-child>.statistics,.qv-object-qsstatistic .ui.card>.statistics,.qv-object-qsstatistic .ui.cards>.card:first-child>.statistics,.qv-object-qsstatistic .ui.cards>.card>.statistics {
+  border: 1px solid rgba(34,36,38,.15)!important;
+  border-radius: .28571429rem;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+}
+
+@media (max-width:767px) {
+  .qv-object-qsstatistic .ui.card:first-child>.statistics,  .qv-object-qsstatistic .ui.card>.statistics,  .qv-object-qsstatistic .ui.cards>.card:first-child>.statistics,  .qv-object-qsstatistic .ui.cards>.card>.statistics {
+    margin: auto;
+    padding: 1em 0;
+  }
+}
+
+.qv-object-qsstatistic .ui.card .statistics,.qv-object-qsstatistic .ui.cards>.card .statistics {
+  -ms-flex-align: center;
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  width: 250px;
+}
+
+.qv-object-qsstatistic .ui.card .statistics>.statistic,.qv-object-qsstatistic .ui.cards>.card .statistics>.statistic {
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
+.qv-object-qsstatistic .ui.tag.label {
+  font-size: .5em!important;
+}
+
+.qv-object-qsstatistic .ui.button {
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1em;
+  outline: 0;
+  border: none;
+  vertical-align: baseline;
+  background: #fff;
+  color: rgba(0,0,0,.87);
+  font-family: icons,Helvetica Neue,Arial,Helvetica,sans-serif;
+  margin: 0 0 1rem;
+  padding: 1em;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 700;
+  line-height: 1.4285em;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: .28571429rem;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: "default";
+  will-change: "";
+  -webkit-tap-highlight-color: transparent;
+}
+
+.qv-object-qsstatistic .ui.mini.button {
+  font-size: .71428571em;
+}
+
+.qv-object-qsstatistic .ui.icon.button {
+  padding: 1em;
+}
+
+.qv-object-qsstatistic .ui.icon.button>.icon {
+  opacity: .9;
+  margin: 0;
+  vertical-align: top;
+}
+
+.qv-object-qsstatistic .ui.card .ui.label {
+  border: 1px solid #a6a6a6!important;
+  border-bottom: none;
+}
+
+.qv-object-qsstatistic .ui.segments .statistics {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.qv-object-qsstatistic .ui.segments .statistics .statistic {
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+@media (max-width:767px) {
+  .qv-object-qsstatistic .ui.segments .statistics {
+    display: block;
+  }
+
+  .qv-object-qsstatistic .ui.segments .statistics .statistic {
+    width: 100%;
+    margin-bottom: .7rem;
+  }
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card,.qv-object-qsstatistic .ui.segments .ui.card {
+  min-width: 250px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card,.qv-object-qsstatistic .ui.cards .ui.segment,.qv-object-qsstatistic .ui.segments .ui.card,.qv-object-qsstatistic .ui.segments .ui.segment {
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 0;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card a,.qv-object-qsstatistic .ui.cards .ui.segment a,.qv-object-qsstatistic .ui.segments .ui.card a,.qv-object-qsstatistic .ui.segments .ui.segment a {
+  font-size: 16px;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card>.label,.qv-object-qsstatistic .ui.cards .ui.segment>.label,.qv-object-qsstatistic .ui.segments .ui.card>.label,.qv-object-qsstatistic .ui.segments .ui.segment>.label {
+  display: block;
+  padding: 10px 5px;
+  border-bottom: 1px solid #a6a6a6!important;
+  box-sizing: border-box;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card>.statistics,.qv-object-qsstatistic .ui.cards .ui.segment>.statistics,.qv-object-qsstatistic .ui.segments .ui.card>.statistics,.qv-object-qsstatistic .ui.segments .ui.segment>.statistics {
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card.is-selected>.label,.qv-object-qsstatistic .ui.cards .ui.segment.is-selected>.label,.qv-object-qsstatistic .ui.segments .ui.card.is-selected>.label,.qv-object-qsstatistic .ui.segments .ui.segment.is-selected>.label {
+  background-color: #52cc52;
+  color: #fff;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .bottom,.qv-object-qsstatistic .ui.cards .ui.segment .bottom,.qv-object-qsstatistic .ui.segments .ui.card .bottom,.qv-object-qsstatistic .ui.segments .ui.segment .bottom {
+  border-bottom: none;
+  border-top: 1px solid #a6a6a6;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .bottom.left,.qv-object-qsstatistic .ui.cards .ui.segment .bottom.left,.qv-object-qsstatistic .ui.segments .ui.card .bottom.left,.qv-object-qsstatistic .ui.segments .ui.segment .bottom.left {
+  border-bottom: none;
+  border-top: 1px solid #a6a6a6;
+  -ms-flex-order: 2;
+  order: 2;
+  text-align: left;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .bottom.right,.qv-object-qsstatistic .ui.cards .ui.segment .bottom.right,.qv-object-qsstatistic .ui.segments .ui.card .bottom.right,.qv-object-qsstatistic .ui.segments .ui.segment .bottom.right {
+  border-bottom: none;
+  border-top: 1px solid #a6a6a6;
+  -ms-flex-order: 2;
+  order: 2;
+  text-align: right;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .top,.qv-object-qsstatistic .ui.cards .ui.segment .top,.qv-object-qsstatistic .ui.segments .ui.card .top,.qv-object-qsstatistic .ui.segments .ui.segment .top {
+  border-top: none;
+  border-bottom: 1px solid #a6a6a6;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .top.right,.qv-object-qsstatistic .ui.cards .ui.segment .top.right,.qv-object-qsstatistic .ui.segments .ui.card .top.right,.qv-object-qsstatistic .ui.segments .ui.segment .top.right {
+  border-top: none;
+  border-bottom: 1px solid #a6a6a6;
+  text-align: right;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .top.left,.qv-object-qsstatistic .ui.cards .ui.segment .top.left,.qv-object-qsstatistic .ui.segments .ui.card .top.left,.qv-object-qsstatistic .ui.segments .ui.segment .top.left {
+  border-top: none;
+  border-bottom: 1px solid #a6a6a6;
+  text-align: left;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .mini,.qv-object-qsstatistic .ui.cards .ui.segment .mini,.qv-object-qsstatistic .ui.segments .ui.card .mini,.qv-object-qsstatistic .ui.segments .ui.segment .mini {
+  font-size: xx-small;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .tiny,.qv-object-qsstatistic .ui.cards .ui.segment .tiny,.qv-object-qsstatistic .ui.segments .ui.card .tiny,.qv-object-qsstatistic .ui.segments .ui.segment .tiny {
+  font-size: x-small;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .small,.qv-object-qsstatistic .ui.cards .ui.segment .small,.qv-object-qsstatistic .ui.segments .ui.card .small,.qv-object-qsstatistic .ui.segments .ui.segment .small {
+  font-size: small;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .normal,.qv-object-qsstatistic .ui.cards .ui.segment .normal,.qv-object-qsstatistic .ui.segments .ui.card .normal,.qv-object-qsstatistic .ui.segments .ui.segment .normal {
+  font-size: 19px;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .large,.qv-object-qsstatistic .ui.cards .ui.segment .large,.qv-object-qsstatistic .ui.segments .ui.card .large,.qv-object-qsstatistic .ui.segments .ui.segment .large {
+  font-size: x-large;
+}
+
+.qv-object-qsstatistic .ui.cards .ui.card .huge,.qv-object-qsstatistic .ui.cards .ui.segment .huge,.qv-object-qsstatistic .ui.segments .ui.card .huge,.qv-object-qsstatistic .ui.segments .ui.segment .huge {
+  font-size: xx-large;
+}
+
+@media (max-width:767px) {
+  .qv-object-qsstatistic .ui.statistics {
+    display: block;
+  }
+}

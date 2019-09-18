@@ -1,0 +1,17 @@
+{
+	"_description": "List of themes available in the sense client, specified as a value and label.",
+	"default": [
+		{
+			"id": "sense",
+			"name": "Themes.Qlik.Classic"
+		},
+		{
+			"id": "card",
+			"name": "Themes.Qlik.Standard"
+		},
+		{
+			"id": "breeze",
+			"name": "Themes.Qlik.Breeze"
+		}
+	]
+}

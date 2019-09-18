@@ -1,0 +1,296 @@
+{
+	"_inherit": true,
+	"_variables": {
+		"@myColorLight": "#FFFFFF",
+		"@myColorDark": "#444",
+		"@black": "#00000",
+		"@white": "#ffffff",
+		"@B55": "#8b8b8b",
+		"@B80": "#cdcdcd",
+		"@B90": "#e5e5e5",
+	  	"@B95": "#F2F2F2",
+		"@B98": "#fbfbfb",
+		"@transparent": "rgba(0, 0, 0, 0)"
+	},
+	"_cards": true,
+	"color": "@myColorDark",
+	"backgroundColor": "#FFFFFF",
+	"object": {
+		"title": {
+			"main": {
+				"color": "@myColorDark"
+			},
+			"subTitle": {
+				"color": "@B55"
+			},
+			"footer": {
+			  "backgroundColor": "@B98"
+			}
+		},
+		"grid": {
+			"line": {
+				"highContrast": {
+					"color": "@B80"
+				},
+				"major": {
+					"color": "@B80"
+				},
+				"minor": {
+					"color": "@B90"
+				}
+			}
+		},
+		"axis": {
+			"line": {
+				"major": {
+					"color": "@B80"
+				},
+				"minor": {
+					"color": "@B90"
+				}
+			}
+		},
+		"filterpane": {
+			"backgroundColor": "transparent"
+		},
+		"straightTable": {
+			"header": {
+				"color": "@myColorDark"
+			},
+			"content": {
+				"color": "@myColorDark"
+			}
+		},
+		"lineChart": {
+			"title": {
+				"main": {
+					"color": "@myColorDark"
+				}
+			}
+		},
+		"treemap": {
+		  "branch": {
+			"backgroundColor": "@B95"
+		  }
+		},
+		"waterfallChart": {
+		  "shape": {
+			"positiveValue": {
+			  "fill": "#70ba6e"
+			},
+			"negativeValue": {
+			  "fill": "#d76c6c"
+			},
+			"subtotal": {
+			  "fill": "#b0afae"
+			}
+		  }
+		}
+	},
+	"dataColors": {
+		"primaryColor": "#26a0a7",
+		"othersColor": "#a5a5a5",
+		"errorColor": "#ff4444",
+		"nullColor": "#d2d2d2",
+		"selectionColor": "#52cc52"
+	},
+	"scales": [
+		{
+			"name": "Sequential Gradient",
+			"translation": "properties.colorScheme.sequential",
+			"type": "gradient",
+			"propertyValue": "sg",
+			"scale": [
+				"#26a0a7",
+				"#c7ea8b"
+			]
+		},
+		{
+			"name": "Sequential Classes",
+			"translation": "properties.colorScheme.sequentialC",
+			"propertyValue": "sc",
+			"type": "class",
+			"scale": [
+				"#26a0a7",
+				"#c7ea8b"
+			]
+		},
+		{
+			"name": "Diverging gradient",
+			"translation": "properties.colorScheme.diverging",
+			"propertyValue": "dg",
+			"type": "gradient",
+			"scale": [
+				"#26a0a7",
+				"#c3ea8c",
+				"#ec983d"
+			]
+		},
+		{
+			"name": "Diverging Classes",
+			"translation": "properties.colorScheme.divergingC",
+			"propertyValue": "dc",
+			"type": "class",
+			"scale": [
+				"#26a0a7",
+				"#c3ea8c",
+				"#ec983d"
+			]
+		}
+	],
+	"palettes": {
+		"data": [
+			{
+				"name": "12 Colors",
+				"translation": "properties.colorNumberOfColors.12",
+				"propertyValue": "12",
+				"type": "pyramid",
+				"scale": [
+                    [ "#26A0A7" ],
+					[ "#26A0A7", "#EC983D" ],
+					[ "#26A0A7", "#CBE989", "#EC983D" ],
+					[ "#26A0A7", "#79D69F", "#F9EC86", "#EC983D" ],
+					[ "#26A0A7", "#79D69F", "#CBE989", "#F9EC86", "#EC983D" ],
+					[ "#26A0A7", "#65D3DA", "#79D69F", "#CBE989", "#F9EC86", "#EC983D" ],
+					[ "#26A0A7", "#65D3DA", "#79D69F", "#CBE989", "#F9EC86", "#EC983D", "#D76C6C" ],
+					[ "#26A0A7", "#65D3DA", "#79D69F", "#CBE989", "#F9EC86", "#FAD144", "#EC983D", "#D76C6C" ],
+					[ "#138185", "#26A0A7", "#65D3DA", "#79D69F", "#CBE989", "#F9EC86", "#FAD144", "#EC983D", "#D76C6C" ],
+					[ "#138185", "#26A0A7", "#65D3DA", "#79D69F", "#CBE989", "#EBF898", "#F9EC86", "#FAD144", "#EC983D", "#D76C6C" ],
+					[ "#138185", "#26A0A7", "#65D3DA", "#79D69F", "#CBE989", "#EBF898", "#F9EC86", "#FAD144", "#EC983D", "#D76C6C", "#A54343" ],
+					[ "#138185", "#26A0A7", "#65D3DA", "#79D69F", "#70BA6E", "#CBE989", "#EBF898", "#F9EC86", "#FAD144", "#EC983D", "#D76C6C", "#A54343" ]
+				]
+			},
+			{
+				"name": "100 Colors",
+				"translation": "properties.colorNumberOfColors.100",
+				"propertyValue": "100",
+				"type": "row",
+				"scale": [
+					"#99c867",
+					"#e43cd0",
+					"#e2402a",
+					"#66a8db",
+					"#3f1a20",
+					"#e5aa87",
+					"#3c6b59",
+					"#aa2a6b",
+					"#e9b02e",
+					"#7864dd",
+					"#65e93c",
+					"#5ce4ba",
+					"#d0e0da",
+					"#d796dd",
+					"#64487b",
+					"#e4e72b",
+					"#6f7330",
+					"#932834",
+					"#ae6c7d",
+					"#986717",
+					"#e3cb70",
+					"#408c1d",
+					"#dd325f",
+					"#533d1c",
+					"#2a3c54",
+					"#db7127",
+					"#72e3e2",
+					"#e2c1da",
+					"#d47555",
+					"#7d7f81",
+					"#54ae9b",
+					"#e9daa6",
+					"#3a8855",
+					"#5be66e",
+					"#ab39a4",
+					"#a6e332",
+					"#6c469d",
+					"#e39e51",
+					"#4f1c42",
+					"#273c1c",
+					"#aa972e",
+					"#8bb32a",
+					"#bdeca5",
+					"#63ec9b",
+					"#9c3519",
+					"#aaa484",
+					"#72256d",
+					"#4d749f",
+					"#9884df",
+					"#e590b8",
+					"#44b62b",
+					"#ad5792",
+					"#c65dea",
+					"#e670ca",
+					"#e38783",
+					"#29312d",
+					"#6a2c1e",
+					"#d7b1aa",
+					"#b1e7c3",
+					"#cdc134",
+					"#9ee764",
+					"#56b8ce",
+					"#2c6323",
+					"#65464a",
+					"#b1cfea",
+					"#3c7481",
+					"#3a4e96",
+					"#6493e1",
+					"#db5656",
+					"#747259",
+					"#bbabe4",
+					"#e33f92",
+					"#d0607d",
+					"#759f79",
+					"#9d6b5e",
+					"#8574ae",
+					"#7e304c",
+					"#ad8fac",
+					"#4b77de",
+					"#647e17",
+					"#b9c379",
+					"#8da8b0",
+					"#b972d9",
+					"#786279",
+					"#7ec07d",
+					"#916436",
+					"#2d274f",
+					"#dce680",
+					"#759748",
+					"#dae65a",
+					"#459c49",
+					"#b7934a",
+					"#51c671",
+					"#9ead3f",
+					"#969a5c",
+					"#b9976a",
+					"#46531a",
+					"#c0f084",
+					"#76c146",
+					"#bad0ad"
+				]
+			}
+		],
+		"ui": [
+			{
+				"name": "Palette",
+				"colors": [
+					"#b0afae",
+					"#7b7a78",
+					"#a54343",
+					"#d76c6c",
+					"#ec983d",
+					"#ecc43d",
+					"#f9ec86",
+					"#cbe989",
+					"#70ba6e",
+					"#578b60",
+					"#79d69f",
+					"#26a0a7",
+					"#138185",
+					"#65d3da",
+					"#ffffff",
+					"#000000"
+				]
+			}
+		]
+	}
+}

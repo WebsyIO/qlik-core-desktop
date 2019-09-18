@@ -1,0 +1,22 @@
+{
+    "author": "Michael Laenen <michael.laenen@agilos.com>",
+    "bundle": {
+        "id": "qlik-visualization-bundle",
+        "name": "Qlik Visualization bundle",
+        "description": "This is a set of supported extensions that expands the visualization capabilities of Qlik Sense. These can be used in addition to the native objects found under 'Charts'. For support conditions and limitations, see the documentation."
+    },
+    "dependencies": {
+        "qlik-sense": ">=5.5.x"
+    },
+    "description": "Displays hierarchical or relational dimensions as nodes and edges\u00b4, with measures to show the significance of its links.",
+    "homepage": "",
+    "icon": "bubbles",
+    "installer": "QlikExtensionBundler",
+    "keywords": "qlik-sense, visualization",
+    "license": "MIT",
+    "name": "Network chart",
+    "preview": "network.png",
+    "repository": "",
+    "type": "visualization",
+    "version": "0.25.0"
+}

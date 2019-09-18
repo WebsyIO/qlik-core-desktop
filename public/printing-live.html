@@ -1,0 +1,148 @@
+<!doctype html><html lang="en"><head><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>Printing live</title><meta charset="utf-8"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta http-equiv="cleartype" content="on"><link rel="stylesheet" href="../resources/assets/external/leonardo-ui/leonardo-ui.css"><link rel="stylesheet" href="../resources/assets/client/client.css" media="all"><link rel="shortcut icon" href="../resources/favicon.ico"><link rel="apple-touch-icon" href="../resources/img/core/logo/Sense_120x120.png"><link rel="apple-touch-icon" sizes="152x152" href="../resources/img/core/logo/Sense_152x152.png"><link rel="apple-touch-icon" sizes="167x167" href="../resources/img/core/logo/Sense_167x167.png"><link rel="apple-touch-icon" sizes="180x180" href="../resources/img/core/logo/Sense_180x180.png"><style>body {
+            margin: 0px;
+        }
+
+        .printing-live-content {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            float: left;
+            background-color: white;
+        }
+
+        .noanimate * {
+            -webkit-transition: none !important;
+            -moz-transition: none !important;
+            -o-transition: none !important;
+            -ms-transition: none !important;
+            transition: none !important;
+        }
+
+        .table {
+            width: 200px;
+        }
+
+        .table td, th {
+            border-top: 0px solid #fff;
+            border-bottom: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            white-space: normal;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align: middle;
+            cursor: default;
+            font-size: 12px;
+        }
+
+        .table td.hover {
+            background: #dadada;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }</style><script>/** for testing onvalid and onrendered */
+		window.replay = {
+			retryCount: 0,
+			maxRetry: 3,
+			objIdx: 0,
+			reset: function (f) {
+				this.func = f;
+			},
+			onReady: function () {
+				console.log('onReady');
+			},
+			onValid: function (vis) {
+				console.log('onValid:' + vis);
+			},
+			onRendered: function () {
+				console.log('onRendered, calling stopRender');
+				window.qlikPrintingService.stopRender();
+			},
+			onError: function (code, msg) {
+				console.log('onError:' + code + ", " + msg);
+			},
+			onStopped: function () {
+				if (this.retryCount >= this.maxRetry) {
+					console.log('onStopped, testing sequence complete');
+					this.retryCount = 0;
+					this.objIdx = 0;
+					return;
+				}
+				console.log('onStopped, wait some time and restart');
+				this.retryCount++;
+				this.func();
+			},
+			onResize: function (element) {
+				console.log('onResize: ' + element);
+			}
+		};
+
+		window.consoledebug = {
+			onReady: function () {
+				console.log('onReady');
+			},
+			onValid: function (vis) {
+				console.log('onValid:' + vis);
+			},
+			onRendered: function (vis) {
+				console.log('onRendered:' + vis);
+			},
+			onError: function (code, msg) {
+				console.log('onError:' + code + ", " + msg);
+			},
+			onStopped: function (vis) {
+				console.log('onStopped:' + vis);
+			},
+			onResize: function (element) {
+				console.log('onResize: ' + element);
+			}
+		};
+
+		window.testprint = {
+            onReady: function(vis) {
+                console.log('onReady');
+                window.onReady();
+            },
+
+            onValid: function(vis) {
+                console.log('onValid:' + vis);
+            },
+            onRendered: function(vis) {
+                console.log('onRendered:' + vis);
+                window.renderingDone();
+            },
+            onResize: function(element) {
+                console.log('onResize: ' + element);
+            }
+        };
+
+		window.cconsole = window.consoledebug;
+
+		window.fromLocalStorage = {
+          onReady: function(vis) {
+            console.log('onReady');
+
+            function getURLParameter(name) {
+              return (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [null, null])[1];
+            }
+
+            var livePrintId = getURLParameter("livePrintId");
+            var obj = JSON.parse(localStorage.getItem("live-print-" + livePrintId));
+
+            window.qlikPrintingService.render(obj.appId, "", obj.type, obj.objectId, obj.options);
+          },
+          onValid: function(vis) {
+            console.log('onValid:' + vis);
+          },
+          onRendered: function(vis) {
+            console.log('onRendered:' + vis);
+          },
+          onResize: function(element) {
+            console.log('onResize: ' + element);
+          },
+          onError: function (code, msg) {
+            console.log('onError:' + code + ", " + msg);
+          },
+        };</script><script id="__set_assets_path">window.__DO_NOT_USE__ASSETS_URL = '../resources/';</script></head><body><article id="content" class="printing-live-content" style="position: absolute; top:0;left: 0; display:none; z-index: 1000;"></article><div id="cover" style="width: 100%; height:100%; position: absolute; top:0;left: 0;z-index: 1; display: block; background:transparent;"></div><script type="text/javascript" src="../resources/js/printing-live.6.105.4.js"></script></body></html>

@@ -1,0 +1,24 @@
+{
+  "_variables": {
+		"@myColorLight": "#FFFFFF",
+		"@B95": "#F2F2F2",
+		"@B98": "#FBFBFB"
+  },
+  "_cards": true,
+  "backgroundColor": "@myColorLight",
+  "object": {
+	"title": {
+	  "footer": {
+		"backgroundColor": "@B98"
+	  }
+	},
+	"filterpane": {
+		"backgroundColor": "transparent"
+	},
+	"treemap": {
+	  "branch": {
+		"backgroundColor": "@B95"
+	  }
+	}
+  }
+}

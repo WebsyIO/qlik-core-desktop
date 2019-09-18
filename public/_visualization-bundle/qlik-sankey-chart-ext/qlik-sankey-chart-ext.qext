@@ -1,0 +1,15 @@
+{
+    "author": "",
+    "bundle": {
+        "id": "qlik-visualization-bundle",
+        "name": "Qlik Visualization bundle",
+        "description": "This is a set of supported extensions that expands the visualization capabilities of Qlik Sense. These can be used in addition to the native objects found under 'Charts'. For support conditions and limitations, see the documentation."
+    },
+    "description": "A flow diagram visually emphasizing major transfers or flows within defined system boundaries. (0.7.4)",
+    "icon": "stream",
+    "installer": "QlikExtensionBundler",
+    "name": "Sankey chart",
+    "preview": "sankey-preview.png",
+    "type": "visualization",
+    "version": "0.7.4"
+}

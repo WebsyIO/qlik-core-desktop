@@ -1,0 +1,17 @@
+﻿<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" viewBox="0 0 100 101">
+	<g stroke="#b6b6b6">
+		<line x1="2" y1="98" x2="2" y2="2" />
+		<line x1="2" y1="98" x2="98" y2="98" />
+	</g>
+	<g fill-opacity="0.3">
+		<rect x="12" y="98" width="8" height="75" fill="#b6b6b6" transform="rotate(180, 12, 98)" shape-rendering="crispEdges" />
+		<rect x="22" y="98" width="8" height="50" fill="#b6b6b6" transform="rotate(180, 22, 98)" shape-rendering="crispEdges" />
+		<rect x="32" y="98" width="8" height="25" fill="#b6b6b6" transform="rotate(180, 32, 98)" shape-rendering="crispEdges" />
+		<rect x="42" y="98" width="8" height="45" fill="#b6b6b6" transform="rotate(180, 42, 98)" shape-rendering="crispEdges" />
+		<rect x="52" y="98" width="8" height="30" fill="#b6b6b6" transform="rotate(180, 52, 98)" shape-rendering="crispEdges" />
+		<rect x="62" y="98" width="8" height="20" fill="#b6b6b6" transform="rotate(180, 62, 98)" shape-rendering="crispEdges" />
+		<rect x="72" y="98" width="8" height="25" fill="#b6b6b6" transform="rotate(180, 72, 98)" shape-rendering="crispEdges" />
+		<rect x="82" y="98" width="8" height="55" fill="#b6b6b6" transform="rotate(180, 82, 98)" shape-rendering="crispEdges" />
+		<rect x="92" y="98" width="8" height="28" fill="#b6b6b6" transform="rotate(180, 92, 98)" shape-rendering="crispEdges" />
+	</g>
+</svg>

@@ -1,0 +1,14 @@
+<div qv-extension
+     class="container {{layout.props.buttonAlignment}}">
+
+     <button ng-class="getButtonClasses(layout.props)"
+     title="{{layout.props.buttonLabel}}"
+     style="text-align: {{layout.props.buttonTextAlign}};"
+     ng-disabled="getEnableCond(layout.props)"
+     >
+     <span ng-if="layout.props.buttonShowIcon === true"
+     ng-class="getIconClasses(layout.props)"
+        style="padding-right:5px;"></span>
+        <span>{{layout.props.buttonLabel}}</span>
+</button>
+</div>

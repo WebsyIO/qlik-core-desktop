@@ -1,0 +1,105 @@
+.qv-object-qlik-tabbed-container article.tab-contents {
+  /** 100% - tab size(40.21px) - padding of tab-content (20px * 2)**/
+  height: calc(100% - 40.21px - 40px);
+  height: -o-calc(100% - 40.21px - 40px);
+  height: -webkit-calc(100% - 40.21px - 40px);
+  height: -moz-calc(100% - 40.21px - 40px);
+}
+
+.qv-object-qlik-tabbed-container section.tab-content, main.panel-content {
+  /** 100% - padding size around chart(40px * 2) **/
+  width: calc(100% - 80px);
+  width: -o-calc(100% - 80px);
+  width: -webkit-calc(100% - 80px);
+  width: -moz-calc(100% - 80px);
+  height: 100%;
+}
+
+ .qv-object-qlik-tabbed-container div.viz-with-export {
+   /** 100% - export button height(27.99) -export button margin (10px)**/
+   height: calc(100% - 37.99px);
+   height: -o-calc(100% - 37.99px);
+   height: -webkit-calc(100% - 37.99px);
+   height: -moz-calc(100% - 37.99px);
+   width: 100%;
+ }
+
+.qv-object-qlik-tabbed-container div.viz-without-export {
+  width: 100%;
+  height: 100%;
+}
+
+.qv-object-qlik-tabbed-container section.activated  {
+  /** padding size around chart on the acticated tab**/
+  padding: 20px 40px;
+}
+
+/** inline html elements are hidden when main.panel-content's height is 0px **/
+.qv-object-qlik-tabbed-container main.panel-content {
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+
+.qv-object-qlik-tabbed-container button[id^="export-data"] {
+  position: absolute;
+  top: 50px;
+  right: 5px;
+  z-index: 1;
+}
+
+/** Remove the border line around a chart in 'Sense Focus' app theme**/
+.qv-object-qlik-tabbed-container article.qv-object:not(.qv-selections-active) {
+  border: 0  !important;
+}
+
+/** Remove the padding of a chart in 'Sense Focus' app theme**/
+/** Without this, a chart on an unactivated tab can be clicked on the bottom of the tab lists **/
+.qv-object-qlik-tabbed-container div.qv-inner-object {
+  padding: 0px !important;
+  overflow: visible;
+}
+.qv-mode-edit .qv-object-qlik-tabbed-container div.qv-inner-object {
+  overflow: hidden;
+}
+
+.qv-object-qlik-tabbed-container ul.lui-tabset {
+  width: calc(100% - 2px);
+  border: 1px
+  solid rgba(0, 0, 0, 0.1);
+  overflow-y: visible;
+}
+
+.qv-object-qlik-tabbed-container .tab-row {
+  height: 100%;
+  width: 100%;
+}
+
+.qv-object-qlik-tabbed-container .tab-block {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  z-index: 10;
+}
+
+.qv-object-qlik-tabbed-container .tab-instructions {
+  margin: auto;
+  width: 80%;
+  padding-top: 30px;
+}
+
+.qv-object-qlik-tabbed-container .tab-instructions .title {
+  padding-bottom: 10px;
+}
+
+.qv-object-qlik-tabbed-container .tab-instructions ul {
+  padding-left: 22px;
+}
+
+.qv-object-qlik-tabbed-container .tab-instructions li {
+  padding-bottom: 2px;
+}
+
+[tid="tab"] .pp-data-header {
+  padding-top: 20px;
+}

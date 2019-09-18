@@ -1,0 +1,22 @@
+{
+    "author": "brz, rabe",
+    "bundle": {
+        "id": "qlik-visualization-bundle",
+        "name": "Qlik Visualization bundle",
+        "description": "This is a set of supported extensions that expands the visualization capabilities of Qlik Sense. These can be used in addition to the native objects found under 'Charts'. For support conditions and limitations, see the documentation."
+    },
+    "dependencies": {
+        "qlik-sense": ">=5.5.x"
+    },
+    "description": "A matrix of colors based on two dimensions and a measure.\nVersion: 0.53.0",
+    "homepage": "",
+    "icon": "high-resolution",
+    "installer": "QlikExtensionBundler",
+    "keywords": "qlik-sense, visualization",
+    "license": "MIT",
+    "name": "Heatmap chart",
+    "preview": "heatmap.png",
+    "repository": "https://github.com/qlik-oss/QlikSense_Extension_2DimHeatmap",
+    "type": "visualization",
+    "version": "0.53.0"
+}

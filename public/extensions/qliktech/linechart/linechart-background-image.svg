@@ -1,0 +1,24 @@
+﻿<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="none" viewBox="0 0 100 101">
+	<g stroke="#888">
+		<line x1="0" y1="100" x2="0" y2="0" />
+		<line x1="0" y1="100" x2="100" y2="100" />
+	</g>
+	<g stroke="#888" transform="translate(0,30)">
+		<line x1="0" y1="30" x2="10" y2="5" />
+		<line x1="10" y1="5" x2="22" y2="15" />
+		<line x1="22" y1="15" x2="35" y2="37" />
+		<line x1="35" y1="37" x2="47" y2="27" />
+		<line x1="47" y1="27" x2="60" y2="30" />
+		<line x1="60" y1="30" x2="72" y2="50" />
+		<line x1="72" y1="50" x2="85" y2="58" />
+
+		<circle cx="10" cy="5" r="1" fill="#868686" />
+		<circle cx="22" cy="15" r="1" fill="#929292" />
+		<circle cx="35" cy="37" r="1" fill="#d0d0d0" />
+		<circle cx="47" cy="27" r="1" fill="#929292" />
+		<circle cx="60" cy="30" r="1" fill="#b6b6b6" />
+		<circle cx="72" cy="50" r="1" fill="#c2c2c2" />
+		<circle cx="85" cy="58" r="1" fill="#d0d0d0" />
+
+	</g>
+</svg>

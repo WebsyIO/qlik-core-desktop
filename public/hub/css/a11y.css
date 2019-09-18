@@ -1,0 +1,34 @@
+
+[ng-click]:not(.lui-button):focus,
+.lui-search__input:focus {
+  box-shadow: inset 0 0 0 1px #3f8ab3;
+}
+.qv-grid .qv-thumb-wrap:focus,
+.qv-grid .qv-details-wrap:focus {
+  border-color: #3f8ab3;
+  box-shadow: inset 0 0 0 1px transparent;
+}
+.qv-grid .qv-thumb-wrap:focus .qv-img-thumb,
+.qv-grid .qv-details-wrap:focus .qv-img-thumb {
+  border-bottom-color: #3f8ab3;
+  border-bottom-width: 1px;
+  padding-bottom: 1px;
+}
+.hub-search.hub-empty .lui-search__input {
+  padding: 0 10px;
+  margin-right: 52px;
+  margin-left: 5px;
+}
+.hub-search .lui-search__input {
+  padding: 0 10px;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+.hub-search .lui-search__clear-button {
+  margin-right: 10px;
+}
+.hub-screen-reader-label {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
