@@ -3,8 +3,14 @@ var express = require('express'),
 
 app.use('/resources', express.static(__dirname+'/public'))
 
+app.use('/sense/resources', express.static(__dirname+'/public'))
+
 app.get('/hub', function(req, res){
   res.sendFile(__dirname+'/public/hub.html');
+});
+
+app.get('/sense/app/*', function(req, res){
+  res.sendFile(__dirname+'/public/client.html');
 });
 
 app.get('/api/hub/about', (req, res) => {
@@ -24,7 +30,7 @@ app.get('/api/hub/about', (req, res) => {
 					"mode": "enterprise"
 				}]
 			}
-		`		
+		`
 	)
 })
 
