@@ -1,0 +1,45 @@
+
+.usertextselect {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+.qmc-text {
+  font-family: 'QlikView Sans', sans-serif;
+  color: #595959;
+}
+.qmc-text-T1 {
+  font-family: 'QlikView Sans', sans-serif;
+  color: #595959;
+  font-weight: bold;
+  font-size: 24px;
+}
+.qmc-text-H1 {
+  font-family: 'QlikView Sans', sans-serif;
+  color: #595959;
+  font-size: 17px;
+}
+.qmc-text-H2 {
+  font-family: 'QlikView Sans', sans-serif;
+  color: #595959;
+  font-size: 15px;
+}
+.qmc-text-B1 {
+  font-family: 'QlikView Sans', sans-serif;
+  color: #595959;
+  font-size: 13px;
+}
+.qmc-text-B2 {
+  font-family: 'QlikView Sans', sans-serif;
+  color: #595959;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 15px;
+}
+.qmc-text-B3 {
+  font-family: 'QlikView Sans', sans-serif;
+  color: #595959;
+  font-size: 11px;
+  line-height: 16px;
+}

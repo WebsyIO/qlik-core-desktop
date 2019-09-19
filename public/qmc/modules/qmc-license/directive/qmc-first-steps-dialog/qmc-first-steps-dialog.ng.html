@@ -1,0 +1,12 @@
+﻿<qmc-popup width="500" maxheight="300" enable-draggable="true" class="qmcFirstStepsDialog">
+	<header><i class="icon-qmc-tick icon-small"></i>{{ 'qmcFirstStepsDialog.heading' | qmcTranslate}}</header>
+	<main>
+		<p class="content">{{ 'qmcFirstStepsDialog.firstStepsInfo' | qmcTranslate }}</p>
+		<br />
+		<p class="content">{{ 'qmcFirstStepsDialog.firstStepsLinkInfo' | qmcTranslate }}</p>
+		<qmc-help-link label-ref="qmcFirstStepsDialog.helpLinkLabel" help-topic="QmcSection_Setup"></qmc-help-link>
+	</main>
+	<footer>
+		<button id="qmc-first-steps-button-close" class="dialog-button-qmc" ng-click="dialogCancelClick( $event )" value="Cancel">{{ 'qmcFirstStepsDialog.button.close' | qmcTranslate}}</button>
+	</footer>
+</qmc-popup>

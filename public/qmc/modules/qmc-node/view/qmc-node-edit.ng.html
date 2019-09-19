@@ -1,0 +1,4 @@
+﻿<qmc-edit id="qmc.stage" class="qmc-property-edit" selection-set="selectionSet" config="config" navigation-view="navigationView">
+	<qmc-node-edit-control class="qmc-property-edit-form" selection-set="selectionSet" qmc-routing-message="qmcRoutingMessage" ng-show="navigationView.value==='mainEdit'" set-group-listener="config.setGroupListener"></qmc-node-edit-control>
+	<qmc-property-edit-associations type-name="ServerNodeConfiguration" selection-set="selectionSet" navigation-view="navigationView" ng-show="navigationView.value!=='mainEdit'"></qmc-property-edit-associations>
+</qmc-edit>

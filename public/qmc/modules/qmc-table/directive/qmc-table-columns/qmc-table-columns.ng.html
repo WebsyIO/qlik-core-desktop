@@ -1,0 +1,30 @@
+﻿<table class="column-header">
+	<thead>
+		<tr>
+			<th class="column"
+				ng-repeat="col in tableController.columnLayout.columns"
+				ng-class="{'sortColumn': col.colDef.propertyName === sortColumn}"
+				id="{{'col:' + $index}}"
+				ng-style="{'width': col.data.size + 'px'}">
+				<div ng-if="!$first" class="resize-div">&nbsp;</div>
+				<div class="head-container" ng-class="{'sortable': canSort(col)}">
+					<div class="name-div"
+						 ng-class="{'sortable': canSort(col)}"
+						 ng-style="{'padding-right': (col.colDef.propertyName === sortColumn ? 14 : 0) + (canFilter(col) ? 28 : 0)}" 
+						 title="{{(col.colDef.displayName | qmcTranslate) || col.colDef.displayName}}">
+						{{(col.colDef.displayName | qmcTranslate) || col.colDef.displayName}}
+					</div>
+					<i ng-if="col.colDef.propertyName === sortColumn"
+					   class="{{'sortController icon-qmc-' + sortOrder}}"
+					   ng-class="{'filter-padding': canFilter(col)}"></i>
+					<qmc-button ng-if="canFilter(col) && !tableController.disableSearch"
+								ng-class="{'qmc-filter-button-toggler': !col.colDef.filter.isClear()}"
+								class="qmc-filter-button"
+								icon="filter"
+								disabled="col.colDef.isDisabled"></qmc-button>
+				</div>
+			</th>
+			<th class="scrollbar-compensation"></th>
+		</tr>
+	</thead>
+</table>

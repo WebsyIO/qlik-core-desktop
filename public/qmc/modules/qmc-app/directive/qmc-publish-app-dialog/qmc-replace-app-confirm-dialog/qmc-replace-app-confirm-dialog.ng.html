@@ -1,0 +1,35 @@
+﻿<qmc-popup width="400"
+		   maxheight="300"
+		   enable-draggable="true"
+		   popup-name="qmcPublishAppDialog"
+		   popup-id="qmc-publish-replace-app">
+	<header>{{qmcReplacePublishAppData.header}}</header>
+	<main>
+		<div class="title">
+			<i class="icon-qmc-warning qmc-flex-none"></i>
+			<div class="qmc-replace-publish-app-data-heading-text qmc-flex-fill">
+				{{qmcReplacePublishAppData.headerText}}
+			</div>
+		</div>
+		
+		<div class="qmc-replace-publish-app-data-message-text">
+			{{qmcReplacePublishAppData.messageText}}
+		</div>
+		<div>
+			{{qmcReplacePublishAppData.oldAppText}}
+		</div>
+		<div class="qmc-replace-publish-app-old-app-info">
+			{{qmcReplacePublishAppData.oldAppName}}
+		</div>
+		<div>
+			{{qmcReplacePublishAppData.newAppText}}
+		</div>
+		<div class="qmc-replace-publish-app-new-app-info">
+			{{qmcReplacePublishAppData.newAppName}}
+		</div>
+	</main>
+	<footer>
+		<button id="qmc-publish-replace-app-button-cancel" class="dialog-button-qmc" ng-click="dialogCancelClick( $event )" value="Cancel">{{qmcReplacePublishAppData.cancelText}}</button>
+		<button id="qmc-publish-replace-app-button-ok" class="dialog-button-qmc" ng-click="dialogOkClick( $event )" value="Publish">{{qmcReplacePublishAppData.okText}}</button>
+	</footer>
+</qmc-popup>

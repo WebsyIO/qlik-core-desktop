@@ -1,0 +1,52 @@
+﻿<div class="heading">
+	<h1>
+		<i class="{{tableHeaderIcon}}"></i>
+		<span>{{tableHeaderLabel | qmcTranslate}}</span>
+	</h1>
+</div>
+<div class="counters" ng-if="hideCounters !== true">
+	<div class="counter" ng-if="hideTotalCount !== true">
+		<span>{{'qmcTableHeader.totalCount' | qmcTranslate}}</span>&nbsp;
+		{{allItemsCount}}
+		<span class="spinner-wrapper">
+			<qmc-spinner delay="0" overlay-opacity="0" in-progress="allItemsCount === null">
+			</qmc-spinner>
+		</span>
+	</div>
+	<div class="counter">
+		<span>{{'qmcTableHeader.shownCount' | qmcTranslate}}</span>&nbsp;
+		{{getTableSize()}}
+		<span class="spinner-wrapper">
+			<qmc-spinner delay="0" overlay-opacity="0" in-progress="getTableSize() == null"></qmc-spinner>
+		</span>
+	</div>
+	<div class="counter"><span>{{'qmcTableHeader.selectedCount' | qmcTranslate}}</span>&nbsp;{{selectionSet.length}}</div>
+</div>
+<div class="actions">
+
+	<qmc-button action-definition="tableRefreshAction"
+				id="qmc.stageheader.app.action.refresh"
+				class="qmc-table-header"
+				title="{{'qmcTableHeader.refreshTooltip' | qmcTranslate}}"
+				disabled="tableRefreshAction.isDisabled"></qmc-button>
+
+	<qmc-button ng-if="!tableController.disableSearch"
+				id="qmc.stageheader.app.action.search"
+				action-definition="tableSearchAction"
+				class="{{'qmc-table-header' + (tableController.searchgroup.isClear() ? '' : ' activeButton')}}"
+				title="{{'qmcTableHeader.searchTooltip' | qmcTranslate}}"
+				disabled="tableSearchAction.isDisabled"></qmc-button>
+
+	<qmc-button ng-if="columnSelector==true"
+				id="qmc.stageheader.app.action.columns"
+				action-definition="tableColumnAction"
+				class="qmc-table-header"
+				title="{{'qmcTableHeader.columnSelectorTooltip' | qmcTranslate}}"
+				disabled="tableColumnAction.isDisabled"></qmc-button>
+
+	<qmc-button action-definition="tableActionsAction"
+				id="qmc.stageheader.app.action.actions"
+				class="qmc-actionbuttons"
+				title="{{'qmcTableHeader.actionsTooltip' | qmcTranslate}}"
+				disabled="tableActionsAction.isDisabled">{{'qmcTableHeader.actions' | qmcTranslate}}</qmc-button>
+</div>

@@ -1,0 +1,26 @@
+﻿<qmc-popover align-to="alignTo" position="right" collision="flipfit" toggle="closeUserInfoPopover($event)" spinner="inProgress">
+	<div class="qmc-popover-header">
+		<h1>
+			<span>{{ 'qmcUserInfoDialog.heading' | qmcTranslate : userName}}</span>
+		</h1>
+	</div>
+	<div class="main">
+		<div class="maincontent">
+			<table ng-if="!inProgress" class="attribute-table" data-ready="{{!inProgress}}">
+				<thead>
+					<tr>
+						<td>{{'qmcUserInfoDialog.header.attributeName' | qmcTranslate}}</td>
+						<td>{{'qmcUserInfoDialog.header.attributeValue' | qmcTranslate}}</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="prop in properties">
+						<td>{{prop.name}}</td>
+						<td>{{prop.value}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+	</div>
+</qmc-popover>

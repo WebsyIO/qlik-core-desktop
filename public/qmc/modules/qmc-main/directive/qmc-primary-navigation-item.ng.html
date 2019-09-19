@@ -1,0 +1,10 @@
+﻿<a class="qmc-primary-navigation-item-link" ng-class="{'primary-navigation-item-disabled' : item.disabled}"
+   ng-href="{{ item.href }}" target="{{item.target ? item.target : ''}}" ng-click="hidePopover()">
+	<i class="qmc-primary-navigation-item-icon icon {{ item.icon }}" ng-if="item.icon"></i>
+	<div class="qmc-primary-navigation-item-label">
+		<span ng-if="!item.isTranslated">{{item.label | qmcTranslate}}</span>
+		<span ng-if="item.isTranslated">{{item.label}}</span>
+		<div class="qmc-primary-navigation-service-status" ng-if="item.errors>0" title="{{item.label+'.errors' | qmcTranslate: item.errors}}">{{item.errors}}</div>
+			<div class="qmc-primary-navigation-service-status warning" ng-if="item.warnings>0" title="{{item.label+'.warnings' | qmcTranslate: item.warnings}}">{{item.warnings}}</div>
+	</div>
+</a>

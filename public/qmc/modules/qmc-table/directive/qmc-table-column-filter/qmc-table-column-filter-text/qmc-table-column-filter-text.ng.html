@@ -1,0 +1,13 @@
+﻿<div class="qmc-search-wrapper">
+	<div class="qmc-filter-search-container">
+		<input ng-model="filter.value"
+			   ng-change="tableController.refreshDebounced()"
+			   qmc-focus="true"
+			   class="qmc-filter-search-box"
+			   type="text"
+			   maxlength="200">
+		<span class="qmc-filter-search-icon-right">
+			<i class="icon-clear" ng-show="filter.value.length > 0" ng-click="clear()"></i>
+		</span>
+	</div>
+</div>

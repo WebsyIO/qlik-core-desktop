@@ -1,0 +1,21 @@
+﻿<qmc-table-header id="qmc.stageheader.{{name | lowercase}}"
+				  table-controller="tableController"
+				  selection-set="selectionSet"
+				  table-header-icon="{{tableHeaderIcon || 'icon-qmc-' + name}}"
+				  table-header-label="{{tableHeaderLabel || 'qmc.resourceType.' + name}}"
+				  no-search="false"
+				  column-selector="true"
+				  hide-total-count="hideTotalCount"
+				  total-count-filter="{{totalCountFilter}}"
+				  total-count-callback="totalCountCallback"
+				  class="{{sectionClass}}"></qmc-table-header>
+<div class="qmc-overview-body">
+	<qmc-table table-controller="tableController" selection-set="selectionSet"></qmc-table>
+	<qmc-transport-dialog ng-if="includeTransport"></qmc-transport-dialog>
+</div>
+<qmc-action-alert-bar></qmc-action-alert-bar>
+<qmc-actionbar id="qmc.actionbar.{{name | lowercase}}"
+			   class="qmc-overview-footer"
+			   actions="actionDefinition"
+			   more-actions="moreActionDefinition">
+</qmc-actionbar>

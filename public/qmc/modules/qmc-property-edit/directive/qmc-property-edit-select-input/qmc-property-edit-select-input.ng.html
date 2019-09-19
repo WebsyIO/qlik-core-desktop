@@ -1,0 +1,11 @@
+﻿<div ng-class="{ 'qmc-property-edit-row-layout': !ignoreEditStyle }" class="qmc-property-edit-row" ng-hide="ngModel.isHidden">
+	<div class="qmc-property-edit-row-label">
+		<label for="{{elemClass}}" title="{{ignoreLocalize ? label : (label | qmcTranslate)}}">{{ignoreLocalize ? label : (label | qmcTranslate)}}</label>
+		<qmc-undo-button ng-disabled="ngModel.isDisabled" ng-click="ngModel.reset()" ng-if="ngModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+	</div>
+	<div class="qmc-property-edit-row-input">
+		<select title="{{selectBoxTooltip}}" class="qmc-input" ng-model="selectValue" ng-change="onChange()(selectValue)" ng-disabled="ngModel.isDisabled || ngModel.isReadonly" ng-readonly="ngModel.isReadonly" ng-options="item.item as optionDisplay(item) for item in selectOptions" required qmc-focus="{{focusOnLoad}}"></select>
+		<qmc-contextual-notifier ng-if="!ngModel.isValid && !ignoreInvalid" msg-type="error" msg-string="errorMessages"></qmc-contextual-notifier>
+	    <qmc-contextual-notifier ng-if="ngModel.information" msg-type="info" msg-string="infoMessages"></qmc-contextual-notifier>
+	</div>
+</div>

@@ -1,0 +1,4 @@
+﻿<div class="toggle" ng-click="toggleState()">
+	<h3 class="qmc-property-edit-collapsible-label qmc-property-edit-row"><i class="{{'icon-triangle-' + (isExpanded ? 'bottom' : 'right')}}"></i><div class="text">{{heading | qmcTranslate}}</div></h3>
+</div>
+<div ng-show="isExpanded" ng-transclude></div>

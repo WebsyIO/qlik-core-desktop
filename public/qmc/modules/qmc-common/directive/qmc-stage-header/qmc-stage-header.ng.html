@@ -1,0 +1,16 @@
+﻿<h1 class="header">
+	<i ng-if="stageHeaderIcon" class="{{stageHeaderIcon}}"></i>
+	<span>{{stageHeaderLabel | qmcTranslate}}</span>
+	<span ng-transclude></span>
+	<button id="{{idBase}}.action.menu" class="icon-qmc-asc menubutton" type="button" ng-click="popovers[0].toggle($event)" ng-if="menuButton"></button>
+	<span class="stageheaderrightmargin" ng-if="stageHeaderActionIcon && !stageHeaderActionDisabled"></span>
+	<button id="{{idBase}}.action" data-actiontype="{{actionName}}" class="{{stageHeaderActionIcon}} actionbutton" type="button" ng-click="popovers[0].toggle($event)" ng-if="stageHeaderActionIcon && !stageHeaderActionDisabled">{{stageHeaderActionLabel | qmcTranslate}}</button>
+	<span id="{{idBase}}.action.label" class="stageheaderactionlabel icon-qmc-asc" ng-if="!stageHeaderActionIcon && stageHeaderActionLabel" ng-click="popovers[0].toggle($event)">{{stageHeaderActionLabel | qmcTranslate}}</span>
+	<qmc-popover ng-repeat="popover in popovers" align-to="alignToActorActions" position="{{popover.position}}" collision="flipfit" ng-if="popover.show" width="{{stageHeaderPopoverWidth}}" toggle="popover.toggle($event)" id="{{idBase}}.popover">
+		<ul>
+			<li ng-repeat=" action in popover.actions" ng-class="{ 'qmc-trigger-action-disabled': action.isDisabled.disabled }">
+				<span id="{{idBase}}.{{action.id}}" data-actiontype="{{action.id}}" ng-click="action.event($event)">{{(action.label | qmcTranslate) || action.label}}</span>
+			</li>
+		</ul>
+	</qmc-popover>
+</h1>

@@ -1,0 +1,127 @@
+﻿<qmc-stage-header stage-header-icon="icon-qmc-License"
+				  stage-header-label="qmcTokenOverview.pageTitle"
+				  class="qmc-manage-resources-section">
+</qmc-stage-header>
+<div class="tokenOverview">
+	<div>
+		<div class="unallocated" ng-show="model.userAccess.enabled || model.loginAccess.enabled">
+			<div class="unallocated-label">{{'qmcTokenOverview.unallocatedLabel' | qmcTranslate}}</div>
+			<div class="unallocated-percent">{{model.unallocated.percent+'%'}}</div>
+			<div class="total-tokens">
+				<div class="total-tokens-val">{{model.total.sum}}</div>{{'qmcTokenOverview.totaltokens.label' | qmcTranslate}}
+			</div>
+		</div>
+		<div class="unallocated" ng-show="model.professionalAccess.enabled">
+			<div class="unallocated-title">{{'qmcAccessOverview.professionalAccessLabel' | qmcTranslate}}</div>
+			<div class="unallocated-label">{{'qmcTokenOverview.unallocatedLabel' | qmcTranslate}}</div>
+			<div class="unallocated-percent">{{model.professionalAccess.percentageUnallocated+'%'}}</div>
+			<div class="total-tokens">
+				<div class="total-tokens-val">{{model.professionalAccess.total}}</div>{{'qmcAccessOverview.totalusers.label' | qmcTranslate}}
+			</div>
+		</div>
+		<div class="unallocated" ng-show="model.analyzerAccess.enabled">
+			<div class="unallocated-title">{{'qmcAccessOverview.analyzerAccessLabel' | qmcTranslate}}</div>
+			<div class="unallocated-label">{{'qmcTokenOverview.unallocatedLabel' | qmcTranslate}}</div>
+			<div class="unallocated-percent">{{model.analyzerAccess.percentageUnallocated+'%'}}</div>
+			<div class="total-tokens">
+				<div class="total-tokens-val">{{model.analyzerAccess.total}}</div>{{'qmcAccessOverview.totalusers.label' | qmcTranslate}}
+			</div>
+		</div>
+		<div class="unallocated" ng-show="model.analyzerTimeAccess.enabled">
+			<div class="unallocated-title">{{'qmcTokenOverview.analyzerTimeAccessLabel' | qmcTranslate}}</div>
+			<div class="total-tokens">
+				<div class="total-tokens-val">{{model.analyzerTimeAccess.allocatedMinutes + ' '}}</div>{{'qmcTokenOverview.allocatedMinutesLabel' | qmcTranslate}} {{'qmcTokenOverview.minutesLabel' | qmcTranslate}}
+			</div>
+			<div class="panel-spacing"></div>
+			<div class="total-tokens">
+				<div class="total-tokens-val">{{model.analyzerTimeAccess.usedMinutes + ' '}}</div>{{'qmcTokenOverview.usedMinutesLabel' | qmcTranslate}} {{'qmcTokenOverview.minutesLabel' | qmcTranslate}}
+			</div>
+		</div>
+	</div>
+	<div class="summaryTable">
+		<table>
+			<thead ng-show="model.userAccess.enabled || model.loginAccess.enabled">
+				<tr>
+					<th class="barname">{{'qmcTokenOverview.userAccessLabel' | qmcTranslate}}</th>
+					<td colspan="3" class="topbar">
+						<div class="qmc-flex-row">
+							<div class="qmc-flex-fill">
+								<div class="chartbar in-use" ng-style="{ width: size(model.userAccess, 'inUse')+'%'}"></div><span class="chartbar available" ng-style="{ width: size(model.userAccess, 'available')+'%'}"></span>
+							</div>
+							<div class="qmc-flex-none infoNumbers">{{ model.userAccess.inUse + ' / ' + model.userAccess.available }}</div>
+							<div class="qmc-flex-none" ng-style="{width: remaining(model.userAccess) + '%'}"></div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th class="barname">{{'qmcTokenOverview.loginAccessLabel' | qmcTranslate}}</th>
+					<td colspan="3" class="topbar">
+						<div class="qmc-flex-row">
+							<div class="qmc-flex-fill">
+								<div class="chartbar in-use" ng-style="{ width: size(model.loginAccess, 'inUse')+'%'}"></div><div class="chartbar available" ng-style="{ width: size(model.loginAccess, 'available')+'%'}"></div>
+							</div>
+							<div class="qmc-flex-none infoNumbers">{{ model.loginAccess.inUse + ' / ' + model.loginAccess.available}}</div>
+							<div class="qmc-flex-none" ng-style="{width: remaining(model.loginAccess) + '%'}"></div>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th class="barname">{{'qmcTokenOverview.totalLabel' | qmcTranslate}}</th>
+					<td colspan="3" class="bottombar">
+						<div class="qmc-flex-row">
+							<div class="qmc-flex-fill">
+								<div class="chartbar in-use" ng-style="{ width: size(model.total, 'inUse')+'%'}"></div><div class="chartbar available" ng-style="{ width: size(model.total, 'available')+'%'}"></div>
+							</div>
+							<div class="qmc-flex-none infoNumbers">{{model.total.inUse + ' / ' + model.total.available}}</div>
+							<div class="qmc-flex-none" ng-style="{width: remaining(model.total) + '%'}"></div>
+						</div>
+					</td>
+				</tr>
+			</thead>
+			<tbody class="tablebody">
+				<tr>
+					<td></td>
+					<th class="header-row">
+						<div class="colorBox in-use"></div>{{'qmcTokenOverview.inUseLabel' | qmcTranslate}}
+					</th>
+					<th ng-show="showQuarantine" class="header-row">
+						<div class="colorBox in-use"></div>{{'qmcTokenOverview.quarantineLabel' | qmcTranslate}}
+					</th>
+					<th class="header-row">
+						<div class="colorBox available"></div>{{'qmcTokenOverview.availableLabel' | qmcTranslate}}
+					</th>
+				</tr>
+				<tr ng-show="model.userAccess.enabled">
+					<td>{{'qmcTokenOverview.userAccessLabel' | qmcTranslate}}</td>
+					<th>{{model.userAccess.inUse-model.userAccess.quarantine}}</th>
+					<th>{{model.userAccess.quarantine}}</th>
+					<th>{{model.userAccess.available}}</th>
+				</tr>
+				<tr ng-show="model.loginAccess.enabled">
+					<td>{{'qmcTokenOverview.loginAccessLabel' | qmcTranslate}}</td>
+					<th>{{model.loginAccess.inUse-model.loginAccess.quarantine}}</th>
+					<th>{{model.loginAccess.quarantine}}</th>
+					<th>{{model.loginAccess.available}}</th>
+				</tr>
+				<tr ng-show="model.userAccess.enabled || model.loginAccess.enabled">
+					<td>{{'qmcTokenOverview.totalLabel' | qmcTranslate}}</td>
+					<th>{{model.total.inUse-model.total.quarantine}}</th>
+					<th ng-show="showQuarantine">{{model.total.quarantine}}</th>
+					<th>{{model.total.available}}</th>
+				</tr>
+				<tr ng-show="model.professionalAccess.enabled">
+					<td>{{'qmcAccessOverview.professionalAccessLabel' | qmcTranslate}}</td>
+					<th>{{model.professionalAccess.inUse}}</th>
+					<th ng-show="showQuarantine">{{model.professionalAccess.quarantine}}</th>
+					<th>{{model.professionalAccess.available}}</th>
+				</tr>
+				<tr ng-show="model.analyzerAccess.enabled">
+					<td>{{'qmcAccessOverview.analyzerAccessLabel' | qmcTranslate}}</td>
+					<th>{{model.analyzerAccess.inUse}}</th>
+					<th ng-show="showQuarantine">{{model.analyzerAccess.quarantine}}</th>
+					<th>{{model.analyzerAccess.available}}</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

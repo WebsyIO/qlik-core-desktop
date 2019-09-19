@@ -1,0 +1,6 @@
+﻿	<ol class="qmc-primary-navigation-list">
+		<li class="qmc-primary-navigation-list-item" ng-repeat="item in items">
+			<qmc-primary-navigation-group ng-if="item.options !== undefined &&  item.options !== null"></qmc-primary-navigation-group>
+			<qmc-primary-navigation-item ng-if="item.options === undefined || item.options === null"></qmc-primary-navigation-item>
+		</li>
+	</ol>

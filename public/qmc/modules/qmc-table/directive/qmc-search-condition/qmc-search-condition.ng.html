@@ -1,0 +1,61 @@
+﻿<td class="selector qmc-search-condition-property">
+	<select ng-model="filter.property"
+			ng-disabled="filter.isReadonly || ngDisabled"
+			ng-change="resetCondition(filter)"
+			ng-options="property as properties[property].display for property in propertyNames"></select>
+</td>
+<td class="selector qmc-search-condition-operator">
+	<select ng-model="filter.operator"
+			ng-disabled="filter.isReadonly || ngDisabled"
+			ng-change="operatorChange(filter)"
+			ng-options="operator as operators[properties[filter.property].type][operator].display for operator in operators[properties[filter.property].type].refs"></select>
+</td>
+<td class="valueControl">
+	<qmc-autocomplete ng-if="(filter.type == 'Text' && entity !== 'Task') || filter.type == 'userAttribute' || filter.type == 'Tag'"
+					  autocomplete-search-model="autocompleteSearchModel"
+					  ng-disabled="ngDisabled"
+					  property-model="filter">
+	</qmc-autocomplete>
+
+	<select ng-if="filter.operator === 'since'"
+			ng-model="filter.value"
+			ng-disabled="filter.isReadonly || ngDisabled"
+			ng-options="timespan.value as timespan.display for timespan in timespans"></select>
+
+	<select ng-if="filter.type == 'Enum' || filter.type == 'Bool' || filter.type == 'EnumText'"
+			ng-model="filter.value"
+			ng-options="enum.value as (enum.display | qmcTranslate) for enum in properties[filter.property].filter.enums"></select>
+
+	<input ng-if="filter.operator === 'after' || filter.operator === 'before'"
+		   qmc-date-time-formatter="true"
+		   ng-class="{'invalid' : filter.invalid}"
+		   qmc-placeholder="{{'qmcSearchWizard.dateformat' | qmcTranslate}}"
+		   ng-change="checkDate( filter )"
+		   ng-model="filter.value">
+
+	<input ng-if="filter.type == 'Int' || (filter.type == 'Text' && entity === 'Task')" ng-model="filter.value" />
+	<input ng-if="filter.type == 'GUID'"
+		   ng-class="{'invalid' : filter.invalid}"
+		   ng-change="checkGuid( filter )"
+		   ng-blur="filter.value = filter.invalid ? '' : filter.value"
+		   placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+		   ng-model="filter.value" />
+</td>
+<td class="actionButton">
+	<div class="actionButton">
+		<qmc-button ng-if="!condition.isReadonly && !ngDisabled && (filter.parent.items.length > 1)"
+					class="qmc-search-wizard qmc-search-wizard-xsmall-icon"
+					icon="remove"
+					action="removeFilter(filter)"
+					disabled="tableClearAction.isDisabled">
+		</qmc-button>
+	</div>
+</td>
+<td class="actionButton">
+	<qmc-button ng-if="!condition.isReadonly && !ngDisabled"
+				class="qmc-search-wizard qmc-search-wizard-xsmall-icon"
+				icon="add"
+				action="addFilter(filter)"
+				disabled="tableClearAction.isDisabled">
+	</qmc-button>
+</td>

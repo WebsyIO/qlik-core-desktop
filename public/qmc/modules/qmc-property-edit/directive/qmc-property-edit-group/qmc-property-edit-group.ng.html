@@ -1,0 +1,5 @@
+﻿<div ng-show="groupObject.selected && !groupObject.toggledOff">
+	<h3 class="qmc-property-edit-group-label qmc-property-edit-row" ng-if="!hideHeading">{{ignoreLocalize ? heading : (heading | qmcTranslate)}}</h3>
+	<div ng-transclude></div>
+	<hr ng-if="!noSeparator" />
+</div>

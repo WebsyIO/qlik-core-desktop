@@ -1,0 +1,51 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+		<qmc-property-edit-empty-warning url="/odag/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmcOdag.qmcPropertyEditGroup.settings" force-show="true">
+ 				<qmc-property-edit-bool-input label="qros.Odag.enableOdag"
+     											  ng-model="editModel.property.settings.property.enabled"
+    											  error-message-callback="errorMessageCallback"
+    											  id="qmc-odag-edit-enableOdag">
+    			</qmc-property-edit-bool-input>
+				<qmc-property-edit-loglevel label="qros.Odag.loggingLevel"
+											ng-model="editModel.property.settings.property.logLevel"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug,Trace"
+											id="qmc-odag-edit-loggingLevel">
+				</qmc-property-edit-loglevel>
+
+ 				<qmc-property-edit-text-input label="qros.Odag.numConcurrentAppGens"
+											  ng-model="editModel.property.settings.property.maxConcurrentRequests"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-odag-edit-numConcurrentAppGens">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.Odag.purgeOlderThan"
+											  ng-model="editModel.property.settings.property.purgeOlderThan"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-odag-edit-purgeOlderThan">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-bool-input label="qros.Odag.allowAnonymousUser"
+											  ng-model="editModel.property.settings.property.allowAnonymousUser"
+											 error-message-callback="errorMessageCallback"
+											 id="qmc-odag-edit-allowAnonymousUser">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-autocomplete-text-input label="qros.Odag.anonymousProxyUser"
+											ng-model="editModel.property.settings.property.anonymousProxyUser"
+											autocomplete-search-model="autocompleteSearchModel"
+											error-message-callback="errorMessageCallback"
+											id="qmc-odag-edit-anonymousProxyUser"
+											is-new="editModel.isNew">
+				</qmc-property-edit-autocomplete-text-input>
+				<qmc-property-edit-text-input label="qros.Odag.anonymousAppCleanup"
+											ng-model="editModel.property.settings.property.anonymousAppCleanup"
+											error-message-callback="errorMessageCallback"
+											id="qmc-odag-edit-anonymousAppCleanup">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-odag-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

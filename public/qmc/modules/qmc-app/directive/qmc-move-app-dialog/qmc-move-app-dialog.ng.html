@@ -1,0 +1,23 @@
+﻿<qmc-popup width="400" maxheight="300" enable-draggable="true" popup-name="qmcMoveAppDialog"
+		ng-hide="isHidden" popup-id="qmc-move-app" in-progress="inProgress" not-hide-overflow="true">
+	<header>{{ 'qmcMoveAppDialog.heading' | qmcTranslate}}</header>
+	<main>
+		<div class="qmc-move-app-dialog-content">
+			<qmc-property-edit-non-enum-select-input label="qmcMoveAppDialog.heading.stream"
+											ng-model="streamModel.property.id"
+											options="options"
+											id="qmc-move-app-dialog-streamslist"
+											error-message-callback="errorMessageCallback"
+											ignore-undo="true"
+											ignore-edit-style="true"
+											no-value-translation-key="qmcMoveAppDialog.qmcPropertyEditSelectInput.noValue">
+			</qmc-property-edit-non-enum-select-input>
+			<qmc-spinner in-progress="inProgress"></qmc-spinner>
+		</div>
+	</main>
+	<footer>
+		<button id="qmc-move-app-button-cancel" class="dialog-button-qmc" ng-click="dialogCancelClick( $event )" value="Cancel" ng-disabled="inProgress">{{ 'qmcMoveAppDialog.button.cancel' | qmcTranslate}}</button>
+		<button id="qmc-move-app-button-ok" class="dialog-button-qmc" ng-click="dialogOkClick( $event )" value="Move" ng-disabled="inProgress || !streamModel.isValid">{{ 'qmcMoveAppDialog.button.ok' | qmcTranslate}}</button>
+	</footer>
+</qmc-popup>
+

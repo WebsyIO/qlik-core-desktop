@@ -1,0 +1,77 @@
+﻿<div ng-class="{ 'qmc-property-edit-row-layout': !ignoreEditStyle }" class="qmc-property-edit-row" ng-hide="ngModel.isHidden">
+	<div class="qmc-property-edit-row-input">
+		<div class="qmc-property-edit-row-label paired-input-label">
+			<label for="{{inputControlId + '-key'}}">{{ignoreLocalize ? label.key : (label.key | qmcTranslate)}}</label>
+			<qmc-undo-button ng-disabled="keyModel.isDisabled" ng-click="undo()" ng-if="keyModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+		</div>
+		<input type="{{password ? 'password' : 'text'}}"
+			   id="{{inputControlId + '-key'}}"
+			   class="qmc-input paired-input"
+			   maxlength="{{keyModel.maxLength}}"
+			   minlength="{{keyModel.minLength}}"
+			   max="{{keyModel.maxValue}}"
+			   min="{{keyModel.minValue}}"
+			   ng-model="keyModel.value"
+			   ng-readonly="keyModel.isReadonly"
+			   ng-disabled="keyModel.isDisabled"
+			   ng-required="keyModel.isRequired"
+			   ng-focus="disableIfReadOnly()"
+			   ng-blur="callbackOnBlur( $event )"
+			   qmc-focus="{{focusOnLoad}}"
+			   qmc-placeholder="{{keyModel.placeholder | qmcTranslate}}"
+			   qmc-numeric-parser="{{isNumeric}}"
+			   qmc-date-time-formatter="{{keyModel.type === 'DateTime'}}"
+			   qmc-file-size-formatter="{{keyModel.type === 'FileSize'}}" />
+		<!--<qmc-contextual-notifier ng-if="!keyModel.isValid && keyModel.errors && !ignoreInvalid" msg-type="error" msg-string="errorMessages"></qmc-contextual-notifier>
+			<qmc-contextual-notifier ng-if="keyModel.information" msg-type="info" msg-string="infoMessages"></qmc-contextual-notifier>-->
+	</div>
+	<div class="qmc-property-edit-row-input">
+		<div class="qmc-property-edit-row-label paired-input-label">
+			<label for="{{inputControlId + '-value'}}">{{ignoreLocalize ? label.value : (label.value | qmcTranslate)}}</label>
+			<qmc-undo-button ng-disabled="valueModel.isDisabled" ng-click="undo()" ng-if="valueModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+		</div>
+		<input type="{{password ? 'password' : 'text'}}"
+			   id="{{inputControlId + '-value'}}"
+			   class="qmc-input paired-input"
+			   maxlength="{{valueModel.maxLength}}"
+			   minlength="{{valueModel.minLength}}"
+			   max="{{valueModel.maxValue}}"
+			   min="{{valueModel.minValue}}"
+			   ng-model="valueModel.value"
+			   ng-readonly="valueModel.isReadonly"
+			   ng-disabled="valueModel.isDisabled"
+			   ng-required="valueModel.isRequired"
+			   ng-focus="disableIfReadOnly()"
+			   ng-blur="callbackOnBlur( $event )"
+			   qmc-focus="{{focusOnLoad}}"
+			   qmc-placeholder="{{valueModel.placeholder | qmcTranslate}}"
+			   qmc-numeric-parser="{{isNumeric}}"
+			   qmc-date-time-formatter="{{valueModel.type === 'DateTime'}}"
+			   qmc-file-size-formatter="{{valueModel.type === 'FileSize'}}" />
+		<!--<qmc-contextual-notifier ng-if="!valueModel.isValid && valueModel.errors && !ignoreInvalid" msg-type="error" msg-string="errorMessages"></qmc-contextual-notifier>
+			<qmc-contextual-notifier ng-if="valueModel.information" msg-type="info" msg-string="infoMessages"></qmc-contextual-notifier>-->
+	</div>
+	<div class="qmc-property-edit-row-input-checkbox" ng-if="mandatory">
+		<div class="qmc-property-edit-row-label">
+			<label for="{{inputControlId + '-mandatory'}}">{{ignoreLocalize ? label.mandatory : (label.mandatory | qmcTranslate)}}</label>
+			<qmc-undo-button ng-disabled="mandatoryModel.isDisabled" ng-click="undo()" ng-if="mandatoryModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+		</div>
+		<label class="qmc-checkbox">
+			<input type="checkbox"
+				   value="true"
+				   ng-model="mandatoryModel.value"
+				   ng-disabled="mandatoryModel.isDisabled || mandatoryModel.isReadonly"
+				   ng-readonly="mandatoryModel.isReadonly"
+				   qmc-focus="{{focusOnLoad}}"
+				   id="{{inputControlId + '-mandatory'}}" />
+			<div class="check-wrap">
+				<span class="check"></span>
+				<span class="check-text">{{ngModel.placeholder | qmcTranslate}}</span>
+			</div>
+		</label>
+	</div>
+</div>
+<div class="qmc-property-edit-row-context">
+	<qmc-contextual-notifier ng-if="showValidationWarning()" msg-type="error" msg-string="errorMessages"></qmc-contextual-notifier>
+	<qmc-contextual-notifier ng-if="ngModel.property[keyName].information || ngModel.property[valueName].information" msg-type="info" msg-string="infoMessages"></qmc-contextual-notifier>
+</div>

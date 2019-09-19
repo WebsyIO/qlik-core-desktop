@@ -1,0 +1,62 @@
+<!doctype html>
+<html class="qmc no-js" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="google" content="notranslate" />
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="cleartype" content="on">
+	<title>Qlik Management Console</title>
+	<base href="<?qv RelativeBaseURL?>" />
+	<!-- leonardo should probably be located at ./resources/external/leonardo-ui/leonardo-ui.css -->
+	<link rel="stylesheet" href="../resources/qmc/assets/leonardo-ui/leonardo-ui.css?1561728215281">
+	<link rel="stylesheet" href="../resources/qmc.css?1561728215281">
+	<link id="favicon" rel="shortcut icon" href="../resources/favicon.ico">
+	<link rel="apple-touch-icon" href="../resources/qmc/img/Icon-App-60x60@1x.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../resources/qmc/img/Icon-App-76x76@1x.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../resources/qmc/img/logo-120x120.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../resources/qmc/img/logo-152x152.png">
+	<script>document.documentElement.className = "qmc js";</script>
+</head>
+<body>
+	<div id="qmc">
+		<div class="qv-preload-icons">.</div>
+		<div class="qv-preload-font">.</div>
+		<div class="qmc-loading">
+			<noscript>
+				<qmc-error-popup class="qmc-popup-overlay">
+					<qmc-popup popup-name="qmcErrorPopup">
+						<div class="qmcErrorPopup">
+							<div class="popupHeader">
+								<div class="topHeader"></div>
+								<div class="bottomHeader">
+									<header>Initialization error</header>
+								</div>
+							</div>
+						</div>
+						<div class="popupContent">
+							<div class="popupMain">
+								<main class="qmc-error-popup-main">
+									<i class="icon-qmc-error qmc-flex-none"></i>
+									<div class="qmc-flex-fill">The Qlik Management Console will not work if JavaScript is disabled.</div>
+								</main>
+							</div>
+						</div>
+						<div class="popupFooter">
+						</div>
+					</qmc-popup>
+				</qmc-error-popup>
+			</noscript>
+			<qmc-spinner ng-non-bindable>
+				<div class="spinner-overlay"><div class="qv-loader"></div></div>
+			</qmc-spinner>
+			<script src="../resources/qmc/assets/external/requirejs/require.js?1561728215281"></script>
+			<script>require.config( { baseUrl: "../resources", urlArgs: "?1561728215281" } )( ["qmc/qmc"] );</script>
+		</div>
+	</div>
+</body>
+</html>

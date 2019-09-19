@@ -1,0 +1,70 @@
+﻿<qmc-popover class="qmc-task-chain-dialog" align-to="alignTo" position="right" collision="flipfit" toggle="closeTaskChainPopover($event)">
+	<div class="qmc-popover-header">
+		<h1>
+			<qmc-button id="qmcTaskChainDialog.refresh"
+						action="refresh()"
+						icon="refresh"
+						class="qmc-table-header"
+						title="{{'qmcTaskChainDialog.refresh' | qmcTranslate}}"
+						disabled="inProgress"></qmc-button>
+			<span>{{ 'qmcTaskChainDialog.dialogHeading' | qmcTranslate}}</span>
+		</h1>
+	</div>
+	<div class="main">
+		<div class="qmc-task-chain-info" data-ready="{{!inProgress}}">
+			<div class="trigger-section" ng-if="model.triggers.length > 0">
+				<button type="button" class="toggler-button qmc-button" ng-click="toggleTriggerSection()"><i ng-class="{'icon-qmc-expanded': showTriggerSection, 'icon-qmc-collapsed': !showTriggerSection}"></i>{{ 'qmcTaskChainDialog.triggers' | qmcTranslate }}</button>
+				<ul ng-if="showTriggerSection">
+					<li ng-repeat="event in model.triggers" data-task-id="{{event.task.id}}" data-task-name="{{event.task.name}}" data-task-type="{{event.task.taskType}}" data-trigger-id="{{event.id}}">
+						<div ng-repeat="rule in event.rules" class="flex">
+							<button type="button" class="task-select-button" ng-click="select(rule.task)">
+								<i class="task-icon-wrapper {{rule.task.statusIcon}}" title="{{ rule.task.statusLabel | qmcTranslate }}"></i>
+								<span class="task-name">{{rule.task.name}}</span>
+							</button>
+							<div class="task-action-button-wrapper">
+								<button class="task-action-button" ng-if="isStartable(rule.task.status)" ng-click="rule.task.start()" ng-disabled="rule.task.actionRequested">{{ 'qmcTaskChainDialog.start' | qmcTranslate }}</button>
+								<button class="task-action-button" ng-if="isStoppable(rule.task.status)" ng-click="rule.task.stop()" ng-disabled="rule.task.actionRequested">{{ 'qmcTaskChainDialog.stop' | qmcTranslate }}</button>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="task-section" ng-if="model.task" ng-class="{'selected-row': isSelectedRow}">
+				<i class="task-icon-wrapper {{model.task.statusIcon}}" title="{{ model.task.statusLabel | qmcTranslate }}"></i>
+				<span class="task-name">{{model.task.name}}</span>
+			</div>
+			<div class="taskchain-section" ng-if="model.taskChain.length > 0">
+				<button type="button" class="toggler-button qmc-button" ng-click="toggleTaskChainSection()"><i ng-class="{'icon-qmc-expanded': showTaskChainSection, 'icon-qmc-collapsed': !showTaskChainSection}"></i>{{ 'qmcTaskChainDialog.taskChain' | qmcTranslate }}</button>
+				<ul ng-if="showTaskChainSection">
+					<li ng-repeat="event in model.taskChain" data-task-id="{{event.task.id}}" data-task-name="{{event.task.name}}" data-task-type="{{event.task.taskType}}" data-trigger-id="{{event.id}}">
+						<div class="flex">
+							<button type="button" class="task-select-button" ng-click="select(event.task)">
+								<i class="task-icon-wrapper {{event.task.statusIcon}}" title="{{ event.task.statusLabel | qmcTranslate }}"></i>
+								<span class="task-name">{{event.task.name}}</span>
+							</button>
+							<div class="task-action-button-wrapper">
+								<button class="task-action-button" ng-if="isStartable(event.task.status)" ng-click="event.task.start()" ng-disabled="event.task.actionRequested">{{ 'qmcTaskChainDialog.start' | qmcTranslate }}</button>
+								<button class="task-action-button" ng-if="isStoppable(event.task.status)" ng-click="event.task.stop()" ng-disabled="event.task.actionRequested">{{ 'qmcTaskChainDialog.stop' | qmcTranslate }}</button>
+							</div>
+						</div>
+						<ul ng-if="event.taskChain.length > 0">
+							<li ng-repeat="childEvent in event.taskChain" data-task-id="{{childEvent.task.id}}" data-task-name="{{childEvent.task.name}}" data-task-type="{{childEvent.task.taskType}}" data-trigger-id="{{childEvent.id}}">
+								<div class="flex">
+									<button type="button" class="task-select-button" ng-click="select(childEvent.task)">
+										<i class="task-icon-wrapper {{childEvent.task.statusIcon}}" title="{{ childEvent.task.statusLabel | qmcTranslate }}"></i>
+										<span class="task-name">{{childEvent.task.name}}</span>
+									</button>
+									<div class="task-action-button-wrapper">
+										<button class="task-action-button" ng-if="isStartable(childEvent.task.status)" ng-click="childEvent.task.start()" ng-disabled="childEvent.task.actionRequested">{{ 'qmcTaskChainDialog.start' | qmcTranslate }}</button>
+										<button class="task-action-button" ng-if="isStoppable(childEvent.task.status)" ng-click="childEvent.task.stop()" ng-disabled="childEvent.task.actionRequested">{{ 'qmcTaskChainDialog.stop' | qmcTranslate }}</button>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+	</div>
+</qmc-popover>

@@ -1,0 +1,96 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+
+		<qmc-property-edit-empty-warning url="/nodes/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.ServerNodeConfiguration.name"
+											  ng-model="editModel.property.name"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-node-edit-name">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.ServerNodeConfiguration.hostName"
+											  ng-model="editModel.property.hostName"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-node-edit-hostName">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmcNodeEdit.qmcPropertyEditGroup.nodePurpose" force-show="true">
+				<qmc-property-edit-select-input label="qros.ServerNodeConfiguration.nodePurpose"
+												ng-model="editModel.property.nodePurpose"
+												error-message-callback="errorMessageCallback"
+												translation-prefix="qros.ServerNodeConfiguration.nodePurpose"
+												no-empty-value="true"
+												id="qmc-node-edit-nodePurpose">
+				</qmc-property-edit-select-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmcNodeEdit.qmcPropertyEditGroup.nodeRole" force-show="true">
+				<qmc-property-edit-bool-input label="qros.ServerNodeConfiguration.failoverCandidate"
+												ng-model="editModel.property.failoverCandidate"
+												error-message-callback="errorMessageCallback"
+												id="qmc-node-edit-failoverCandidate">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-object-list-input ng-model="editModel.property.roles"
+														error-message-callback="errorMessageCallback"
+														id="qmc-node-edit-roles"
+														table-heading="qmcNodeEditControl.roles.header.label"
+														display-property="definition"
+														display-type="Enum"
+														parent-selection-set="selectionSet"
+														select-dialog-data="selectDialogData",
+														hide-buttons="true",
+														enum-translation-prefix="qros.ServerNodeRole",
+														list-type="ref",
+														no-values-string-key="qmcNodeEditControl.roles.novalues">
+				</qmc-property-edit-object-list-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmcNodeEdit.qmcPropertyEditGroup.serviceActivation" force-show="true">
+				<qmc-property-edit-bool-input label="qros.ServerNodeConfiguration.repositoryEnabled"
+											  ng-model="repositoryEnabledModel"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-node-edit-repositoryEnabled">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-bool-input label="qros.ServerNodeConfiguration.engineEnabled"
+											  ng-model="editModel.property.engineEnabled"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-node-edit-engineEnabled">
+				</qmc-property-edit-bool-input>
+				<qmc-contextual-notifier msg-type="warning" msg-string="coreWarning" ng-if="coreWarning"></qmc-contextual-notifier>
+
+				<qmc-property-edit-bool-input label="qros.ServerNodeConfiguration.printingEnabled"
+											  ng-model="editModel.property.printingEnabled"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-node-edit-printingEnabled">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-bool-input label="qros.ServerNodeConfiguration.proxyEnabled"
+											  ng-model="editModel.property.proxyEnabled"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-node-edit-proxyEnabled">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-bool-input label="qros.ServerNodeConfiguration.schedulerEnabled"
+											  ng-model="editModel.property.schedulerEnabled"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-node-edit-schedulerEnabled">
+				</qmc-property-edit-bool-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.tags" force-show="{{detached}}">
+				<qmc-tag-control ng-model="editModel.property.tags"
+								 error-message-callback="errorMessageCallback"
+								 id="qmc-node-edit-tags">
+				</qmc-tag-control>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.customProperties" force-show="{{detached}}">
+				<qmc-property-edit-custom-properties ng-model="editModel.property.customProperties">
+				</qmc-property-edit-custom-properties>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-node-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

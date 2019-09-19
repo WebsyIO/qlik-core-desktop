@@ -1,0 +1,67 @@
+﻿<qmc-popup width="850" enable-draggable="true" popup-name="qmcMultiConflictDialog" error-header="conflicts">
+	<header>{{'qmcMultiConflictDialog.heading' | qmcTranslate : conflicts.length}}</header>
+	<main class="qmc-multi-conflict-dialog">
+		<div class="infoMessage">
+			<div>{{'qmcMultiConflictDialog.conflictInfoMessage' | qmcTranslate}}</div>
+			<div class="conflictAction">
+				<input type="radio" ng-model="resolveConflict.val" ng-value="false" id="qmcMultiConflictDialog.radio.discard">
+				<label for="qmcMultiConflictDialog.radio.discard">{{'qmcMultiConflictDialog.discardChanges' | qmcTranslate}}</label>
+			</div>
+			<div class="conflictAction">
+				<input type="radio" ng-model="resolveConflict.val" ng-value="true" id="qmcMultiConflictDialog.radio.resolve">
+				<label for="qmcMultiConflictDialog.radio.resolve">{{'qmcMultiConflictDialog.resolveConflict' | qmcTranslate}}</label>
+			</div>
+		</div>
+		<div class="conflictTable">
+			<table>
+				<thead>
+					<tr>
+						<td>{{'qmcMultiConflictDialog.table.header.update' | qmcTranslate}}</td>
+						<td>{{'qmcMultiConflictDialog.table.header.item' | qmcTranslate}}</td>
+						<td>{{'qmcMultiConflictDialog.table.header.editBy' | qmcTranslate}}</td>
+						<td>{{'qmcMultiConflictDialog.table.header.property' | qmcTranslate}}</td>
+						<td>{{'qmcMultiConflictDialog.table.header.serverValue' | qmcTranslate}}</td>
+						<td>{{'qmcMultiConflictDialog.table.header.localValue' | qmcTranslate}}</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat-start="conflict in conflicts" class="separator">
+						<td class="spacing"><input type="checkbox" ng-model="conflict.overwrite" ng-disabled="conflict.isReadonly || !resolveConflict.val"></td>
+						<td>{{conflict.name}}</td>
+						<td ng-if="!conflict.isReadonly">{{conflict.modifiedByUserName}}</td>
+						<td ng-if="!conflict.isReadonly && conflict.diff.length>0" title="{{showDetails ? '' : propList(conflict.diff)}}">{{conflict.diff[0].property}}<span ng-if="conflict.diff.length>1 && !showDetails">...</span></td>
+						<td ng-if="!conflict.isReadonly && conflict.diff.length>0" title="{{conflict.diff[0].objectTitle}}">{{conflict.diff[0].objectVal}}</td>
+						<td ng-if="!conflict.isReadonly && conflict.diff.length>0" title="{{conflict.diff[0].modelTitle}}">{{conflict.diff[0].modelVal}}</td>
+						<td ng-if="!conflict.isReadonly && conflict.diff.length===0" colspan="3" class="isReadonly">{{'qmcMultiConflictDialog.isSame' | qmcTranslate}}</td>
+						<td ng-if="conflict.isReadonly" colspan="4" class="isReadonly">{{'qmcMultiConflictDialog.isReadonly' | qmcTranslate}}</td>
+					</tr>
+					<tr ng-repeat-end ng-repeat="diff in conflict.diff" ng-if="$index>0 && showDetails">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>{{diff.property}}</td>
+						<td title="{{diff.objectTitle}}">{{diff.objectVal}}</td>
+						<td title="{{diff.modelTitle}}">{{diff.modelVal}}</td>
+					</tr>
+					<tr class="separator"><td colspan="6"> </td></tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="actions">
+			<input type="checkbox" ng-model="toggle.val" id="qmcMultiConflictDialog-selectAll" ng-disabled="!resolveConflict.val" />
+			<label for="qmcMultiConflictDialog-selectAll">{{'qmcMultiConflictDialog.checkbox.selectAll'| qmcTranslate}}</label>
+			<span class="showDetails" ng-show="hasDetails">
+				<input type="checkbox" ng-model="showDetails" id="qmcMultiConflictDialog-showDetails" />
+				<label for="qmcMultiConflictDialog-showDetails">{{'qmcMultiConflictDialog.checkbox.showDetail' | qmcTranslate}}</label>
+			</span>
+		</div>
+	</main>
+	<footer>
+		<button type="button" class="dialog-button-qmc" ng-click="cancelClick( $event )" ng-disabled="inProgress" id="qmc-multi-conflict-dialog-button-cancel">
+			{{'qmcMultiConflictDialog.cancelButton' | qmcTranslate}}
+		</button>
+		<button type="button" class="dialog-button-qmc" ng-click="okClick( $event )" ng-disabled="inProgress" id="qmc-multi-conflict-dialog-button-ok">
+			{{'qmcMultiConflictDialog.okButton' | qmcTranslate}}
+		</button>
+	</footer>
+</qmc-popup>

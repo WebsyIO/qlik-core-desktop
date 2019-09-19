@@ -1,0 +1,93 @@
+﻿<div class="qmc-rule-wizard" ng-disabled="ngDisabled">
+	<div ng-if="topgroups != null">
+		<div ng-if="topgroups" class="topGroup" ng-repeat-start="groups in topgroups">
+			<div ng-if="groups.length===0">
+				<qmc-button class="qmc-search-wizard rightAlign" icon="add" action="addCondition(0,0)" disabled="tableClearAction.isDisabled"></qmc-button>
+				<br/><br/>
+			</div>
+			<div ng-if="groups" class="boolGroup" ng-repeat-start="group in groups">
+				<table>
+					<tbody class="qmc-search-condition" ng-repeat-start="condition in group">
+						<tr>
+							<td>
+								<select title="{{condition.sourceResource}}" ng-model="condition.sourceResource" ng-options="property for property in rootAttributes" ng-disabled="condition.isReadonly || ngDisabled" ng-change="changeResource(condition)"></select>
+							</td>
+							<td>
+								<select title="{{condition.sourceProperty}}" ng-model="condition.sourceProperty" ng-disabled="condition.isReadonly || ngDisabled" ng-options="property for property in resourceProperties[condition.sourceResource]" ng-change="condition.value=''"></select>
+							</td>
+							<td class="operator">
+								<select ng-model="condition.operator" ng-disabled="condition.isReadonly || ngDisabled" ng-options="property for property in operators"></select>
+							</td>
+							<td class="actionButton actionButtonAlignRight">
+								<qmc-button ng-if="!condition.isReadonly && !ngDisabled && (topgroups.length>1 || groups.length>1 || group.length>1)"
+											class="qmc-search-wizard qmc-search-wizard-xsmall-icon" icon="remove" action="removeCondition(topgroups, groups, $parent.$parent.$index, $index)" disabled="tableClearAction.isDisabled"></qmc-button>
+							</td>
+							<td class="actionButton actionButtonAlignLeft">
+								<qmc-button ng-if="!condition.isReadonly && !ngDisabled"
+											class="qmc-search-wizard qmc-search-wizard-xsmall-icon" icon="add" action="addCondition(group,$index)" disabled="tableClearAction.isDisabled"></qmc-button>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<select class="selector" title="{{condition.targetResource}}" ng-model="condition.targetResource" ng-disabled="condition.isReadonly || ngDisabled" ng-options="property for property in ['value'].concat(rootAttributes)"></select>
+							</td>
+							<td colspan="2">
+								<div class="inputwrapper" ng-if="condition.targetResource=='value'">
+									<qmc-autocomplete autocomplete-search-model="autocompleteSearchModel" ng-disabled="ngDisabled" property-model="condition"></qmc-autocomplete>
+								</div>
+								<select ng-if="condition.targetResource!='value'"
+										class="selector"
+										title="{{condition.targetProperty}}"
+										ng-disabled="condition.isReadonly || ngDisabled"
+										ng-model="condition.targetProperty"
+										ng-options="property for property in resourceProperties[condition.targetResource]"></select>
+							</td>
+						</tr>
+					</tbody>
+
+					<tbody ng-repeat-end ng-if="$index<(group.length-1)">
+						<tr>
+							<td class="groupOperators">
+								<select class="boolOperator" ng-model="condition.boolOperator" ng-disabled="condition.isReadonly || ngDisabled">
+									<option value="and">AND</option>
+									<option value="or" selected="">OR</option>
+								</select>
+							</td>
+							<td colspan="4" class="groupOperators">
+								<qmc-button disabled="condition.isReadonly || ngDisabled" class="qmc-search-wizard-group rightAlign" action="splitGroup(groups,group,$index+1)">
+									{{'qmcExpressionBuilder.grouping.ungroup' | qmcTranslate}}
+								</qmc-button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div ng-repeat-end class="groupOperators" ng-if="$index<(groups.length-1)">
+				<div class="rightAlign">
+					<qmc-button disabled="condition.isReadonly || ngDisabled" class="qmc-search-wizard-group" action="mergeGroups(groups, $parent.$index)">
+						{{'qmcExpressionBuilder.grouping.group' | qmcTranslate}}
+					</qmc-button>
+					<qmc-button disabled="condition.isReadonly || ngDisabled" class="qmc-search-wizard-group" action="splitTopGroup(topgroups, groups, $parent.$index+1)">
+						{{'qmcExpressionBuilder.grouping.split' | qmcTranslate}}
+					</qmc-button>
+				</div>
+				<select ng-model="group[group.length-1].boolOperator" ng-disabled="condition.isReadonly || ngDisabled">
+					<option value="and">AND</option>
+					<option value="or" selected="">OR</option>
+				</select>
+			</div>
+		</div>
+		<div ng-repeat-end class="groupOperators" ng-if="$index<(topgroups.length-1)">
+			<div class="rightAlign">
+				<qmc-button disabled="condition.isReadonly || ngDisabled" class="qmc-search-wizard-group" action="mergeTopGroups(topgroups, $parent.$index)">
+					{{'qmcExpressionBuilder.grouping.join' | qmcTranslate}}
+				</qmc-button>
+			</div>
+			<select class="boolOperator" ng-model="groups[groups.length-1][groups[groups.length-1].length-1].boolOperator" ng-disabled="condition.isReadonly || ngDisabled">
+				<option value="and">AND</option>
+				<option value="or" selected="">OR</option>
+			</select>
+		</div>
+	</div>
+	<qmc-contextual-notifier ng-if="!topgroups" msg-type="error" msg-string="backtrackErrorMsg"></qmc-contextual-notifier>
+</div>

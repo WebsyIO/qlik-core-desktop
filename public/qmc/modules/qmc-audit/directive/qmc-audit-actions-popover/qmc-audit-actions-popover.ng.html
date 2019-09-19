@@ -1,0 +1,12 @@
+﻿<qmc-popover align-to="alignTo" position="bottom" collision="flipfit" toggle="closeActionsPopover($event)" spinner="inProgress">
+	<div class="qmc-popover-header" ng-if="action==='setEnvironment'">
+		<h1><span>{{'qmcAuditActionsPopover.heading.setEnvironment' | qmcTranslate}}</span></h1>
+	</div>
+	<div class="maincontent">
+		<textarea id="qmcAuditActionsPopover.environment" ng-if="action==='setEnvironment'" ng-click="stopEvent($event)" maxlength="5000" class="qmc-input environment-input" ng-model="audit.filters.environment" rows="3" qmc-placeholder="{{'qmcAuditActionsPopover.filters.environment.placeholder' | qmcTranslate}}"></textarea>
+		<div class="size-warning" ng-if="action==='sizeWarning'">
+			<i class="icon-qmc-warning qmc-flex-none"></i>
+			<span>{{'qmcAuditActionsPopover.content.sizeWarning' | qmcTranslate}}</span>
+		</div>
+	</div>
+</qmc-popover>

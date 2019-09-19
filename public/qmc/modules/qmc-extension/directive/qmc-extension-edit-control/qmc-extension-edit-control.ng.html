@@ -1,0 +1,37 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+
+		<qmc-property-edit-empty-warning url="/extensions/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.Extension.name"
+											  ng-model="editModel.property.name"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-extension-edit-name">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-autocomplete-text-input label="qros.common.owner"
+														   ng-model="editModel.property.owner"
+														   autocomplete-search-model="autocompleteSearchModel"
+														   error-message-callback="errorMessageCallback"
+														   id="qmc-app-edit-owner"
+														   is-new="editModel.isNew">
+				</qmc-property-edit-autocomplete-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.tags" force-show="{{detached}}">
+				<qmc-tag-control ng-model="editModel.property.tags"
+								 error-message-callback="errorMessageCallback"
+								 id="qmc-extension-edit-tags">
+				</qmc-tag-control>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.customProperties" force-show="{{detached}}">
+				<qmc-property-edit-custom-properties ng-model="editModel.property.customProperties">
+				</qmc-property-edit-custom-properties>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-extension-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

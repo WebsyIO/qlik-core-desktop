@@ -1,0 +1,131 @@
+﻿<div id="editViewContainer" class="qmc-property-edit" ng-show="editConfig.hasEditView" style="position: absolute; left: 0; bottom: 0; right: 65%; top: 0; margin: 5px 0 5px 5px;">
+	<div class="qmc-property-edit-main" qmc-property-edit-handler>
+		<div class="qmc-property-edit-content" style="right:0">
+			<qmc-stage-header stage-header-icon="{{editConfig.icon || ('icon-qmc-' +editConfig.resourceType)}}"
+							  stage-header-label="{{editConfig.editHeading}}"
+							  stage-header-action-icon="button-icon icon-qmc-help icon-small"
+							  stage-header-action-label="qmcPopup.helpLink"
+							  stage-header-actions="showEditHelp"
+							  class="{{editConfig.sectionClass}}">
+			</qmc-stage-header>
+			<i ng-click="closeEditView()"
+			   id="qmcAuditOverview.action.closeEdit"
+			   title="{{'qmcAuditOverview.action.closeEdit.title' | qmcTranslate}}"
+			   class="button-icon icon-qmc-close icon-small qmc-audit-overview-close-edit"></i>
+			<div id="editControlContainer" class="qmc-property-edit-form"></div>
+		</div>
+	</div>
+</div>
+<div class="qmc-route-stage-container qmc-audit-overview" ng-style="{'left': editConfig.hasEditView ? '35%' : '0'}">
+	<div class="qmc-audit-overview-header qmc-manage-resources-section">
+		<div class="heading">
+			<h1>
+				<i class="icon-qmc-Audit"></i>
+				<span>{{'qmc.resourceType.Audit' | qmcTranslate}}</span>
+			</h1>
+		</div>
+		<div class="actions">
+			<qmc-button action="selectActions($event)"
+						id="qmcAuditOverview.action.selectActions"
+						icon="picker"
+						class="qmc-table-header"
+						title="{{'qmcAuditOverview.action.selectActions.title' | qmcTranslate}}"
+						disabled="audit.inProgress || audit.category==='License' || !audit.resource.type || actionSelectorButtonDisabled">
+				{{'qmcAuditOverview.action.selectActions' | qmcTranslate}}
+			</qmc-button>
+
+			<qmc-button action="clearFilters($event)"
+						id="qmcAuditOverview.action.clearFilters"
+						icon="delete"
+						class="qmc-table-header"
+						title="{{'qmcAuditOverview.action.clearFilters.title' | qmcTranslate}}"
+						disabled="audit.inProgress">
+				{{'qmcAuditOverview.action.clearFilters' | qmcTranslate}}
+			</qmc-button>
+
+			<qmc-button action="switchAutoAudit($event)"
+						id="qmcAuditOverview.action.switchAutoAudit"
+						class="qmc-table-header"
+						title="{{'qmcAuditOverview.action.autoAudit.title' | qmcTranslate}}"
+						disabled="audit.inProgress">
+				<input type="checkbox" ng-checked="autoAudit" class="auto-audit-checkbox">
+				{{'qmcAuditOverview.action.autoAudit' | qmcTranslate}}</input>
+			</qmc-button>
+
+			<select id="qmcAuditOVerview.categorySelector" class="category-selector" title="{{'qmcAuditOverview.action.switchCategory.title' | qmcTranslate}}"
+					ng-model="audit.category" ng-disabled="audit.inProgress" ng-change="switchCategory()"
+					ng-options="category as (categoryKey[category] | qmcTranslate) for category in auditCategories"></select>
+
+		</div>
+	</div>
+	<div class="subheader">
+		<div class="group">
+			&nbsp;
+			<qmc-button action="runAudit()"
+						id="qmcAuditOverview.action.audit"
+						class="qmc-actionbuttons auditButton"
+						title="{{'qmcAuditOverview.action.audit.title' | qmcTranslate}}"
+						disabled="auditDisabled()">
+				{{'qmcAuditOverview.action.audit' | qmcTranslate}}
+			</qmc-button>
+			&nbsp;
+		</div>
+		<div class="group">
+			<span title="{{'qmcAuditGrid.axisLabel.target.title' | qmcTranslate}}">{{'qmcAuditOverview.label.resourceFilter' | qmcTranslate}}</span>
+			<span>
+				<select
+					id="qmcAuditOVerview.resourceSelector"
+					class="resource-selector"
+					title="{{'qmcAuditOverview.resourceSelector.label' | qmcTranslate}}"
+					ng-model="audit.resource"
+					ng-disabled="audit.inProgress"
+					ng-change="onChooseResource()"
+					ng-options="auditResource as (auditResource.display | qmcTranslate) for auditResource in auditResources[audit.category]">
+			</select>
+			</span>
+			<qmc-button action="resourceSearch($event)"
+						id="qmcAuditOverview.action.resourceSearch"
+						icon="magnifier"
+						class="{{'qmc-search-wizard' + (audit.resourceSelectionSet && audit.resourceSelectionSet.length ? ' activeButton' : '')}}"
+						title="{{'qmcAuditOverview.action.resourceSearch.title' | qmcTranslate}}"
+						disabled="audit.inProgress || filterButtonDisabled || !audit.resource.type || !audit.resource.table"></qmc-button>
+			<span id="qmcAuditOverview.resourceCount">={{(audit.resourceSelectionSet ? audit.resourceSelectionSet.length : 0) || audit.resourceCount}}</span>
+		</div>
+		<div class="group" ng-if="audit.category!=='Sync'">
+			<span title="{{'qmcAuditGrid.axisLabel.source.title' | qmcTranslate}}">{{'qmcAuditOverview.label.userFilter' | qmcTranslate}}</span>
+			<qmc-button action="userSearch($event)"
+						id="qmcAuditOverview.action.userSearch"
+						icon="magnifier"
+						class="{{'qmc-search-wizard' + (userTableController.searchgroup.isClear() ? '' : ' activeButton')}}"
+						title="{{'qmcAuditOverview.action.userSearch.title' | qmcTranslate}}"
+						disabled="audit.inProgress || filterButtonDisabled"></qmc-button>
+			<span id="qmcAuditOverview.userCount">={{userCount}}</span>
+		</div>
+
+		<div class="group">
+			{{'qmcAuditOverview.label.environment' | qmcTranslate}}
+			<span>
+				<select class="resource-selector"
+						ng-disabled="audit.inProgress" ng-model="audit.filters.context"
+						ng-change="changeContext()"
+						ng-options="auditContext as auditContext.display for auditContext in auditContexts"></select>
+			</span>
+			<qmc-button action="setEnvironment($event)"
+						id="qmcAuditOverview.action.setEnvironment"
+						icon="filter"
+						class="{{'qmc-search-wizard' + (audit.filters.environment.length == 0 ? '' : ' activeButton')}}"
+						title="{{'qmcAuditOverview.action.setEnvironment.title' | qmcTranslate}}"
+						disabled="audit.inProgress || setEnvironmentButtonDisabled"></qmc-button>
+		</div>
+	</div>
+	<div class="qmc-audit-grid-container">
+		<div class="auditHelp" ng-if="showHelp">
+			<i class="icon-qmc-Audit"></i>
+			<div>{{'qmcAuditGrid.helptext' | qmcTranslate}}</div>
+		</div>
+		<qmc-audit-grid ng-show="!showHelp" audit-config="audit" double-click-handler="auditDetails"></qmc-audit-grid>
+		<qmc-spinner in-progress="audit.inProgress"></qmc-spinner>
+	</div>
+	<qmc-action-alert-bar message-key="qmcAuditOverview"></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc.actionbar.audit" class="qmc-overview-footer" actions="actionDefinition"></qmc-actionbar>
+</div>

@@ -1,0 +1,59 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+
+		<qmc-property-edit-empty-warning url="/users/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.User.name"
+											  ng-model="editModel.property.name"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-user-edit-name">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.User.userDirectory"
+											  ng-model="editModel.property.userDirectory"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-user-edit-userDirectory">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.User.userId"
+											  ng-model="editModel.property.userId"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-user-edit-userId">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-bool-input label="qros.User.blacklisted"
+											  ng-model="editModel.property.blacklisted"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-user-edit-blacklisted">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-bool-input label="qros.User.deleteProhibited"
+											  ng-model="editModel.property.deleteProhibited"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-user-edit-deleteProhibited">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-list-input ng-model="editModel.property.roles"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-user-edit-roles"
+											  text-list-type="qmc-user-edit-roles"
+											  table-heading="qros.User.roles"
+											  column-heading="editModel.property.roles.column.heading"
+											  add-button-text="editModel.property.roles.addButton.label"
+											  auto-complete-resource="User">
+				</qmc-property-edit-list-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.tags" force-show="{{detached}}">
+				<qmc-tag-control ng-model="editModel.property.tags"
+								 error-message-callback="errorMessageCallback"
+								 id="qmc-user-edit-tags">
+				</qmc-tag-control>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.customProperties" force-show="{{detached}}">
+				<qmc-property-edit-custom-properties ng-model="editModel.property.customProperties">
+				</qmc-property-edit-custom-properties>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-user-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

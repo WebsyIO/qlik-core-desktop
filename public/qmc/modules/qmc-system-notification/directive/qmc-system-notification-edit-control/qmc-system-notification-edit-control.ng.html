@@ -1,0 +1,60 @@
+<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+		<qmc-property-edit-empty-warning url="/systemnotifications/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.SystemNotification.title"
+											  ng-model="editModel.property.title"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-systemnotification-edit-title">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.SystemNotification.message"
+											  ng-model="editModel.property.message"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-systemnotification-edit-message"
+											  rows="5">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.SystemNotification.url"
+											  ng-model="editModel.property.url"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-systemnotification-edit-url">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-object-list-input ng-model="editModel.property.targetUsers"
+							error-message-callback="errorMessageCallback"
+							id="qmc-systemnotification-edit-targetUsers"
+							select-dialog-data="selectDialogData"
+							table-heading="qmcSystemNotificationEditControl.targetUsers.label"
+							column-heading="qmcSystemNotificationEditControl.targetUsers.column.label"
+							add-button-text="qmcSystemNotificationEditControl.targetUsers.add.label"
+							delete-button-text="qmcSystemNotificationEditControl.targetUsers.delete.label"
+							parent-selection-set="selectionSet"
+							table-service="tableService"
+							is-set="isSet"
+							display-property="name",
+							list-type="ref"
+							no-filter="true"
+							show-delete-button="true">
+			</qmc-property-edit-object-list-input>
+			<qmc-property-edit-list-input ng-model="editModel.property.targetGroups"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-systemnotification-edit-targetGroups"
+											  text-list-type="qmc-system-notification-edit-targetGroups"
+											  table-heading="qros.SystemNotification.targetGroups"
+											  column-heading="editModel.property.targetGroups.column.heading"
+											  add-button-text="editModel.property.targetGroups.addButton.label"
+											  auto-complete-resource="User"
+											  auto-complete-property="group"
+											  privileged-add-button-on-empty="true">
+				</qmc-property-edit-list-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.customProperties" force-show="{{detached}}">
+				<qmc-property-edit-custom-properties ng-model="editModel.property.customProperties">
+				</qmc-property-edit-custom-properties>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-systemnotification-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

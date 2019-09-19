@@ -1,0 +1,80 @@
+﻿
+<qmc-popup width="800" maxheight="580" enable-draggable="true">
+	<header>{{ 'qmcTaskEventEditDialog.title' | qmcTranslate}}</header>
+	<main class="qmc-property-edit">
+		<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+			<div class="qmc-property-edit-groups">
+				<!-- Trigger name-->
+				<qmc-property-edit-text-input label="qmcTaskEventEditDialog.name.label"
+											  ng-model=" editModel.property.name"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-trigger-edit-name">
+				</qmc-property-edit-text-input>
+				<hr />
+
+				<!-- Enabled -->
+				<qmc-property-edit-bool-input label="qmcTaskEventEditDialog.enabled.label"
+											  ng-model="editModel.property.enabled"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-trigger-edit-enabled">
+				</qmc-property-edit-bool-input>
+				<hr />
+
+				<!-- Time constraint -->
+				<h3 class="qmc-property-edit-group-label qmc-property-edit-row">{{'qmcTaskEventEditDialog.timeConstraint.label' | qmcTranslate | uppercase}}</h3>
+
+				<qmc-property-edit-text-input label="qmcTaskEventEditDialog.timeConstraint.seconds.label"
+											  ng-model="editModel.property.timeConstraint.property.seconds"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-trigger-edit-seconds">
+				</qmc-property-edit-text-input>
+
+				<qmc-property-edit-text-input label="qmcTaskEventEditDialog.timeConstraint.minutes.label"
+											  ng-model="editModel.property.timeConstraint.property.minutes"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-trigger-edit-minutes">
+				</qmc-property-edit-text-input>
+
+				<qmc-property-edit-text-input label="qmcTaskEventEditDialog.timeConstraint.hours.label"
+											  ng-model="editModel.property.timeConstraint.property.hours"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-trigger-edit-hours">
+				</qmc-property-edit-text-input>
+
+				<qmc-property-edit-text-input label="qmcTaskEventEditDialog.timeConstraint.days.label"
+											  ng-model="editModel.property.timeConstraint.property.days"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-trigger-edit-days">
+				</qmc-property-edit-text-input>
+
+
+				<hr />
+
+				<!-- Task chain -->
+				<qmc-property-edit-list-input ng-model="editModel.property.compositeRules"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-tasks-triggers-events"
+											  object-chooser="objectChooserOpts"
+											  table-heading="qmcTaskEventEditDialog.tasks.label"
+											  add-button-text="compositeEventRules.button.addItem"
+											  allow-empty="false">
+				</qmc-property-edit-list-input>
+			</div>
+		</form>
+	</main>
+	<footer>
+		<button id="qmc-task-trigger-event-cancel"
+				class="dialog-button-qmc"
+				ng-click="dialogCancelClick( $event )"
+				value="Cancel">
+			{{ 'qmcTaskEventEditDialog.button.cancel' | qmcTranslate }}
+		</button>
+		<button id="qmc-task-trigger-event-add"
+				class="dialog-button-qmc"
+				ng-click="dialogOkClick( $event )"
+				ng-disabled="editForm.$invalid || !editModel.hasChanged"
+				value="Add">
+			{{ 'qmcTaskEventEditDialog.button.ok' | qmcTranslate }}
+		</button>
+	</footer>
+</qmc-popup>

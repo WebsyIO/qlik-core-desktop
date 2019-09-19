@@ -1,0 +1,6 @@
+﻿<a ng-href="{{ tile.href }}" class="qmc-startpagetile" ng-class="{ 'qmc-disabled': tile.disabled }" ng-repeat="tile in tiles">
+	<i class="icon-large {{ tile.icon }}"></i>
+	<div class="heading">{{ tile.label | qmcTranslate }} {{ tile.count }}</div>
+	<hr>
+	<div class="tileText">{{ tile.text | qmcTranslate}}</div>
+</a>

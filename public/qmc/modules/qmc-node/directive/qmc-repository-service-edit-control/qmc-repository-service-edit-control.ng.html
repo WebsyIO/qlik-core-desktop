@@ -1,0 +1,106 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+
+		<qmc-property-edit-empty-warning url="/repositories/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.RepositoryService.name"
+											  ng-model="nodeNameProperty"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-repository-service-edit-node">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.logging" force-show="true">
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbosityAuditActivity"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityAuditActivity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Basic"
+											id="qmc-repository-service-edit-logVerbosityAuditActivity">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbosityAuditSecurity"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityAuditSecurity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Basic"
+											id="qmc-repository-service-edit-logVerbosityAuditSecurity">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbosityService"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityService"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Error,Warning,Info"
+											id="qmc-repository-service-edit-logVerbosityService">
+				</qmc-property-edit-loglevel>
+				<h4 class="qmc-node-trace-log-heading">{{'qmcNode.trace.log.heading' | qmcTranslate}}</h4>
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbosityApplication"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityApplication"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-repository-service-edit-logVerbosityApplication">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbosityAudit"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityAudit"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-repository-service-edit-logVerbosityAudit">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbosityLicense"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityLicense"
+											error-message-callback="errorMessageCallback"
+											log-levels="Info,Debug"
+											id="qmc-repository-service-edit-logVerbosityLicense">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbosityManagementConsole"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityManagementConsole"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-repository-service-edit-logVerbosityManagementConsole">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbosityPerformance"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityPerformance"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-repository-service-edit-logVerbosityPerformance">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbositySecurity"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbositySecurity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-repository-service-edit-logVerbositySecurity">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbositySynchronization"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbositySynchronization"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-repository-service-edit-logVerbositySynchronization">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbositySystem"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbositySystem"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-repository-service-edit-logVerbositySystem">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.RepositoryService.logVerbosityUserManagement"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityUserManagement"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-repository-service-edit-logVerbosityUserManagement">
+				</qmc-property-edit-loglevel>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.tags" force-show="{{detached}}">
+				<qmc-tag-control ng-model="editModel.property.tags"
+								 error-message-callback="errorMessageCallback"
+								 id="qmc-repository-service-edit-tags">
+				</qmc-tag-control>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.customProperties" force-show="{{detached}}">
+				<qmc-property-edit-custom-properties ng-model="editModel.property.customProperties">
+				</qmc-property-edit-custom-properties>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-repository-service-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

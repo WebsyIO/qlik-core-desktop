@@ -1,0 +1,12 @@
+@font-face {
+  src: url('./New Walt Disney UI.ttf');
+  font-family: "Disney";
+}
+
+.qv-object * {
+    font-family: 'Disney';
+}
+
+[tid='KPKzVR'] .qv-inner-object {
+	background-color: red;
+}

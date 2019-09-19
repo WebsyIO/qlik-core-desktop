@@ -1,0 +1,74 @@
+﻿<qmc-popup width="400" maxheight="400" enable-draggable="true">
+	<header>{{ 'qmcImportAppDialog.heading' | qmcTranslate}}</header>
+	<main>
+		<div>
+			<form name="importAppForm" ng-submit="">
+				<qmc-property-edit-file-input ng-model="appImportModel.property.file"
+				  error-message-callback="errorMessageCallback"
+				  id="qmc-app-import-edit-file"
+				  ignore-edit-style="true"
+				  ignore-undo="true"
+				  focus-on-load="true">
+				</qmc-property-edit-file-input>
+				<hr />
+				<div ng-if="!appImportModel.property.replaceApp.value">
+					<qmc-property-edit-text-input ng-model="appImportModel.property.name"
+					  label="qmcImportAppDialog.inputlabel.name"
+					  error-message-callback="errorMessageCallback"
+					  id="qmc-app-import-edit-name"
+					  ignore-edit-style="true"
+					  ignore-undo="true">
+					</qmc-property-edit-text-input>
+					<hr />
+					<qmc-contextual-notifier msg-type="warning" msg-string="warningMessage"></qmc-contextual-notifier>
+				</div>
+				<qmc-object-chooser label="qmcPublishAppDialog.heading.appToReplace"
+					dialog-header="qmcImportAppDialog.heading.appChooser"
+					table-service="tableService"
+					resource-type="'App'"
+					ng-model="appImportModel.property.appToReplace"
+					id="qmc-import-app-dialog-app-chooser"
+					ignore-undo="true">
+				</qmc-object-chooser>
+				<hr />
+				<qmc-property-edit-bool-input
+					class="qmc-import-app-dialog__checkbox-label"
+					id="qmc-import-app-dialog-replaceApp"
+					ignore-undo="true"
+					label="qmcImportAppDialog.replaceApp.checkbox.message"
+					ng-model="appImportModel.property.replaceApp">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-bool-input
+					class="qmc-import-app-dialog__checkbox-label"
+					id="qmc-import-app-dialog-keepData"
+					ignore-undo="true"
+					label="qmcImportAppDialog.keepData.checkbox.message"
+					ng-model="appImportModel.property.keepData">
+				</qmc-property-edit-bool-input>
+				<div ng-if="appImportModel.property.replaceApp.value && appImportModel.property.keepData.value">
+					<hr />
+					<qmc-contextual-notifier msg-type="warning" msg-string="possiblyBrokenMessage"></qmc-contextual-notifier>
+				</div>
+			</form>
+		</div>
+	</main>
+	<footer>
+		<button id="qmc-app-import-button-cancel" class="dialog-button-qmc" ng-click="dialogCancelClick( $event )" value="Cancel">{{ 'qmcImportAppDialog.button.cancel' | qmcTranslate}}</button>
+		<button id="qmc-app-import-button-import"
+				class="dialog-button-qmc"
+				ng-click="dialogImportOkClick()"
+				ng-disabled="importAppForm.$invalid || !hasCreateAccess"
+				ng-if="!appImportModel.property.replaceApp.value"
+				value="Import">
+			{{ 'qmcImportAppDialog.button.ok' | qmcTranslate }}
+		</button>
+		<button id="qmc-app-import-button-import"
+				class="dialog-button-qmc"
+				ng-click="dialogReplaceOkClick()"
+				ng-disabled="importAppForm.$invalid || !appImportModel.property.hasCorrectPrivileges.value"
+				ng-if="appImportModel.property.replaceApp.value"
+				value="Import">
+			{{ 'qmcImportAppDialog.button.ok' | qmcTranslate }}
+		</button>
+	</footer>
+</qmc-popup>

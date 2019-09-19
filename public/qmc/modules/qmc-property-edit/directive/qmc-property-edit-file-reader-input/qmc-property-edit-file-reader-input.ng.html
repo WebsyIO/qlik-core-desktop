@@ -1,0 +1,21 @@
+﻿<div ng-class="{ 'qmc-property-edit-row-layout': !ignoreEditStyle }" class="qmc-property-edit-row" ng-hide="ngModel.isHidden">
+	<div class="qmc-property-edit-row-label">
+		<label for="{{elemClass}}">{{label | qmcTranslate}}</label>
+		<qmc-undo-button ng-disabled="ngModel.isDisabled" ng-click="resetNgModel()" ng-if="ngModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+		<div ng-if="!ngModel.isReady" class="spinner qv-loader">&nbsp;</div>
+	</div>
+	<div class="qmc-property-edit-row-input">
+		<qmc-button id="qmc-property-edit-file-reader-input-cancel" ng-show="!ngModel.isReady" action="cancelReadFile()">{{'qmcPropertyEditFileReaderInput.cancel.button.label' | qmcTranslate}}</qmc-button>
+		<input type="file"
+			   name="file"
+			   accept=".xml"
+			   ng-model="ngModel.value"
+			   ng-disabled="ngModel.isDisabled || ngModel.isReadonly"
+			   ng-readonly="ngModel.isReadonly"
+			   ng-change="fileInputChange()"
+			   qmc-focus="{{focusOnLoad}}" />
+		<div class="viewLink"><a ng-show="ngModel.value.length > 0 && ngModel.value !== fileToLargeErrorText" target="_blank" id="dataLink" class="dataLink" ng-click="doDisplayData()">{{'qmcPropertyEditFileReaderInput.view.link.label' | qmcTranslate }}</a></div>
+		<qmc-contextual-notifier ng-if="!ngModel.isValid && !ignoreInvalid" msg-type="error" msg-string="errorMessages"></qmc-contextual-notifier>
+		<qmc-contextual-notifier ng-if="ngModel.information" msg-type="info" msg-string="infoMessages"></qmc-contextual-notifier>
+	</div>
+</div>

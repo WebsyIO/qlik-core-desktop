@@ -1,0 +1,43 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+		<qmc-property-edit-empty-warning url="/customproperties/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.CustomPropertyDefinition.name"
+											  ng-model="editModel.property.name"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-custom-property-edit-name">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.CustomPropertyDefinition.description"
+											  ng-model="editModel.property.description"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-custom-property-edit-description">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmcCustomPropertyEdit.qmcPropertyEditGroup.resources" force-show="true">
+				<qmc-multiple-choice-input translation-prefix="qmc.resourceType."
+										   ng-model="editModel.property.objectTypes"
+										   arr-choices="customPropertyTypes"
+										   error-message-callback="errorMessageCallback"
+										   id="qmc-custom-property-edit-objectTypes">
+				</qmc-multiple-choice-input>
+				<qmc-contextual-notifier ng-if="editModel.property.objectTypes.information"
+										 msg-type="warning"
+										 msg-string="resourceTypesWarningMessage"></qmc-contextual-notifier>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmcCustomPropertyEdit.qmcPropertyEditGroup.values" force-show="true">
+				<qmc-property-edit-list-input ng-model="editModel.property.choiceValues"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-custom-property-edit-choiceValues"
+											  text-list-type="qmcCustomPropertyEdit.choiceValues"
+											  table-heading="qmcCustomPropertyEdit.choiceValues.heading"
+											  column-heading="qmcCustomPropertyEdit.choiceValues.column.heading"
+											  add-button-text="qmcCustomPropertyEdit.choiceValues.add.button.label">
+				</qmc-property-edit-list-input>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-custom-properties-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

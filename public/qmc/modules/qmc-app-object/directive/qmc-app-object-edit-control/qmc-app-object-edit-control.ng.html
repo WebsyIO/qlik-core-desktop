@@ -1,0 +1,30 @@
+﻿<form class="qmc-property-edit-form" ng-model="editModel" name="editForm" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+		<qmc-property-edit-empty-warning url="/appobjects/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.App.Object.name"
+											  ng-model="editModel.property.name"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-app-object-edit-name">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-autocomplete-text-input label="qros.common.owner"
+														   ng-model="editModel.property.owner"
+														   autocomplete-search-model="autocompleteSearchModel"
+														   error-message-callback="errorMessageCallback"
+														   id="qmc-app-object-edit-type"
+														   is-new="isNew">
+				</qmc-property-edit-autocomplete-text-input>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.tags" force-show="{{detached}}">
+				<qmc-tag-control ng-model="editModel.property.tags"
+								 error-message-callback="errorMessageCallback"
+								 id="qmc-app-object-edit-tags">
+				</qmc-tag-control>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-app-object-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

@@ -1,0 +1,39 @@
+﻿<div class="qmc-audit-overview-header">
+	<div class="heading">
+		<h1>
+			<i class="icon-qmc-Audit"></i>
+			<span>{{'qmcUserAssociation.heading' | qmcTranslate}}</span>
+		</h1>
+	</div>
+	<div class="actions">
+		<qmc-button action="runAudit()"
+					id="qmcUserAssociation.action.refresh"
+					icon="refresh"
+					class="qmc-table-header"
+					title="{{'qmcTableHeader.refreshTooltip' | qmcTranslate}}"
+					disabled="audit.inProgress"></qmc-button>
+
+		<qmc-button action="userFilter()"
+					id="qmcUserAssociation.action.search"
+					icon="magnifier"
+					class="{{'qmc-table-header' + (tableController.searchgroup.isClear() ? '' : ' activeButton')}}"
+					title="{{'qmcUserAssociation.userFilter.Tooltip' | qmcTranslate}}"
+					disabled="audit.inProgress || userFilterButtonDisabled"></qmc-button>
+
+		<qmc-button action="selectActions($event)"
+					id="qmcUserAssociation.action.selectPrivileges"
+					icon="picker"
+					class="qmc-table-header"
+					title="{{'qmcAuditOverview.action.selectActions.title' | qmcTranslate}}"
+					disabled="audit.inProgress || audit.category==='License' || actionSelectorButtonDisabled">
+			{{'qmcAuditOverview.action.selectActions' | qmcTranslate}}
+		</qmc-button>
+	</div>
+</div>
+<div class="qmc-audit-grid-container">
+	<qmc-audit-grid audit-config="audit" double-click-handler="auditDetails"></qmc-audit-grid>
+	<qmc-spinner delay="200" in-progress="audit.inProgress"></qmc-spinner>
+</div>
+<qmc-action-alert-bar></qmc-action-alert-bar>
+<qmc-actionbar id="qmc.actionbar.userAssociation" class="qmc-overview-footer" actions="actionDefinition"></qmc-actionbar>
+

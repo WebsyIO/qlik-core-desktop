@@ -1,0 +1,19 @@
+﻿<div class="popupHeader" id="qmcPopup-header">
+	<div class="topHeader"></div>
+	<div class="bottomHeader">
+		<button ng-if="helpLink"
+				id="qmc.popup.help"
+				class="qmc-popup-help icon-qmc-help icon-small ng-binding"
+				type="button"
+				ng-click="showHelp()">
+				{{'qmcPopup.helpLink' | qmcTranslate}}
+		</button>
+	</div>
+</div>
+<div class="popupContent">
+	<div class="popupMain">
+	</div>
+	<qmc-spinner in-progress="inProgress" opacity="0.4"></qmc-spinner>
+</div>
+<div class="popupMark"></div>
+<div class="popupFooter"></div>

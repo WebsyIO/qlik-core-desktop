@@ -1,0 +1,16 @@
+﻿<div class="qmc-property-edit-left">
+	<qmc-to-overview entity-type="{{config.resourceType}}" loc-ref="{{config.toOverview}}" section-name="{{config.sectionName || config.resourceType}}" overview-link="{{config.url}}" back-to-overview="config.backToOverview"></qmc-to-overview>
+	<qmc-current-selection selection-set="selectionSet"></qmc-current-selection>
+</div>
+<div class="qmc-property-edit-right">
+	<div class="qmc-property-edit-main" qmc-property-edit-handler>
+		<div class="qmc-property-edit-content">
+			<qmc-stage-header stage-header-icon="{{config.icon || ('icon-qmc-' +config.resourceType)}}"
+							  stage-header-label="{{navigationView.value==='mainEdit' ? config.editHeading : config.associationHeading || config.editHeading}}"
+							  class="{{config.sectionClass}}">
+			</qmc-stage-header>
+			<div ng-transclude class="qmc-property-edit-form"></div>
+		</div>
+		<qmc-navigator section-name="{{config.sectionName || config.resourceType}}" navigation-view="navigationView" is-new="isNew" rescue-localize="config.rescueLocalize" set-group-listener="config.setGroupListener"></qmc-navigator>
+	</div>
+</div>

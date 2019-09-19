@@ -1,0 +1,29 @@
+﻿<qmc-popup width="400" maxheight="300" enable-draggable="true" popup-name="qmcImportExtensionDialog">
+	<header>{{ 'qmcImportExtensionDialog.heading' | qmcTranslate}}</header>
+	<main>
+		<div>
+			<form name="importForm" ng-submit="">
+				<qmc-property-edit-file-input ng-model="importModel.property.file"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-extension-import-edit-file"
+											  ignore-edit-style="true"
+											  ignore-undo="true"
+											  focus-on-load="true">
+				</qmc-property-edit-file-input>
+				<hr />
+				<qmc-property-edit-text-input ng-model="importModel.property.password"
+											  label="qmcImportExtensionDialog.inputlabel.password"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-extension-import-edit-name"
+											  password="true"
+											  ignore-edit-style="true"
+											  ignore-undo="true">
+				</qmc-property-edit-text-input>
+			</form>
+		</div>
+	</main>
+	<footer>
+		<button id="qmc-extension-import-button-cancel" class="dialog-button-qmc" ng-click="dialogCancelClick( $event )" value="Cancel">{{ 'qmcImportExtensionDialog.button.cancel' | qmcTranslate}}</button>
+		<button id="qmc-extension-import-button-import" class="dialog-button-qmc" ng-click="dialogOkClick( $event )" ng-disabled="importForm.$invalid || disableImportButton()" value="Publish">{{ 'qmcImportExtensionDialog.button.ok' | qmcTranslate}}</button>
+	</footer>
+</qmc-popup>

@@ -1,0 +1,32 @@
+﻿<qmc-popover align-to="alignTo" position="bottom" collision="flipfit" toggle="closeTableSearch($event)" spinner="inProgress">
+	<div class="qmc-popover-header">
+		<h1>
+			<span>{{ (searchHeading || 'qmcTableSearch.heading') | qmcTranslate}}</span>
+		</h1>
+	</div>
+	<div class="maincontent">
+		<div class="maincontent">
+			<qmc-search-wizard entity="entity"
+							   topgroups="topgroups"
+							   selection-db-id="selectionDbId"
+							   properties="resourceProperties">
+			</qmc-search-wizard>
+		</div>
+	</div>
+	<div class="footer">
+		<button ng-if="!autoSearch"
+				type="button"
+				class="dialog-button-qmc"
+				ng-disabled="inProgress || (topgroups.isClear() && !closeOnSearch) || hasErrors()"
+				ng-click="search()"
+				id="qmc-table-search-search">
+			{{ 'qmcTableSearch.button.search' | qmcTranslate}}
+		</button>
+		<button type="button" class="dialog-button-qmc" ng-click="closeTableSearch($event)" id="qmc-table-search-close">
+			{{ autoSearch ? 'qmcConfirmPopup.okButton' : 'qmcTableSearch.button.close' | qmcTranslate}}
+		</button>
+		<button type="button" class="dialog-button-qmc" ng-click="clearSearch()" id="qmc-table-search-clear">
+			{{ 'qmcTableSearch.button.clear' | qmcTranslate}}
+		</button>
+	</div>
+</qmc-popover>

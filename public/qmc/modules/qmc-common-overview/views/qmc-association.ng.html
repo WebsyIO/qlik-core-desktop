@@ -1,0 +1,22 @@
+﻿<qmc-table-header id="qmc.stageheader.{{name | lowercase}}association"
+				  table-controller="tableController"
+				  selection-set="associationSelectionSet"
+				  parent-selection="selectionSet"
+				  table-header-icon="{{tableHeaderIcon || 'icon-qmc-' + name || entity}}"
+				  table-header-label="{{tableHeaderLabel || 'qmc' + name + 'Association.heading'}}"
+				  column-selector="true"
+				  hide-total-count="hideTotalCount"
+				  total-count-filter="{{totalCountFilter}}"
+                  total-count-callback="totalCountCallback"
+				  ng-if="dataReady"></qmc-table-header>
+<div class="qmc-overview-body">
+	<qmc-table table-controller="tableController"
+			   selection-set="associationSelectionSet"
+			   ng-if="dataReady"></qmc-table>
+	<qmc-transport-dialog ng-if="includeTransport"></qmc-transport-dialog>
+</div>
+<qmc-action-alert-bar></qmc-action-alert-bar>
+<qmc-actionbar id="qmc.actionbar.{{name | lowercase}}Association"
+			   actions="actionDefinition"
+			   class="qmc-overview-footer"
+			   more-actions="moreActionDefinition"></qmc-actionbar>

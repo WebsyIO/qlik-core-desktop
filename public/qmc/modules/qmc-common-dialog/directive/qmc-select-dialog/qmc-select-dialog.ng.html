@@ -1,0 +1,23 @@
+﻿<qmc-popup width="{{qmcSelectDialogData.width || 600}}"
+		   maxheight="500"
+		   enable-draggable="true"
+		   popup-name="qmcSelectDialog">
+	<header>
+		<qmc-table-header table-header-icon="{{qmcSelectDialogData.headerIcon}}"
+						  table-header-label="{{qmcSelectDialogData.headerText}}"
+						  table-controller="tableController"
+						  selection-set="selectionSet"
+						  column-selector="true"
+						  no-search="true"
+						  hide-counters="!qmcSelectDialogData.showCounters">
+		</qmc-table-header>
+	</header>
+	<main>
+		<div ng-if="inProgress" class="qv-loader qv-loader-select-dialog"></div>
+		<qmc-table table-controller="tableController" selection-set="selectionSet" single-select="singleSelect"></qmc-table>
+	</main>
+	<footer>
+		<button id="qmc-select-button-cancel" class="dialog-button-qmc" ng-click="selectDialogCancelClick( $event )" value="Cancel">{{qmcSelectDialogData.cancelText || 'qmcConfirmPopup.cancelButton' | qmcTranslate}}</button>
+		<button id="qmc-select-button-add" class="dialog-button-qmc" ng-click="selectDialogAddClick( $event )" qmc-focus="true" value="Add" ng-disabled="addButtonDisabled()">{{qmcSelectDialogData.okText || 'qmcConfirmPopup.okButton' | qmcTranslate}}</button>
+	</footer>
+</qmc-popup>

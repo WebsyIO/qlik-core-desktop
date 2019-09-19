@@ -1,0 +1,86 @@
+﻿<div class="qmc-property-edit-main" qmc-property-edit-handler>
+	<div class="qmc-property-edit-content">
+		<qmc-stage-header stage-header-icon="icon-qmc-License"
+						  stage-header-label="qmcLicenseEdit.stageHeading"
+						  class="qmc-manage-resources-section">
+		</qmc-stage-header>
+		<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+			<div class="qmc-property-edit-form-stage">
+				<qmc-spinner in-progress="inProgress"></qmc-spinner>
+
+				<div class="qmc-property-edit-groups">
+
+					<qmc-logo></qmc-logo>
+
+					<qmc-property-edit-group class="qmc-license-edit-identification" heading="qmcLicenseEdit.qmcPropertyEditGroup.identification" force-show="true" no-separator="true">
+						<qmc-property-edit-named-switch-input label="qmcLicenseEdit.label.switch"
+													  ng-model="editModel.property.switch"
+													  error-message-callback="errorMessageCallback"
+													  id="qmc-license-edit-named-switch"
+													  ignore-undo="true"
+													  on-message="qmcLicenseEdit.label.switch.on.value"
+													  off-message="qmcLicenseEdit.label.switch.off.value"
+													  ng-if="!hideSwitch">
+						</qmc-property-edit-named-switch-input>
+						<qmc-property-edit-text-input label="qmcLicenseEdit.label.name"
+													  ng-model="editModel.property.name"
+													  error-message-callback="errorMessageCallback"
+													  id="qmc-license-edit-name">
+						</qmc-property-edit-text-input>
+						<qmc-property-edit-text-input label="qmcLicenseEdit.label.organization"
+													  ng-model="editModel.property.organization"
+													  error-message-callback="errorMessageCallback"
+													  id="qmc-license-edit-organization">
+						</qmc-property-edit-text-input>
+						<qmc-property-edit-text-input label="qmcLicenseEdit.label.serial"
+													  ng-model="editModel.property.serial"
+													  error-message-callback="errorMessageCallback"
+													  id="qmc-license-edit-serial">
+						</qmc-property-edit-text-input>
+						<qmc-property-edit-text-input label="qmcLicenseEdit.label.check"
+													  ng-model="editModel.property.check"
+													  error-message-callback="errorMessageCallback"
+													  password="true"
+													  id="qmc-license-edit-check">
+						</qmc-property-edit-text-input>
+						<qmc-property-edit-text-input label="qmcLicenseEdit.label.key"
+													  ng-model="editModel.property.key"
+													  error-message-callback="errorMessageCallback"
+													  id="qmc-license-edit-key"
+													  rows="4">
+						</qmc-property-edit-text-input>
+					</qmc-property-edit-group>
+					<qmc-contextual-notifier msg-type="warning" msg-string="coreWarningText" ng-if="coreWarning"></qmc-contextual-notifier>
+
+					<qmc-property-edit-collapsible ng-if="editModel.property.switch.value === 'qmcLicenseEdit.label.switch.on.value'" class="qmc-license-edit-lef-collapsible" heading="qmcLicenseEdit.qmcPropertyEditCollapsible.LEFAccess">
+						<!--We are reusing the property edit text input class here to get the same indentation-->
+						<div class="qmc-property-edit-row qmc-property-edit-row-layout">
+							<div class="qmc-property-edit-row-label">
+							</div>
+							<div class="qmc-property-edit-row-input">
+								<qmc-button id="qmc-license-edit-get-lef" action="getLef()" disabled="(editModel.property.switch.value === 'qmcLicenseEdit.label.switch.off.value') || !editModel.hasChanged || editForm.$Invalid || inProgress">{{'qmcLicenseEdit.getLef' | qmcTranslate}}</qmc-button>
+								<qmc-contextual-notifier ng-if="lefError.length>0" msg-type="error" msg-string="lefError"></qmc-contextual-notifier>
+							</div>
+						</div>
+
+						<qmc-property-edit-text-input ng-model="editModel.property.lef"
+													  error-message-callback="errorMessageCallback"
+													  id="qmc-license-edit-lef"
+													  rows="7">
+						</qmc-property-edit-text-input>
+
+						<div class="qmc-license-edit-lef-info-container">
+							<div class="qmc-license-edit-lef-info">
+								<i class="icon-qmc-info"></i><span>{{'qmcLicenseEdit.lefInfoNotice' | qmcTranslate}}</span>
+								<div>{{'qmcLicenseEdit.lefInfoText' | qmcTranslate}}</div>
+							</div>
+						</div>
+					</qmc-property-edit-collapsible>
+					<qmc-contextual-notifier msg-type="{{messageType}}" msg-string="message" ng-if="showMessageBar()"></qmc-contextual-notifier>
+				</div>
+			</div>
+			<qmc-action-alert-bar></qmc-action-alert-bar>
+			<qmc-actionbar id="qmc-license-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+		</form>
+	</div>
+</div>

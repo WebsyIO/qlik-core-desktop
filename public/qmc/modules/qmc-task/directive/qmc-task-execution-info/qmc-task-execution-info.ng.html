@@ -1,0 +1,28 @@
+﻿<div class="header" ng-class="messageTypeClass(status)">
+    {{formatHeader(message)}}
+	<qmc-button class="qmc-table-header qmc-task-execution-info-refresh" action="refreshExecutionResult()" ng-if="taskData.type === 0" title="{{'qmcTaskExecutionInfo.refresh.tooltip' | qmcTranslate}}" icon="{{'refresh'}}"></qmc-button>
+</div>
+<div class="body">
+    <div class="hostname" ng-if="hostname">
+        <span class="label">
+            {{ 'qmcTaskExecutionInfo.hostname' | qmcTranslate }}
+        </span>
+        <span class="value">
+            {{hostname}}
+        </span>
+    </div>
+    <hr ng-if="hostname"/>
+    <div class="loglist">
+        <div class="logentry" ng-repeat="log in logs">
+            <div class="datetime" ng-if="log.dateTime">
+                {{formatDate(log.dateTime)}}
+            </div>
+            <div class="message">
+                {{log.message}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+	<qmc-button title="{{infoString}}" action="checkDownloadScriptLog()" disabled="!taskData.executionResult.scriptLogAvailable" ng-if="taskData.type === 0">{{'qmcTaskExecutionInfo.downloadscriptlogfile.label' | qmcTranslate}}</qmc-button>
+</div>

@@ -1,0 +1,47 @@
+﻿
+<div ng-show="transports.length > 0">
+	<header class="header">
+		<header>{{ 'qmcTransportDialog.dialogHeader' | qmcTranslate: transports.length}}</header>
+	</header>
+	<div class="qmc-transport-dialog-content">
+		<table class="qmc-transport-dialog-table">
+			<thead>
+				<tr>
+					<th class="th-heading" style="width:20px"></th>
+					<th class="th-heading text-column process">{{ 'qmcTransportDialog.tableheader.process' | qmcTranslate}}</th>
+					<th class="th-heading text-column name">{{ 'qmcTransportDialog.tableheader.appname' | qmcTranslate}}</th>
+					<th class="th-heading text-column duration">{{ 'qmcTransportDialog.tableheader.duration' | qmcTranslate}}</th>
+					<th class="th-heading cancel" ></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="qmc-transport-dialog-tablerow" ng-repeat="transport in transports">
+					<td><qmc-spinner in-progress="transport.status=='running'"></qmc-spinner><div ng-if="transport.status!='running'" ng-class="statusIconClass(transport.status)">&nbsp;</div></td>
+					<td>{{'qmcTransportDialog.table.type.'+transport.type | qmcTranslate}}</td>
+					<td>
+						<div class="qmc-transport-dialog-itemname">
+							{{transport.name}}
+						</div>
+						<qmc-contextual-notifier class="qmc-transport-dialog-error" msg-type="error" msg-string="transport.message" ng-if="transport.status === 'error' || transport.status === 'conflict'"></qmc-contextual-notifier>
+					</td>
+					<td class="duration">
+
+						<div ng-if="transport.status != 'conflict'">{{processTime(transport.time)}}</div>
+						<div>
+							<button ng-if="transport.status == 'conflict'" type="button" ng-click="removeTransportItem(transport)">
+								{{ 'qmcTransportDialog.table.cancelItemButton' | qmcTranslate}}
+							</button>
+							<button ng-if="transport.status == 'conflict'" type="button" ng-click="forceTransport(transport)">
+								{{ 'qmcTransportDialog.table.forceTransportButton' | qmcTranslate}}
+							</button>
+						</div>
+					</td>
+					<td>
+						<div ng-if="transport.status == 'running'" class="icon-qmc-delete icon-small" ng-click="cancelTransportItem(transport)">&nbsp;</div>
+						<div ng-if="transport.status == 'error'" class="icon-qmc-delete icon-small" ng-click="removeTransportItem(transport)">&nbsp;</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

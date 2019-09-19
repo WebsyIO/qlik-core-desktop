@@ -1,0 +1,30 @@
+﻿<qmc-popover align-to="alignTo" position="bottom" collision="flipfit" toggle="closePopover($event)" spinner="inProgress">
+	<div class="maincontent" ng-keydown="checkEscape($event)">
+		<div ng-repeat="filter in filters" ng-switch="filter.type">
+			<qmc-table-column-filter-text ng-switch-when="Text"
+										  table-controller="tableController"
+										  filter="filter">
+			</qmc-table-column-filter-text>
+
+			<qmc-table-column-filter-datetime ng-switch-when="DateTime"
+											  table-controller="tableController"
+											  filter="filter">
+			</qmc-table-column-filter-datetime>
+			
+			<qmc-table-column-filter-int ng-switch-when="GUID"
+										 table-controller="tableController"
+										 filter="filter">
+			</qmc-table-column-filter-int>
+
+			<qmc-table-column-filter-int ng-switch-when="Int"
+										 table-controller="tableController"
+										 filter="filter">
+			</qmc-table-column-filter-int>
+
+			<qmc-table-column-filter-enum ng-switch-default
+										  table-controller="tableController"
+										  filter="filter">
+			</qmc-table-column-filter-enum>
+		</div>
+	</div>
+</qmc-popover>

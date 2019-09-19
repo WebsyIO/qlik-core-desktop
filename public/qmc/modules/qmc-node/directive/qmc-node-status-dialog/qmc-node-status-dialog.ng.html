@@ -1,0 +1,14 @@
+﻿<qmc-popover class="qmc-node-status-dialog" align-to="alignTo" position="bottom" collision="flipfit" toggle="closeNodeStatusPopover($event)" spinner="inProgress">
+	<div class="main">
+		<div class="maincontent">
+			<table ng-if="!inProgress" class="node-status-table" data-ready="{{!inProgress}}">
+				<tbody>
+					<tr class="{{(statuses.length > 1) ? 'tableLine':''}}" ng-repeat="item in statuses track by $index">
+						<td>{{item}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+	</div>
+</qmc-popover>

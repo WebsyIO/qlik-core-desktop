@@ -1,0 +1,24 @@
+﻿<div ng-class="{ 'qmc-property-edit-row-layout': !ignoreEditStyle }" class="qmc-property-edit-row" ng-hide="ngModel.isHidden">
+	<div class="qmc-property-edit-row-label">
+		<label for="{{elemClass}}" title="{{label | qmcTranslate}}">{{label | qmcTranslate}}</label>
+		<qmc-undo-button ng-disabled="ngModel.isDisabled" ng-click="ngModel.reset()" ng-if="ngModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+	</div>
+	<div class="qmc-property-edit-row-input">
+		<qmc-autocomplete autocomplete-search-model="autocompleteSearchModel"
+						  property-model="selectedTag"
+						  on-close-callback="addTag"
+						  on-change-callback="toggleWarning"
+						  parent-elem-id-object="elemObj"
+						  hide-list-on-blur="true"
+						  clear-field-on-blur="true"></qmc-autocomplete>
+		<qmc-contextual-notifier ng-if="!ngModel.isValid && !ignoreInvalid" msg-type="error" msg-string="errorMessages"></qmc-contextual-notifier>
+		<qmc-contextual-notifier ng-if="ngModel.information" msg-type="info" msg-string="infoMessages"></qmc-contextual-notifier>
+		<ol class="tag-list">
+			<li ng-repeat="tag in ngModel.models|qmcEditModelListFilterSorter" class="{{(tag.isAdded || tag.hasChanged ? 'addedTag ' : '') + 'tag-item'}}" title="{{spacesAfterEveryFiftyCharacter(tag.value.name)}}">
+				<div class="tag-label">{{tag.value.name}}</div>
+				<div class="tag-count" ng-if="tag.value.$count">{{'(' + tag.value.$count.toString()  +')'}}</div>
+				<qmc-button disabled="ngModel.isDisabled" right-icon="close" class="tag-button" action="tag.remove()"></qmc-button>
+			</li>
+		</ol>
+	</div>
+</div>

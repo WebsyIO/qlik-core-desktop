@@ -1,0 +1,56 @@
+﻿<div ng-class="{ 'qmc-property-edit-row-layout': !ignoreEditStyle }" class="qmc-property-edit-row" ng-hide="ngModel.isHidden">
+	<div class="qmc-property-edit-row-label">
+		<label for="{{inputControlId}}-time" title="{{ignoreLocalize ? label : (label | qmcTranslate)}}">{{ignoreLocalize ? label : (label | qmcTranslate)}}</label>
+		<qmc-undo-button ng-click="undo()" ng-if="ngModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+	</div>
+	<div class="qmc-property-edit-row-input">
+		<div>
+			<input ng-if="time"
+				   type="text"
+				   ng-change="onTimeChange()"
+				   id="{{inputControlId + '-time'}}"
+				   maxlength="5"
+				   class="qmc-input time"
+				   ng-model="ngModel.value"
+					 ng-model-options="{allowInvalid: true}"
+				   ng-readonly="ngModel.isReadonly"
+				   ng-disabled="ngModel.isDisabled || ngModel.isReadonly"
+				   ng-required="ngModel.isRequired"
+				   ng-focus="disableIfReadOnly()"
+				   ng-blur="callbackOnBlur( $event )"
+				   qmc-focus="{{focusOnLoad}}"
+				   qmc-date-time-formatter="isoTimeLight"
+				   qmc-generic-parser="timeParser"
+				   title="{{ 'qmcPropertyEditDatetimeInput.time' | qmcTranslate }}"
+				   qmc-placeholder="{{ 'qmcPropertyEditDatetimeInput.time' | qmcTranslate }}" />
+			<span>({{ 'qmcPropertyEditDatetimeInput.time' | qmcTranslate }})</span>
+			<input ng-if="date"
+				   type="text"
+				   ng-change="onChangeDate()"
+				   id="{{inputControlId + '-date'}}"
+				   maxlength="10"
+				   class="qmc-input date"
+				   ng-model="ngModel.value"
+					 ng-model-options="{allowInvalid: true}"
+				   ng-readonly="ngModel.isReadonly"
+				   ng-disabled="ngModel.isDisabled || ngModel.isReadonly"
+				   ng-required="ngModel.isRequired"
+				   ng-focus="disableIfReadOnly()"
+				   ng-blur="callbackOnBlur( $event )"
+				   qmc-focus="{{focusOnLoad}}"
+				   qmc-date-time-formatter="isoDate"
+				   qmc-generic-parser="dateParser"
+				   title="{{ 'qmcPropertyEditDatetimeInput.date' | qmcTranslate }}"
+				   qmc-placeholder="{{ 'qmcPropertyEditDatetimeInput.date' | qmcTranslate }}" />
+			<span>({{ 'qmcPropertyEditDatetimeInput.date' | qmcTranslate }})</span>
+		</div>
+		<qmc-contextual-notifier ng-if="!ngModel.isValid && ngModel.errors && !ignoreInvalid"
+								 msg-type="error"
+								 msg-string="errorMessages">
+		</qmc-contextual-notifier>
+		<qmc-contextual-notifier ng-if="ngModel.information"
+								 msg-type="info"
+								 msg-string="infoMessages">
+		</qmc-contextual-notifier>
+	</div>
+</div>

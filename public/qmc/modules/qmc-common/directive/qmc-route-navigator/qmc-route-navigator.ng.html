@@ -1,0 +1,13 @@
+﻿<div class="group" ng-class="{disabled: disable}" ng-if="routes.length > 0">
+    <div class="header">
+        <h1>
+            {{headerKey| qmcTranslate}}
+        </h1>
+    </div>
+	<a id="{{'qmc-route-navigator-' + $index}}" class="item" ng-class="{hoverable: !route.isSelected && !route.isDisabled && !disable, disabled: route.isDisabled}" ng-if="!route.isHidden" ng-repeat="route in routes" ng-href="{{getPath(route)}}">
+		<i class="icon icon-qmc-checkbox" ng-if="route.isSelected"></i>
+		<div ng-class="{selected: route.isSelected}">
+			{{route.labelKey | qmcTranslate}}
+		</div>
+	</a>
+</div>

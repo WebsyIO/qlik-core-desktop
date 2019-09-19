@@ -1,0 +1,10 @@
+﻿<div ng-class="{ 'qmc-property-edit-row-layout': !ignoreEditStyle }" class="qmc-property-edit-row">
+	<div class="qmc-property-edit-row-label">
+		<label for="{{elemClass}}">{{label | qmcTranslate}}</label>
+	</div>
+	<div class="qmc-property-edit-row-input">
+		<qmc-button id="qmc-property-edit-generate-text-button-generate" action="generateText()" disabled="disable || !generatedTextModel.requirements">{{'qmcPropertyEditGenerateTextButton.generate.label' | qmcTranslate}}</qmc-button>
+		<div class="usertextselect">{{generatedTextModel.generatedText}}</div>
+		<qmc-contextual-notifier ng-if="disable || generatedTextModel.generatedText || !generatedTextModel.requirements" msg-type="info" msg-string="generatedTextModel.infoMessages"></qmc-contextual-notifier>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+﻿<div class="{{msgType.toLowerCase()}} alert">
+	<button ng-click="closeContextualNotifier($event)" ng-if="!!showCloseButton"><i class="icon icon-qmc-close"></i></button>
+	<div class="content">
+		<p ng-repeat="msg in (msgStrings || msgString) track by $index">{{msg}}</p>
+	</div>
+</div>

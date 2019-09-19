@@ -1,0 +1,230 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+		<qmc-property-edit-empty-warning url="/engines/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.EngineService.name"
+											  ng-model="nodeNameProperty"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-node">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmcEngineServiceEdit.qmcPropertyEditGroup.apps" force-show="{{detached}}">
+				<qmc-property-edit-text-input label="qros.EngineService.autosaveInterval"
+											  ng-model="editModel.property.settings.property.autosaveInterval"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-appAutosaveInterval">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.EngineService.documentTimeout"
+											  ng-model="editModel.property.settings.property.documentTimeout"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-appTimeout">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.EngineService.documentDirectory"
+											  ng-model="editModel.property.settings.property.documentDirectory"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-documentDirectory">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.EngineService.tableFilesDirectory"
+											  ng-model="editModel.property.settings.property.tableFilesDirectory"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-workingFolder">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.EngineService.genericUndoBufferMaxSize"
+											  ng-model="editModel.property.settings.property.genericUndoBufferMaxSize"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-maxNbrUndos">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmcEngineServiceEdit.qmcPropertyEditGroup.advanced" force-show="{{detached}}">
+				<qmc-property-edit-list-input ng-model="editModel.property.settings.property.listenerPorts"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-listenerPorts"
+											  text-list-type="qmcEngineServiceEdit.listernerPorts"
+											  table-heading="qmcEngineServiceEdit.listernerPorts.table.heading"
+											  column-heading="qmcEngineServiceEdit.listernerPorts.table.column.heading"
+											  add-button-text="qmcEngineServiceEdit.listernerPorts.table.add.button.label"
+											  add-button-text-multiple="qmcEngineServiceEdit.listernerPorts.table.replace.button.label"
+											  allow-empty="false">
+				</qmc-property-edit-list-input>
+				<qmc-property-edit-bool-input label="qros.EngineService.allowDataLineage"
+											  ng-model="editModel.property.settings.property.allowDataLineage"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-allowDataLineage">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-text-input label="qros.EngineService.workingSetSizeLoPct"
+											  ng-model="editModel.property.settings.property.workingSetSizeLoPct"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-minMemoryUsage">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.EngineService.workingSetSizeHiPct"
+											  ng-model="editModel.property.settings.property.workingSetSizeHiPct"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-maxMemoryUsage">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-select-input label="qros.EngineService.workingSetSizeMode"
+												ng-model="editModel.property.settings.property.workingSetSizeMode"
+												error-message-callback="errorMessageCallback"
+												translation-prefix="qros.EngineService.memoryUsageMode"
+												no-empty-value="true"
+												id="qmc-engine-service-edit-memoryUsageMode">
+				</qmc-property-edit-select-input>
+				<qmc-property-edit-text-input label="qros.EngineService.cpuThrottlePercentage"
+											  ng-model="editModel.property.settings.property.cpuThrottlePercentage"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-cpuThrottle">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-bool-input label="qros.EngineService.standardReload"
+											  ng-model="editModel.property.settings.property.standardReload"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-standardMode">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-text-input label="qros.EngineService.qrsHttpNotificationPort"
+											  ng-model="editModel.property.settings.property.qrsHttpNotificationPort"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-qrsHttpNotificationPort">
+				</qmc-property-edit-text-input>
+                <qmc-property-edit-text-input label="qros.EngineService.hyperCubeMemoryLimit"
+                                              ng-model="editModel.property.settings.property.hyperCubeMemoryLimit"
+                                              error-message-callback="errorMessageCallback"
+                                              id="qmc-engine-service-edit-hyperCubeMemoryLimit">
+                </qmc-property-edit-text-input>
+                <qmc-property-edit-text-input label="qros.EngineService.reloadMemoryLimit"
+                                              ng-model="editModel.property.settings.property.reloadMemoryLimit"
+                                              error-message-callback="errorMessageCallback"
+                                              id="qmc-engine-service-edit-reloadMemoryLimit">
+                </qmc-property-edit-text-input>
+                <qmc-property-edit-text-input label="qros.EngineService.exportMemoryLimit"
+                                              ng-model="editModel.property.settings.property.exportMemoryLimit"
+                                              error-message-callback="errorMessageCallback"
+                                              id="qmc-engine-service-edit-exportMemoryLimit">
+                </qmc-property-edit-text-input>
+                <qmc-property-edit-text-input label="qros.EngineService.objectTimeLimitSec"
+                                              ng-model="editModel.property.settings.property.objectTimeLimitSec"
+                                              error-message-callback="errorMessageCallback"
+                                              id="qmc-engine-service-edit-objectTimeLimitSec">
+                </qmc-property-edit-text-input>
+                <qmc-property-edit-text-input label="qros.EngineService.reloadTimeLimitSec"
+                                              ng-model="editModel.property.settings.property.reloadTimeLimitSec"
+                                              error-message-callback="errorMessageCallback"
+                                              id="qmc-engine-service-edit-reloadTimeLimitSec">
+                </qmc-property-edit-text-input>
+                <qmc-property-edit-text-input label="qros.EngineService.exportTimeLimitSec"
+                                              ng-model="editModel.property.settings.property.exportTimeLimitSec"
+                                              error-message-callback="errorMessageCallback"
+                                              id="qmc-engine-service-edit-exportTimeLimitSec">
+                </qmc-property-edit-text-input>
+                <qmc-property-edit-bool-input label="qros.EngineService.createSearchIndexOnReloadEnabled"
+                							ng-model="editModel.property.settings.property.createSearchIndexOnReloadEnabled"
+                							error-message-callback="errorMessageCallback" 
+                							id="qmc-engine-service-edit-createSearchIndexOnReloadEnabled">
+                </qmc-property-edit-bool-input>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.logging" force-show="{{detached}}">
+				<qmc-property-edit-loglevel label="qros.EngineService.auditActivityLogVerbosity"
+											ng-model="editModel.property.settings.property.auditActivityLogVerbosity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Basic"
+											id="qmc-engine-service-edit-auditActivityLogVerbosity">
+				</qmc-property-edit-loglevel>
+				<!-- SecurityLog will be introduced later on SAG 20150519
+				<qmc-property-edit-loglevel label="qros.EngineService.auditSecurityLogVerbosity"
+											ng-model="editModel.property.settings.property.auditSecurityLogVerbosity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Basic"
+											id="qmc-engine-service-edit-auditSecurityLogVerbosity">
+				</qmc-property-edit-loglevel> -->
+				<qmc-property-edit-loglevel label="qros.EngineService.serviceLogVerbosity"
+											ng-model="editModel.property.settings.property.serviceLogVerbosity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Error,Warning,Info"
+											id="qmc-engine-service-edit-serviceLogVerbosity">
+				</qmc-property-edit-loglevel>
+				<h4 class="qmc-node-trace-log-heading">{{'qmcNode.trace.log.heading' | qmcTranslate}}</h4>
+				<qmc-property-edit-text-input label="qros.EngineService.globalLogMinuteInterval"
+											  ng-model="editModel.property.settings.property.globalLogMinuteInterval"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-performanceLogInterval">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-loglevel label="qros.EngineService.systemLogVerbosity"
+											ng-model="editModel.property.settings.property.systemLogVerbosity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-engine-service-edit-logVerbosityApplication">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.EngineService.performanceLogVerbosity"
+											ng-model="editModel.property.settings.property.performanceLogVerbosity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-engine-service-edit-performanceLogLevel">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.EngineService.qixPerformanceLogVerbosity"
+											ng-model="editModel.property.settings.property.qixPerformanceLogVerbosity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-engine-service-edit-qixPerformanceLogLevel">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.EngineService.auditLogVerbosity"
+											ng-model="editModel.property.settings.property.auditLogVerbosity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-engine-service-edit-auditLogLevel">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.EngineService.sessionLogVerbosity"
+											ng-model="editModel.property.settings.property.sessionLogVerbosity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-engine-service-edit-sessionLogLevel">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.EngineService.trafficLogVerbosity"
+											ng-model="editModel.property.settings.property.trafficLogVerbosity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-engine-service-edit-trafficLogLevel">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.EngineService.sseLogVerbosity"
+											ng-model="editModel.property.settings.property.sseLogVerbosity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-engine-service-edit-sseLogLevel">
+				</qmc-property-edit-loglevel>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.tags" force-show="{{detached}}">
+				<qmc-tag-control ng-model="editModel.property.tags"
+								 error-message-callback="errorMessageCallback"
+								 id="qmc-engine-service-edit-tags">
+				</qmc-tag-control>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.customProperties" force-show="{{detached}}">
+				<qmc-property-edit-custom-properties ng-model="editModel.property.customProperties">
+				</qmc-property-edit-custom-properties>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmcEngineServiceEdit.qmcPropertyEditGroup.cores" force-show="true" ng-if="isCapacityProduct">
+				<qmc-property-edit-text-input label="qmcEngineServiceEdit.cores.totalAvailable"
+											  ng-model="coreModel.property.totalAvailable"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-cores-totalAvailable">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qmcEngineServiceEdit.cores.activeCores"
+											  ng-model="coreModel.property.activeCores"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-cores-activeCores">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qmcEngineServiceEdit.cores.totalAllocated"
+											  ng-model="coreModel.property.totalAllocated"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-cores-totalAllocated">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qmcEngineServiceEdit.cores.allocated"
+											  ng-model="coreModel.property.allocated"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-engine-service-edit-cores-allocated">
+				</qmc-property-edit-text-input>
+				<qmc-contextual-notifier msg-type="warning" msg-string="editModel.coreWarning" ng-if="editModel.coreWarning"></qmc-contextual-notifier>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-engine-service-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

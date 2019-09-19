@@ -1,0 +1,20 @@
+﻿<div ng-class="{ 'qmc-property-edit-row-layout': !ignoreEditStyle }" class="qmc-property-edit-row" ng-hide="ngModel.isHidden">
+	<div class="qmc-property-edit-row-label">
+		<label for="{{elemClass}}" title="{{ignoreLocalize ? label : (label | qmcTranslate)}}">{{ignoreLocalize ? label : (label | qmcTranslate)}}</label>
+		<qmc-undo-button qmc-disable-if="isReadonly" ng-disabled="ngModel.isDisabled || ngModel.isReadonly" ng-click="ngModel.reset()" ng-if="ngModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+	</div>
+	<div class="qmc-property-edit-row-input">
+		<div class="qmc-named-switch">
+			<label id="{{switchControlId}}"
+				   ng-disabled="ngModel.isDisabled || ngModel.isReadonly"
+				   ng-readonly="ngModel.isReadonly"
+				   ng-click="switchValue()">
+				{{ngModel.value | qmcTranslate}}
+			</label>
+		</div>
+		<ng-transclude></ng-transclude>
+		<qmc-contextual-notifier ng-if="!ngModel.isValid && !ignoreInvalid" msg-type="error" msg-string="errorMessages"></qmc-contextual-notifier>
+		<qmc-contextual-notifier ng-if="showWarning" msg-type="warning" msg-string="warningMessages"></qmc-contextual-notifier>
+		<qmc-contextual-notifier ng-if="ngModel.information" msg-type="info" msg-string="infoMessages"></qmc-contextual-notifier>
+	</div>
+</div>

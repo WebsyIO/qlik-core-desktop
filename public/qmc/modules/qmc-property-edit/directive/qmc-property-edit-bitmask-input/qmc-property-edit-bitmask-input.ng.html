@@ -1,0 +1,14 @@
+﻿<div ng-class="{ 'qmc-property-edit-row-layout': !ignoreEditStyle }" class="qmc-property-edit-row" ng-hide="ngModel.isHidden">
+	<div class="qmc-property-edit-row-label">
+		<label for="{{elemClass}}" title="{{label | qmcTranslate}}">{{label | qmcTranslate}}</label>
+		<qmc-undo-button ng-disabled="ngModel.isDisabled" ng-click="reset()" ng-if="ngModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+	</div>
+	<div class="qmc-property-edit-row-input">
+		<label ng-repeat="bitname in arrBitNames track by $index" ng-if="bitname.length>0" class="qmc-checkbox" ng-disabled="isDisabled($index)" ng-show="!arrBitHidden[$index]">
+			<div class="qmc-property-edit-checkbox-input-label">
+				<input type="checkbox" value="true" ng-model="bitArray[$index]" qmc-focus="{{focusOnLoad}}" ng-disabled="isDisabled($index)" />
+				{{bitname}}
+			</div>
+		</label>
+	</div>
+</div>

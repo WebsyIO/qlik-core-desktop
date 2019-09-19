@@ -1,0 +1,27 @@
+﻿<qmc-popup width="400" maxheight="300" enable-draggable="true" popup-name="qmcUploadContentDialog">
+	<header>{{ 'qmcUploadContentDialog.heading' | qmcTranslate}}</header>
+	<main>
+		<div>
+			<form name="uploadContentForm" ng-submit="">
+				<qmc-property-edit-file-input ng-model="uploadContentModel.property.file"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-upload-content-edit-file"
+											  ignore-edit-style="true"
+											  ignore-undo="true"
+											  focus-on-load="true">
+				</qmc-property-edit-file-input>
+				<hr/>
+				<div ng-if="uploadContentModel.baseObject.file.length"><b>{{ 'qmcUploadContentDialog.selectedFilesHeader' | qmcTranslate}}</b></div>
+				<ul class="qmcUploadContentDialog-fileList">
+					<li class="fileItem" ng-repeat="file in uploadContentModel.baseObject.file">{{file.name}}</li>
+					<div ng-if="!uploadContentModel.baseObject.file.length">{{ 'qmcUploadContentDialog.noFilesSelected' | qmcTranslate}}</div>					
+				</ul>
+			</form>
+			<hr />
+		</div>
+	</main>
+	<footer>
+		<button id="qmc-upload-content-button-cancel" class="dialog-button-qmc" ng-click="dialogCancelClick( $event )" value="Cancel">{{ 'qmcUploadContentDialog.button.cancel' | qmcTranslate}}</button>
+		<button id="qmc-upload-content-button-upload" class="dialog-button-qmc" ng-click="dialogOkClick( $event )" ng-disabled="uploadContentForm.$invalid || disableUploadButton()" value="Publish">{{ 'qmcUploadContentDialog.button.ok' | qmcTranslate}}</button>
+	</footer>
+</qmc-popup>

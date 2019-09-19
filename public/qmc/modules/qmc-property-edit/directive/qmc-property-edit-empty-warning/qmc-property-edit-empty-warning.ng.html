@@ -1,0 +1,13 @@
+﻿<qmc-popup width="300" maxheight="300" enable-draggable="true" popup-name="qmcPropertyEditEmptyWarning">
+	<header>{{'qmcPropertyEditEmptyWarning.headerText' | qmcTranslate}}</header>
+	<main>
+		<div class="confirmMain">
+			<p>{{'qmcPropertyEditEmptyWarning.messageText' | qmcTranslate}}</p>
+		</div>
+	</main>
+	<footer>
+		<button id="qmc-confirm-button-ok" class="dialog-button-qmc" ng-click="buttonClick( $event )" qmc-focus="true" value="Ok">
+			{{'qmcPropertyEditEmptyWarning.buttonText' | qmcTranslate}}
+		</button>
+	</footer>
+</qmc-popup>

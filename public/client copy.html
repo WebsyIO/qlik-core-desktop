@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Qlik Sense</title>
+	<meta charset="utf-8">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="cleartype" content="on">
+	<base href="<?qv RelativeBaseURL?>">
+	<link rel="stylesheet" href="../resources/assets/external/leonardo-ui/leonardo-ui.css?1499952235400">
+	<link rel="stylesheet" href="../resources/assets/client/client.css?1499952235400">
+	<link rel="stylesheet" href="../resources/css/base/responsive-state.css?1499952235400">
+	<link rel="shortcut icon" href="../resources/favicon.ico">
+	<link rel="apple-touch-icon" href="../resources/img/core/logo/logo-60x60.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="../resources/img/core/logo/logo-76x76.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../resources/img/core/logo/logo-120x120.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="../resources/img/core/logo/logo-152x152.png">	
+</head>
+<body class="qv-client qv-story-disabled">
+	<div class="qv-preload-icons">.</div>
+	<div class="qv-popover-container" qva-outside-ignore-for="allOutside"></div>
+	<div class="qv-popover-navigator"></div>
+	<div id="qv-init-ui-blocker"></div>
+	<div id="qv-open-without-data"></div>
+	<div id="qv-add-data-container">
+		<add-data-panel ng-if="addDataEnabled" ng-show='addDataStateService.panelOpen' is-cloud="isCloud" is-desktop="isDesktop" appname='appname'></add-data-panel>
+		<add-data-edit-panel ng-if="addDataEnabled" ng-show="addDataStateService.editPanelOpen"></add-data-edit-panel>
+	</div>
+
+
+	<div class="qv-panel-wrap">
+		<div id="qv-toolbar-container"></div>
+		<div id="qv-appview-container"></div>
+		<div id="qv-stage-container"></div>
+		<div id="qv-data-container"></div>
+		<div id="qv-storytelling" class="qv-panel qv-panel-story"></div>
+	</div>
+
+	<script src="../resources/assets/external/requirejs/require.js?1499952235400"></script>
+	<script>require.config( { baseUrl: "../resources", urlArgs: "?1499952235400" } )( ["assets/client/client"] );</script>
+</body>
+</html>

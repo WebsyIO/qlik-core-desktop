@@ -1,0 +1,105 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress && dataReady}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-property-edit-empty-warning url="{{overviewUrl}}" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-contextual-notifier ng-if="inputData.infoMessage.message.length>0" msg-type="{{inputData.infoMessage.type}}" msg-string="inputData.infoMessage.message"></qmc-contextual-notifier>
+			<qmc-contextual-notifier ng-if="nonAssoicatedRule()" msg-type="warning" msg-topic="qmcSystemRulePopup.warning.generalRule"></qmc-contextual-notifier>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="{{inDialog!='true' || detached ? 'true' : ''}}">
+
+				<qmc-property-edit-select-input label="qmcSystemRuleEditControl.label.ruleTemplates"
+												translation-prefix="qmcSystemRuleEditControl.ruleTemplate"
+												ng-model="templateModel"
+												on-change="templateChanged"
+												no-empty-value="true"
+												id="qmc-system-rule-edit-ruleTemplate"
+												ng-if="editModel.isNew && inDialog!='true' && editModel.property.category.value!='License' && templateModel.choices.length>1">
+				</qmc-property-edit-select-input>
+
+				<qmc-property-edit-bool-input label="qros.SystemRule.disabled"
+											  ng-model="editModel.property.disabled"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-system-rule-edit-disabled">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-text-input label="qros.SystemRule.name"
+											  ng-model="editModel.property.name"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-system-rule-edit-name">
+				</qmc-property-edit-text-input>
+
+				<qmc-property-edit-text-input label="qros.SystemRule.comment"
+											  ng-model="editModel.property.comment"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-system-rule-edit-comment">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmcSystemRuleEdit.qmcPropertyEditGroup.basic" force-show="{{detached}}">
+				<div>
+					<i ng-if="!editModel.property.resourceFilter.isDisabled && !editModel.property.resourceFilter.isReadonly"
+						id="qmc-system-rule-edit-resourceFilter-selector"
+						ng-click="!resourceSelectorOpen && openResourceSelector()"
+						class="resource-selector button-icon icon-qmc-asc"></i>
+					<qmc-property-edit-text-input label="qros.SystemRule.resourceFilter"
+												  ng-model="editModel.property.resourceFilter"
+												  error-message-callback="errorMessageCallback"
+												  id="qmc-system-rule-edit-resourceFilter">
+					</qmc-property-edit-text-input>
+				</div>
+				<qmc-property-edit-bitmask-input label="qros.SystemRule.actions"
+												 ng-model="editModel.property.actions"
+												 arr-bit-names="availableActions"
+												 arr-bit-disabled="disabledActions"
+												 arr-bit-hidden="hiddenActions"
+												 error-message-callback="errorMessageCallback"
+												 id="qmc-system-rule-edit-actions">
+				</qmc-property-edit-bitmask-input>
+				<qmc-rule-wizard resource="entity"
+								 debounce-time="300"
+								 ng-disabled="editModel.property.rule.isDisabled || advancedEditing"
+								 resource-properties="resourceProperties"
+								 root-attributes="rootAttributes"
+								 update-event="updateRuleWizard"
+								 composer="ruleComposerFunc"
+								 backtracker="ruleBacktrackerFunc"
+								 expression="editModel.property.rule.value">
+				</qmc-rule-wizard>
+				<qmc-contextual-notifier ng-if="showDistributionWarning()" msg-type="info" msg-string="distributionWarningMessage"></qmc-contextual-notifier>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmcSystemRuleEdit.qmcPropertyEditGroup.advanced" force-show="{{detached}}">
+
+				<qmc-property-edit-text-input label="qros.SystemRule.rule"
+											  ng-model="editModel.property.rule"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-system-rule-edit-rule"
+											  undo-callback="validateRule"
+											  rows="5">
+				</qmc-property-edit-text-input>
+				<qmc-button class="qmc-system-rule-edit-control-validate-button" action="validateRule(true)">{{'qmcSystemRuleEditControl.label.validateRuleButton' | qmcTranslate}}</qmc-button>
+				<br/><br/>
+				<qmc-property-edit-select-input ng-if="showContextProperty()"
+												label="qros.SystemRule.ruleContext"
+												translation-prefix="qmcSystemRuleEditControl.ruleContext.option"
+												ng-model="editModel.property.ruleContext"
+												error-message-callback="errorMessageCallback"
+												no-empty-value="true"
+												id="qmc-system-rule-edit-ruleContext">
+				</qmc-property-edit-select-input>
+				<qmc-help-link label-ref="qmcSystemRuleEditControl.helpLink"
+							   help-topic="qmc_helplink_rule_conventions"></qmc-help-link>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.tags" force-show="{{detached}}" no-separator="true">
+				<qmc-tag-control ng-model="editModel.property.tags"
+								 error-message-callback="errorMessageCallback"
+								 id="qmc-system-rule-edit-tags"
+								 in-dialog="inDialog">
+				</qmc-tag-control>
+			</qmc-property-edit-group>
+		</div>
+		<qmc-spinner in-progress="inProgress || !dataReady"></qmc-spinner>
+	</div>
+	<qmc-action-alert-bar in-dialog="inDialog"></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-system-rule-edit-actionbar" actions="actionDefinition" ng-if="inDialog!='true'"></qmc-actionbar>
+</form>

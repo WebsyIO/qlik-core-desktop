@@ -1,0 +1,51 @@
+﻿<qmc-popup width="400" maxheight="300" enable-draggable="true" popup-name="qmcPublishAppDialog"
+		   ng-hide="isHidden" popup-id="qmc-publish-app" in-progress="inProgress" not-hide-overflow="true">
+	<header>{{ 'qmcPublishAppDialog.heading' | qmcTranslate}}</header>
+	<main>
+		<div class="qmc-publish-app-dialog-content">
+			<qmc-property-edit-select-input label="qmcPublishAppDialog.heading.stream"
+											ng-model="appPublishModel.property.stream"
+											error-message-callback="errorMessageCallback"
+											id="qmc-publish-app-dialog-streamslist"
+			                                ignore-undo="true"
+											ignore-edit-style="true"
+											no-value-translation-key="qmcPublishAppDialog.qmcPropertyEditSelectInput.noValue">
+			</qmc-property-edit-select-input>
+			<qmc-property-edit-text-input label="qmcPublishAppDialog.heading.name"
+										  ng-model="appPublishModel.property.name"
+										  error-message-callback="errorMessageCallback"
+										  id="qmc-app-publish-edit-name"
+										  ignore-undo="true"
+										  ignore-edit-style="true"
+										  focus-on-load="true">
+			</qmc-property-edit-text-input>
+			<qmc-object-chooser label="qmcPublishAppDialog.heading.appToReplace"
+								dialog-header="qmcPublishAppDialog.heading.appChooser"
+								table-service="tableService"
+								extra-table-param="appPublishModel.property.stream.value.id"
+								resource-type="'App'"
+								error-message-callback="errorMessageCallback"
+								ng-model="appPublishModel.property.appToReplace"
+								id="qmc-publish-app-dialog-app-chooser"
+								filter-array="appPublishModel.property.stream.value.id"
+								ignore-undo="true"
+								ignore-edit-style="true"
+								focus-on-load="true">
+			</qmc-object-chooser>
+			<qmc-property-edit-bool-input label=""
+										  ng-model="appPublishModel.property.replace"
+										  error-message-callback="errorMessageCallback"
+										  id="qmc-publish-app-dialog-replace"
+										  ignore-undo="true"
+										  ignore-edit-style="true"
+										  focus-on-load="true">
+			</qmc-property-edit-bool-input>
+			<qmc-spinner in-progress="inProgress"></qmc-spinner>
+		</div>
+	</main>
+	<footer>
+		<button id="qmc-publish-app-button-cancel" class="dialog-button-qmc" ng-click="dialogCancelClick( $event )" value="Cancel" ng-disabled="inProgress">{{ 'qmcPublishAppDialog.button.cancel' | qmcTranslate}}</button>
+		<button id="qmc-publish-app-button-ok" class="dialog-button-qmc" ng-click="dialogOkClick( $event )" value="Publish" ng-disabled="inProgress || !appPublishModel.isValid">{{ 'qmcPublishAppDialog.button.ok' | qmcTranslate}}</button>
+	</footer>
+</qmc-popup>
+

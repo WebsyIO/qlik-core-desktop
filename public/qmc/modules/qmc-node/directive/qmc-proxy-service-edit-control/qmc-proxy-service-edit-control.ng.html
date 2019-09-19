@@ -1,0 +1,139 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+		<qmc-property-edit-empty-warning url="/proxies/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.ProxyService.name"
+											  ng-model="nodeNameProperty"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-node">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmcProxyServiceEdit.qmcPropertyEditGroup.ports" force-show="{{detached}}">
+				<qmc-property-edit-text-input label="qros.ProxyService.listenPort"
+											  ng-model="editModel.property.settings.property.listenPort"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-listenPort">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.ProxyService.internalAuthenticationListenPort"
+											  ng-model="editModel.property.settings.property.authenticationListenPort"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-authenticationListenPort">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-bool-input label="qros.ProxyService.kerberosAuthentication"
+											  ng-model="editModel.property.settings.property.kerberosAuthentication"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-kerberosAuthentication">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-text-input label="qros.ProxyService.restListenPort"
+											  ng-model="editModel.property.settings.property.restListenPort"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-restListenPort">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-bool-input label="qros.ProxyService.allowHttp"
+											  ng-model="editModel.property.settings.property.allowHttp"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-allowHttp">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-text-input label="qros.ProxyService.unencryptedListenPort"
+											  ng-model="editModel.property.settings.property.unencryptedListenPort"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-unencryptedListenPort">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmcProxyServiceEdit.qmcPropertyEditGroup.advanced" force-show="{{detached}}">
+				<qmc-property-edit-text-input label="qros.ProxyService.maxHeaderLines"
+											  ng-model="editModel.property.settings.property.maxHeaderLines"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-maxHeaderLines">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.ProxyService.maxHeaderSizeBytes"
+											  ng-model="editModel.property.settings.property.maxHeaderSizeBytes"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-maxHeaderSizeBytes">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.ProxyService.keepAliveTimeoutSeconds"
+											  ng-model="editModel.property.settings.property.keepAliveTimeoutSeconds"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-keepAliveTimeoutSeconds">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.logging" force-show="{{detached}}">
+				<qmc-property-edit-loglevel label="qros.ProxyService.logVerbosityAuditActivity"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityAuditActivity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Basic"
+											id="qmc-proxy-service-edit-logVerbosityAuditActivity">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.ProxyService.logVerbosityAuditSecurity"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityAuditSecurity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Basic"
+											id="qmc-proxy-service-edit-logVerbosityAuditSecurity">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.ProxyService.logVerbosityService"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityService"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Error,Warning,Info"
+											id="qmc-proxy-service-edit-logVerbosityService">
+				</qmc-property-edit-loglevel>
+				<h4 class="qmc-node-trace-log-heading">{{'qmcNode.trace.log.heading' | qmcTranslate}}</h4>
+				<qmc-property-edit-text-input label="qros.ProxyService.performanceLoggingInterval"
+											  ng-model="editModel.property.settings.property.performanceLoggingInterval"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-performanceLoggingInterval">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-loglevel label="qros.ProxyService.logVerbosityAudit"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityAudit"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-proxy-service-edit-logVerbosityAudit">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.ProxyService.logVerbosityPerformance"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityPerformance"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-proxy-service-edit-logVerbosityPerformance">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.ProxyService.logVerbositySecurity"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbositySecurity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-proxy-service-edit-logVerbositySecurity">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.ProxyService.logVerbositySystem"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbositySystem"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-proxy-service-edit-logVerbositySystem">
+				</qmc-property-edit-loglevel>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmcProxyServiceEdit.qmcPropertyEditGroup.security" force-show="{{detached}}">
+				<qmc-property-edit-text-input label="qros.ProxyService.sslBrowserCertificateThumbprint"
+											  ng-model="editModel.property.settings.property.sslBrowserCertificateThumbprint"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-proxy-service-edit-sslBrowserCertificateThumbprint">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.tags" force-show="{{detached}}">
+				<qmc-tag-control ng-model="editModel.property.tags"
+								 error-message-callback="errorMessageCallback"
+								 id="qmc-proxy-service-edit-tags">
+				</qmc-tag-control>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.customProperties" force-show="{{detached}}">
+				<qmc-property-edit-custom-properties ng-model="editModel.property.customProperties">
+				</qmc-property-edit-custom-properties>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-proxy-service-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

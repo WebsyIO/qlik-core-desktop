@@ -1,0 +1,11 @@
+﻿<div ng-class="{ 'qmc-property-edit-row-layout': !ignoreEditStyle }" class="qmc-property-edit-row" ng-hide="ngModel.isHidden">
+	<div class="qmc-property-edit-row-label">
+		<label for="{{elemClass}}" title="{{label | qmcTranslate}}">{{label | qmcTranslate}}</label>
+		<qmc-undo-button ng-disabled="ngModel.isDisabled" ng-click="reset()" ng-if="ngModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+	</div>
+	<div class="qmc-property-edit-row-input">
+		<input type="file" class="qmc-input" maxlength="{{ngModel.maxLength}}" ng-readonly="ngModel.isReadonly" ng-disabled="ngModel.isDisabled" qmc-focus="{{focusOnLoad}}" />
+		<qmc-contextual-notifier ng-if="!ngModel.isValid && !ignoreInvalid" msg-type="error" msg-string="errorMessages"></qmc-contextual-notifier>
+		<qmc-contextual-notifier ng-if="ngModel.information" msg-type="info" msg-string="infoMessages"></qmc-contextual-notifier>
+	</div>
+</div>

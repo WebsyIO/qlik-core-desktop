@@ -1,0 +1,6 @@
+﻿<ul>
+	<li ng-repeat="item in items track by $index" title="{{item.name}}">
+		{{item.name}}
+	</li>
+	<li ng-if="isNew()">{{ (newEntityString || 'qmcCurrentSelection.createNew') | qmcTranslate}}</li>
+</ul>

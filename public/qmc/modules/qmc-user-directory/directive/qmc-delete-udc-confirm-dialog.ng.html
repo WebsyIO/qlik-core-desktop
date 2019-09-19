@@ -1,0 +1,26 @@
+﻿<qmc-popup width="400" maxheight="300" enable-draggable="true" popup-name="qmcDeleteUdcPopup" popup-id="qmc-delete-udc-popup" spinner="inProgress">
+	<header>{{'qmcDeleteUdcConfirmDialog.header' | qmcTranslate }}</header>
+	<main>
+		<div class="wrapper">
+			<i class="icon-qmc-warning qmc-flex-none"></i>
+			<div class="qmc-flex-fill">
+				{{'qmcDeleteUdcConfirmDialog.confirmText' | qmcTranslate : udc.name }}
+			</div>
+		</div>
+		<qmc-property-edit-bool-input class="deleteUsers"
+										label=""
+										ng-model="deleteUdcModel.deleteUsers"
+										error-message-callback="deleteUdcModel.errorMessageCallback"
+										id="qmc-publish-app-dialog-replace"
+										ignore-undo="true"
+										ignore-edit-style="true"
+										focus-on-load="true">
+		</qmc-property-edit-bool-input>
+		<qmc-contextual-notifier ng-if="deleteUdcModel.deleteUsers.value" msg-type="warning" msg-topic="qmcDeleteUdcConfirmDialog.deleteUserWarning"></qmc-contextual-notifier>
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+	</main>
+	<footer>
+		<button id="qmc-delete-udc-button-cancel" class="dialog-button-qmc" ng-click="dialogCancelClick( $event )" ng-disabled="inProgress">{{'qmcDeleteUdcConfirmDialog.cancelText' | qmcTranslate}}</button>
+		<button id="qmc-delete-udc-button-ok" class="dialog-button-qmc" ng-click="dialogOkClick( $event )" ng-disabled="inProgress">{{'qmcDeleteUdcConfirmDialog.okText' | qmcTranslate}}</button>
+	</footer>
+</qmc-popup>

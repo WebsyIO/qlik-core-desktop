@@ -1,0 +1,28 @@
+﻿<qmc-popover align-to="alignTo" position="bottom" collision="flipfit" toggle="closeActionsPopover($event)" spinner="inProgress">
+	<div class="qmc-popover-header">
+		<h1>
+			<span>{{'qmcActionsPopover.heading' | qmcTranslate}}</span>
+		</h1>
+	</div>
+	<div class="maincontent">
+		<ul>
+			<li ng-if="!tableController.disableSearch" ng-click="clear()" ng-class="{'disabled' : refreshInProgress}">
+				<!--<i class="button-icon icon-qmc-filter icon-small"></i>-->
+				<div>{{'qmcActionsPopover.content.clear' | qmcTranslate}}</div>
+			</li>
+			<li ng-click="!tableController.singleSelect && selectAll()" ng-class="{'disabled' : tableController.singleSelect || refreshInProgress}">
+				<!--<i class="button-icon icon-qmc-select icon-small"></i>-->
+				<div>{{'qmcActionsPopover.content.selectAll' | qmcTranslate}}</div>
+			</li>
+
+			<li ng-click="!tableController.singleSelect && deselectAll()" ng-class="{'disabled' : tableController.singleSelect || refreshInProgress}">
+				<!--<i class="button-icon icon-qmc-select icon-small"></i>-->
+				<div>{{'qmcActionsPopover.content.deselectAll' | qmcTranslate}}</div>
+			</li>
+			<li ng-click="wrapCells()" ng-class="{'disabled' : refreshInProgress}">
+				<i ng-if="isWrappingCells()" class="icon icon-qmc-checkbox"></i>
+				<div>{{'qmcActionsPopover.content.toggleWrapping' | qmcTranslate}}</div>
+			</li>
+		</ul>
+	</div>
+</qmc-popover>

@@ -1,0 +1,31 @@
+﻿<input id="{{inputId}}"
+	   type="text"
+	   title="{{autocompleteModel.value}}"
+	   class="qmc-input"
+	   autocomplete="off"
+	   ng-keyup="updateList($event)"
+	   ng-keydown="updateSelected($event)"
+	   ng-click="onClick()"
+	   ng-blur="onBlur($event)"
+	   ng-model="autocompleteModel.value"
+	   maxlength="{{autocompleteModel.getMaxLength()}}"
+	   ng-readonly="isReadonly()"
+	   ng-disabled="ngDisabled || propertyModel.isDisabled || isReadonly()"
+	   ng-change="delayedOnChangeCallback()"
+	   qmc-placeholder="{{propertyModel.placeholder | qmcTranslate}}" />
+<ul class="qmcAutocompleteList" ng-if="showListOfItems">
+	<li
+		class="item"
+		ng-repeat="item in items track by $index"
+		ng-mouseover="resetSelection()"
+		ng-click="select(item, $index)"
+		id="{{inputId + '_' + $index}}"
+		ng-class="{'itemSelected': ($index===selected)}">
+		<span title="{{(item.name || item).length > 60 ? item.name || item : ''}}">
+			{{(item.name || item).length > 60 ? (item.name || item).substring(0,60) + '...' : item.name || item}}
+		</span>
+	</li>
+	<li class="moreItemsIndicator" ng-show="showMoreItemsIndicator">
+		<span>. . .</span>
+	</li>
+</ul>

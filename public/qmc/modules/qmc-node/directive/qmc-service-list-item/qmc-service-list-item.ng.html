@@ -1,0 +1,40 @@
+<div
+	class="node-header"
+	ng-class="{selected: selectionSet.selection.items[0].objectID == item.id}"
+	ng-click="selectNode()"
+	ng-dblclick="onClickEdit()">
+	<div class="node-name">
+		{{item.name}}
+	</div>
+	<div class="node-hostname">
+		 {{item.hostName}}
+	</div>
+</div>
+<div class="services" ng-click="selectNode()">
+	<div class="title">{{servicesString}}</div>
+
+	<div class="services-container">
+		<div
+			class="service"
+			ng-repeat="(name, service) in item.services"
+			ng-mouseenter="editButton=true; onMouseEnter()"
+			ng-mouseleave="editButton=false">
+			<qmc-button
+			  ng-if="editButton && canView"
+				ng-style="buttonStyle"
+				class="qmc-actionbuttons"
+				data-actiontype="redistribute"
+				icon=""
+				right-icon=""
+				action="edit(name, service[0], $event)"
+				disabled="action.isDisabled" ng-if="!action.isHidden">
+				{{(canEdit ? 'qros.ServerNodeConfiguration.Services.edit' : 'qros.ServerNodeConfiguration.Services.view') | qmcTranslate}}
+			</qmc-button>
+			<i class="{{'icon-qmc-' + name + 'Service'}}"></i>
+			<div class="footer" ng-class="{notRunning: (service[0].status !== 'Running') && service[0].enabled, disabled: !service[0].enabled}">
+				<div class="type truncation">{{'qros.ServerNodeConfiguration.' + name.toLowerCase() + 'Enabled' | qmcTranslate}}</div>
+				<div class="status truncation">{{translateStatus(service[0].status)}}</div>
+			</div>
+		</div>
+	</div>
+</div>

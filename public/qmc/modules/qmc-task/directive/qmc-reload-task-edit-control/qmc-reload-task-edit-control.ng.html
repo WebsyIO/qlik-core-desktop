@@ -1,0 +1,67 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+
+		<qmc-property-edit-empty-warning url="/tasks" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.Task.name"
+											  ng-model="editModel.reloadTaskModel.property.name"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-reload-task-edit-name">
+				</qmc-property-edit-text-input>
+				<qmc-object-chooser label="qros.ReloadTask.app"
+									dialog-header="{{'qmcAppChooser.table.heading'}}"
+									table-service="tableService"
+									resource-type="'App'"
+									error-message-callback="errorMessageCallback"
+									ng-model="editModel.reloadTaskModel.property.app"
+									placeholder="qmcAppChooser.placeholder"
+									id="qmc-reload-task-app-chooser">
+				</qmc-object-chooser>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.ReloadTask.execution" show-initially="true" force-show="{{detached}}">
+				<qmc-property-edit-bool-input label="qros.Task.enabled"
+											  ng-model="editModel.reloadTaskModel.property.enabled"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-reload-task-edit-enabled">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-text-input label="qros.ReloadTask.taskSessionTimeout"
+											  ng-model="editModel.reloadTaskModel.property.taskSessionTimeout"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-reload-task-edit-tasksessiontimeout">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.ReloadTask.maxRetries"
+											  ng-model="editModel.reloadTaskModel.property.maxRetries"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-reload-task-edit-maxretries">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.ReloadTask.triggers" id="qmc-task-trigger-group" hide-heading="true" show-initially="true" force-show="{{detached}}" selected-callback="triggerGroupSelected">
+				<qmc-task-event-control 
+										ng-if="viewReady"
+										ng-model="editModel.eventsModel"
+										selection-set="selectionSet"
+										error-message-callback="errorMessageCallback"
+										id="qmc-reload-task-edit-events">
+				</qmc-task-event-control>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.tags" force-show="{{detached}}">
+				<qmc-tag-control ng-model="editModel.reloadTaskModel.property.tags"
+								 error-message-callback="errorMessageCallback"
+								 id="qmc-reload-task-edit-tags">
+				</qmc-tag-control>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.customProperties" force-show="{{detached}}">
+				<qmc-property-edit-custom-properties ng-model="editModel.reloadTaskModel.property.customProperties">
+				</qmc-property-edit-custom-properties>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-reload-task-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

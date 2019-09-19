@@ -1,0 +1,8 @@
+﻿<div ng-repeat="row in rowsArr" class="matrixRow">
+	<span ng-repeat="col in colsArr"
+		  ng-disabled="isDisabled($parent.$index, $index)"
+		  ng-class="{checked: isChecked(colsArr.length * $parent.$index + $index)}"
+		  ng-click="!isDisabled($parent.$index, $index) && toggle(colsArr.length * $parent.$index + $index)">
+		{{items[colsArr.length * $parent.$index + $index]}}
+	</span>
+</div>

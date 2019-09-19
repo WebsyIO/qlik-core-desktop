@@ -1,0 +1,29 @@
+﻿<div class="group {{navigationView.value === 'mainEdit' ? 'group-active group-active-group' : 'group-inactive group-inactive-group' }}">
+	<div class="header" ng-click="setEditView(true)">
+		<h1>
+			{{'qmcNavigator.properties.header'| qmcTranslate}}
+		</h1>
+	</div>
+	<div id="{{'qmc-navigator-group-' + $index}}" class="item" ng-repeat="group in propertyEditChooserGroups | orderBy:'order'"
+	 ng-click="toggleGroup(group)">
+		<i class="icon icon-qmc-checkbox" ng-if="group.selected"></i>
+		<div>
+			{{(group.label | qmcTranslate) || (rescueLocalize ? group.label : '')}}
+		</div>
+	</div>
+</div>
+<div class="group association-group {{navigationView.value === 'mainEdit' ? 'group-inactive' : 'group-active'}}" ng-hide="view === 'gmc' || view === 'lus'"
+ ng-if="associations.length > 0 && !isNew">
+	<div class="header" ng-click="setEditView(false)">
+		<h1>
+			{{'qmcNavigator.associations.header'| qmcTranslate}}
+		</h1>
+	</div>
+	<div id="{{'qmc-navigator-association-' + $index}}" class="item" ng-class="{'hoverable': (association.associationDirective!==currentAssociation), 'item-active': (association.associationDirective===currentAssociation)}"
+	 ng-repeat="association in associations" ng-click="setAssociation(association)">
+		<i class="icon icon-qmc-checkbox" ng-if="association.associationDirective===currentAssociation"></i>
+		<div>
+			{{(association.label | qmcTranslate) || (rescueLocalize ? association.label : '')}}
+		</div>
+	</div>
+</div>

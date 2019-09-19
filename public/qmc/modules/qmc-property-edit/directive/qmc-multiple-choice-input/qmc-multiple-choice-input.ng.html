@@ -1,0 +1,34 @@
+﻿<div ng-class="{ 'qmc-property-edit-row-layout': !ignoreEditStyle }" class="qmc-property-edit-row" ng-hide="ngModel.isHidden">
+	<div class="qmc-property-edit-row-label">
+		<label for="{{elemClass}}">{{label | qmcTranslate}}</label>
+		<qmc-undo-button ng-disabled="ngModel.isDisabled" ng-click="ngModel.reset()" ng-if="ngModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+	</div>
+	<div class="qmc-property-edit-row-input">
+		<div class="leftContainer">
+			<label ng-repeat="choice in choices1 track by $index" class="qmc-checkbox">
+				<br ng-if="$index>0">
+				<div class="qmc-property-edit-checkbox-input-label">
+					<input
+						type="checkbox"
+						ng-disabled="ngModel.isDisabled || isDisabled(choice.value)"
+						ng-checked="ngModel.value.indexOf(choice.value) > -1"
+						ng-click="change($event, choice.value)" />
+					<div class="label" title="{{choice.name}}">{{choice.name}}</div>
+				</div>
+			</label>
+		</div>
+		<div class="rightContainer">
+			<label  ng-repeat="choice in choices2 track by $index" class="qmc-checkbox">
+				<br ng-if="$index>0">
+				<div class="qmc-property-edit-checkbox-input-label">
+					<input
+						type="checkbox"
+						ng-disabled="ngModel.isDisabled || isDisabled(choice.value)"
+						ng-checked="ngModel.value.indexOf(choice.value) > -1"
+						ng-click="change($event, choice.value)" />
+					<div class="label" title="{{choice.name}}">{{choice.name}}</div>
+				</div>
+			</label>
+		</div>
+	</div>
+</div>

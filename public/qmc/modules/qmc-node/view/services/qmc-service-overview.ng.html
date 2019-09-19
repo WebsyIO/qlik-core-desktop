@@ -1,0 +1,21 @@
+
+<qmc-service-header
+	id="qmc.stageheader.{{name | lowercase}}"
+	header-icon="{{tableHeaderIcon || 'icon-qmc-' + name}}"
+	header-label="{{tableHeaderLabel || 'qmc.resourceType.' + name}}"
+	class="{{sectionClass}}">
+</qmc-service-header>
+
+<div class="qmc-overview-body services-scroll-wrapper">
+	<qmc-service-list
+		selection-set="selectionSet"
+		on-click-edit="onClickEdit">
+	</qmc-service-list>
+</div>
+
+<qmc-action-alert-bar></qmc-action-alert-bar>
+<qmc-actionbar id="qmc.actionbar.{{name | lowercase}}"
+			   class="qmc-overview-footer"
+			   actions="actionDefinition"
+			   more-actions="moreActionDefinition">
+</qmc-actionbar>

@@ -1,0 +1,116 @@
+﻿<div class="qmc-property-edit-row" ng-hide="ngModel.isHidden">
+	<qmc-stage-header id="{{'qmc.stageheader.' + textListType}}" stage-header-label="{{tableHeading}}">
+		<qmc-undo-button ng-disabled="ngModel.isDisabled" ng-click="ngModel.reset()" ng-if="ngModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+	</qmc-stage-header>
+	<div class="qmc-table inline">
+		<div ng-if="columnHeading" class="qmc-table-header-container">
+			<table class="qmc-table-header">
+				<thead>
+					<tr>
+						<th class="qmc-table-th">
+							<div id="{{'qmc.tablehead.' + textListType}}">
+								<div class="th-heading">{{columnHeading | qmcTranslate}}</div>
+							</div>
+						</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="qmc-table-body-container">
+			<table class="qmc-table-body">
+				<tbody>
+					<tr class="qmc-property-edit-list-add qmc-table-row">
+						<td>
+							<qmc-button id="qmc-property-edit-list-input-add"
+										disabled="(ngModel.isDisabled || ngModel.isReadonly) && (models.length || privilegedAddButtonOnEmpty)"
+										icon="add"
+										action="addNew()">
+								{{(ngModel.hasMultipleValues ? _addButtonTextMultiple : addButtonText) | qmcTranslate}}
+							</qmc-button>
+						</td>
+					</tr>
+				</tbody>
+				<tbody ng-if="ngModel.hasMultipleValues">
+					<tr class="qmc-table-row">
+						<td class="qmc-maincol">
+							<qmc-property-edit-text-input ignore-edit-style="true"
+														  ignore-undo="true"
+														  ng-model="multipleValuesModel"
+														  error-message-callback="errorMessageCallback">
+							</qmc-property-edit-text-input>
+							<qmc-button id="{{'qmc-property-edit-list-delete-' + ngModel.name}}"
+										icon="delete"
+										class="qmc-property-edit-list-delete"
+										action="ngModel.clear()"
+										disabled="ngModel.isDisabled || ngModel.isReadonly || !allowEmpty"></qmc-button>
+						</td>
+					</tr>
+				</tbody>
+				<tbody ng-if="!ngModel.hasMultipleValues">
+					<tr class="qmc-table-row" ng-repeat="model in models|qmcEditModelListFilterSorter">
+						<td class="qmc-maincol" ng-keypress="handleKeyPress( $event )">
+							<qmc-property-edit-text-input ng-if="!autoCompleteResource && !pairedResource && !objectChooser"
+														  id="{{'qmc-property-edit-list-item-' + $index}}"
+														  ignore-edit-style="true"
+														  ignore-undo="true"
+														  ng-model="model"
+														  error-message-callback="errorMessageCallback"
+														  data-set-focus="{{model.$setFocus}}">
+							</qmc-property-edit-text-input>
+							<qmc-property-edit-paired-text-input ng-if="!autoCompleteResource && pairedResource && !objectChooser"
+																 id="{{'qmc-property-edit-list-item-' + $index}}"
+																 label="pairedLabel"
+																 ignore-edit-style="true"
+																 ignore-undo="true"
+																 ng-model="model"
+																 error-message-callback="errorMessageCallback"
+																 mandatory="pairedMandatory"
+																 data-set-focus="{{model.$setFocus}}">
+							</qmc-property-edit-paired-text-input>
+							<qmc-property-edit-autocomplete-text-input ng-if="autoCompleteResource && !objectChooser"
+																	   id="{{'qmc-property-edit-list-item-' + $index}}"
+																	   ignore-edit-style="true"
+																	   ignore-undo="true"
+																	   ng-model="model"
+																	   error-message-callback="errorMessageCallback"
+																	   autocomplete-search-model="autocompleteSearchModel"
+																	   data-set-focus="{{model.$setFocus}}">
+							</qmc-property-edit-autocomplete-text-input>
+
+							<!-- Should be refatored out (use multiple ng-transclude or something like that)-->
+							<div ng-if="objectChooser" class="select-chooser">
+								<qmc-property-edit-select-input id="{{'qmc-property-edit-list-item-select' + $index}}"
+																label="{{objectChooser.selectText}}"
+																translation-prefix="{{objectChooser.selectPrefix}}"
+																exclude-options="objectChooser.excludeOptions"
+																no-empty-value="true"
+																ng-model="model.property[objectChooser.selectProperty]">
+								</qmc-property-edit-select-input>
+								<qmc-object-chooser style="float: left;width: 65%;"
+													label="{{objectChooser.chooserText}}"
+													dialog-header="{{objectChooser.headerText}}"
+													table-service="objectChooser.tableService"
+													resource-type="objectChooser.resourceType"
+													filter-array="objectChooser.filterArray"
+													filter="objectChooser.filter"
+													id="{{'qmc-property-edit-list-item-chooser' + $index}}"
+													error-message-callback="errorMessageCallback"
+													ng-model="model.property[objectChooser.chooserProperty]">
+								</qmc-object-chooser>
+							</div>
+
+							<qmc-button id="{{'qmc-property-edit-list-item-' + $index + '-delete'}}"
+										icon="delete"
+										class="{{pairedResource || objectChooser ? 'qmc-property-edit-list-delete qmc-property-edit-list-delete-paired':'qmc-property-edit-list-delete'}}"
+										action="model.remove()"
+										disabled="ngModel.isDisabled || ngModel.isReadonly || (!allowEmpty && $first && $last)"></qmc-button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<qmc-contextual-notifier ng-if="!ngModel.isValid && !ignoreInvalid && ngModel.errors.length>0" msg-type="error" msg-string="errorMessages"></qmc-contextual-notifier>
+		<qmc-contextual-notifier ng-if="hasMultipleValues && ngModel.hasChanged" msg-type="warning" msg-topic="qmcPropertyEditListInput.multipleValues.changed.warning"></qmc-contextual-notifier>
+		<qmc-contextual-notifier ng-if="ngModel.information" msg-type="info" msg-string="infoMessages"></qmc-contextual-notifier>
+	</div>
+</div>

@@ -1,0 +1,26 @@
+﻿<qmc-popup width="900" height="300" enable-draggable="true" popup-name="qmcAuditItemDialog" in-progress="inProgress">
+	<header>
+		<qmc-table-header id="qmc.audititemdialogheader"
+						  table-controller="tableController"
+						  selection-set="selectionSet"
+						  column-selector="true"
+						  hide-total-count="true"
+						  table-header-icon="icon-qmc-Audit"
+						  table-header-label="qmcAuditItemDialog.heading">
+		</qmc-table-header>
+	</header>
+	<main>
+		<qmc-table table-controller="tableController" selection-set="selectionSet" single-select="true"></qmc-table>
+		<div class="cellReference">
+			{{'qmcAuditItemDialog.selectedCell' | qmcTranslate}}
+			<b title="{{('qmcAuditGrid.axisLabel.target' | qmcTranslate) + ': ' + auditConfig.selected.resource.items()[0].name + '\n' + ('qmcAuditGrid.axisLabel.source' | qmcTranslate) + ': ' + auditConfig.selected.user.items()[0].name }}">
+				[ &quot;{{auditConfig.selected.resource.items()[0].name}}&quot; , &quot;{{auditConfig.selected.user.items()[0].name}}&quot;]
+			</b>
+		</div>
+		<qmc-contextual-notifier ng-if="limitedRuleAccess()" class="limitedRuleAccess" msg-type="info" msg-topic="qmcAuditItemDialog.limitedRuleAccess.notification" show-close-button="true"></qmc-contextual-notifier>
+	</main>
+	<footer>
+		<button ng-if="ruleSectionAccess" id="qmcAuditItemDialog-button-edit" class="dialog-button-qmc" ng-click="onEdit()" ng-disabled="inProgress || selectionSet.length !== 1">{{ (selectionSet.accessCount( 'update' ) > 0 ? 'qmcSingleEditActionFactory.actionbar.edit' : 'qmcSingleEditActionFactory.actionbar.view') | qmcTranslate}}</button>
+		<button id="qmcAuditItemDialog-button-cancel" class="dialog-button-qmc" ng-click="onCancel()" ng-disabled="inProgress">{{ 'qmc.common.cancel' | qmcTranslate}}</button>
+	</footer>
+</qmc-popup>

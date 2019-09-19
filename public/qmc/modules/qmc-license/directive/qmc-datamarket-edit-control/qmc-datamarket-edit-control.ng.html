@@ -1,0 +1,118 @@
+﻿<div class="qmc-property-edit-main" qmc-property-edit-handler>
+	<div class="qmc-property-edit-content">
+		<qmc-stage-header stage-header-icon="icon-qmc-DataMarket"
+						  stage-header-label="qmcDataMarketEdit.stageHeading"
+						  class="qmc-manage-resources-section">
+		</qmc-stage-header>
+		<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+			<div class="qmc-property-edit-form-stage">
+				<qmc-spinner in-progress="inProgress"></qmc-spinner>
+
+				<div class="qmc-property-edit-groups">
+
+					<qmc-datamarket-logo></qmc-datamarket-logo>
+
+					<qmc-property-edit-group class="qmc-datamarket-edit-identification" heading="qmcDataMarketEdit.qmcPropertyEditGroup.identification" force-show="true" no-separator="true">
+						<!--We are reusing the property edit bool input class here to get the same indentation-->
+						<div class="qmc-property-edit-row qmc-property-edit-row-layout">
+							<div class="qmc-property-edit-row-label">
+								<label title="{{'qmcDataMarketEdit.label.tc' | qmcTranslate}}">{{'qmcDataMarketEdit.label.tc' | qmcTranslate}}</label>
+							</div>
+							<div class="qmc-property-edit-row-input">
+								<qmc-datamarket-tc></qmc-datamarket-tc>
+							</div>
+						</div>
+
+						<qmc-property-edit-bool-input ng-model="editModel.property.accept"
+													  error-message-callback="errorMessageCallback"
+													  id="qmc-datamarket-edit-accept"
+													  ignore-invalid="true">
+						</qmc-property-edit-bool-input>
+
+						<!--We are reusing the property edit bool input class here to get the same indentation-->
+						<div class="qmc-property-edit-row qmc-property-edit-row-layout">
+							<div class="qmc-property-edit-row-label">
+								<label title="{{'qmcDataMarketEdit.label.option' | qmcTranslate}}">{{'qmcDataMarketEdit.label.option' | qmcTranslate}}</label>
+								<qmc-undo-button ng-disabled="editModel.property.subscription.isDisabled" ng-click="editModel.property.subscription.reset()" ng-if="editModel.property.subscription.hasChanged"></qmc-undo-button>
+							</div>
+							<div class="qmc-property-edit-row-input">
+								<label class="qmc-checkbox">
+									<input type="radio"
+										   value="0"
+										   ng-model="editModel.property.subscription.value"
+										   ng-disabled="editModel.property.subscription.isDisabled || editModel.property.subscription.isReadonly"
+										   ng-readonly="editModel.property.subscription.isReadonly">
+									<div class="check-wrap">
+										<span class="check"></span>
+										<span class="check-text">{{'qmcDataMarketEdit.label.option.free' | qmcTranslate}}</span>
+									</div>
+								</label><br />
+								<label class="qmc-checkbox">
+									<input type="radio"
+										   value="1"
+										   ng-model="editModel.property.subscription.value"
+										   ng-disabled="editModel.property.subscription.isDisabled || editModel.property.subscription.isReadonly"
+										   ng-readonly="editModel.property.subscription.isReadonly" />
+									<div class="check-wrap">
+										<span class="check"></span>
+										<span class="check-text">{{'qmcDataMarketEdit.label.option.subscription' | qmcTranslate}}</span>
+									</div>
+								</label>
+							</div>
+						</div>
+						<div ng-if="editModel.property.subscription.value==='1'">
+							<qmc-property-edit-text-input label="qros.License.name"
+														  ng-model="licenseModel.property.name"
+														  error-message-callback="errorMessageCallback"
+														  id="qmc-datamarket-edit-name">
+							</qmc-property-edit-text-input>
+							<qmc-property-edit-text-input label="qros.License.organization"
+														  ng-model="licenseModel.property.organization"
+														  error-message-callback="errorMessageCallback"
+														  id="qmc-datamarket-edit-organization">
+							</qmc-property-edit-text-input>
+							<qmc-property-edit-text-input label="qros.License.serial"
+														  ng-model="licenseModel.property.serial"
+														  error-message-callback="errorMessageCallback"
+														  id="qmc-datamarket-edit-serial">
+							</qmc-property-edit-text-input>
+							<qmc-property-edit-text-input label="qros.License.check"
+														  ng-model="licenseModel.property.check"
+														  error-message-callback="errorMessageCallback"
+														  password="true"
+														  id="qmc-datamarket-edit-check">
+							</qmc-property-edit-text-input>
+							<qmc-property-edit-collapsible class="qmc-license-edit-lef-collapsible" heading="qmcLicenseEdit.qmcPropertyEditCollapsible.LEFAccess">
+								<!--We are reusing the property edit text input class here to get the same indentation-->
+								<div class="qmc-property-edit-row qmc-property-edit-row-layout">
+									<div class="qmc-property-edit-row-label">
+									</div>
+									<div class="qmc-property-edit-row-input">
+										<qmc-button id="qmc-datamarket-edit-get-lef" action="getLef()" disabled="!licenseModel.hasChanged || editForm.$invalid || inProgress">{{'qmcLicenseEdit.getLef' | qmcTranslate}}</qmc-button>
+										<qmc-contextual-notifier ng-if="lefError.length>0" msg-type="error" msg-string="lefError"></qmc-contextual-notifier>
+									</div>
+								</div>
+
+								<qmc-property-edit-text-input ng-model="licenseModel.property.lef"
+															  error-message-callback="errorMessageCallback"
+															  id="qmc-datamarket-edit-lef"
+															  rows="7">
+								</qmc-property-edit-text-input>
+
+								<div class="qmc-license-edit-lef-info-container">
+									<div class="qmc-license-edit-lef-info">
+										<i class="icon-qmc-info"></i><span>{{'qmcLicenseEdit.lefInfoNotice' | qmcTranslate}}</span>
+										<div>{{'qmcLicenseEdit.lefInfoText' | qmcTranslate}}</div>
+									</div>
+								</div>
+							</qmc-property-edit-collapsible>
+							<qmc-contextual-notifier msg-type="{{messageType}}" msg-string="message" ng-if="showMessageBar()"></qmc-contextual-notifier>
+						</div>
+					</qmc-property-edit-group>
+				</div>
+			</div>
+			<qmc-action-alert-bar></qmc-action-alert-bar>
+			<qmc-actionbar id="qmc-datamarket-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+		</form>
+	</div>
+</div>

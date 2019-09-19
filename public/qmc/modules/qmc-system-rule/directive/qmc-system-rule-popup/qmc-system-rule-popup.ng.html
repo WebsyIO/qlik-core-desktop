@@ -1,0 +1,20 @@
+﻿<qmc-popup width="850" enable-draggable="true" popup-name="qmcSystemRulePopup" help-link="{{helpTopic}}" ng-show="!isHidden">
+	<header><i class="{{inputData.category === 'License' ? 'icon-qmc-License': 'icon-qmc-SystemRule'}}"></i> {{inputData.header}}</header>
+	<main class="qmc-system-rule-popup-main qmc-property-edit">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+		<div class="qmc-property-edit-main" qmc-property-edit-handler>
+			<div class="qmc-property-edit-content">
+				<qmc-system-rule-edit-control selection-set="selectionSet" input-data="inputData" in-dialog="true" output="editControl"></qmc-system-rule-edit-control>
+			</div>
+			<qmc-navigator section-name="{{inputData.entity==='License.UserAccessGroup' || inputData.entity==='License.AnalyzerAccessGroup' || inputData.entity==='License.ProfessionalAccessGroup' ? inputData.entity : 'SystemRule'}}" navigation-view="navigationView" is-new="editModel.isNew && inputData.entity==='License.UserAccessGroup'" set-group-listener="inputData.setGroup" in-dialog="true" hide-associations="true"></qmc-navigator>
+		</div>
+	</main>
+	<footer>
+		<button type="button" class="dialog-button-qmc" ng-click="popupCancelClick( $event )" ng-disabled="inProgress" id="qmc-rulewizard-popup-button-cancel">
+			{{'qmcSystemRulePopup.cancelButton' | qmcTranslate}}
+		</button>
+		<button type="button" class="dialog-button-qmc" ng-click="onSave()" ng-disabled="!(editControl.model.hasChanged || editControl.model.isNew) || (systemRuleEditForm.$invalid || !editControl.model.isValid || !editControl.model.isReady ) || inProgress || editControl.model.isDisabled" id="qmc-rulewizard-popup-button-ok">
+			{{'qmcSystemRulePopup.okButton' | qmcTranslate}}
+		</button>
+	</footer>
+</qmc-popup>

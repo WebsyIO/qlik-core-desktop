@@ -1,0 +1,2 @@
+﻿<a ng-if="locations.length > maxNumLocations" class="first">. . .</a>
+<a ng-repeat="location in trail" ng-class="{active: $last}" ng-href="{{location.url}}">{{location.name}}</a>

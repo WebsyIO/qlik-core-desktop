@@ -1,0 +1,247 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="output.inProgress"></qmc-spinner>
+		<qmc-property-edit-empty-warning url="/virtualproxies/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="{{'true'}}">
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.description"
+											  ng-model="editModel.property.description"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-description">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.prefix"
+											  ng-model="editModel.property.prefix"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-prefix">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-bool-input label="qros.VirtualProxyConfig.defaultVirtualProxy"
+											  ng-model="editModel.property.defaultVirtualProxy"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-defaultVirtualProxy">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.sessionInactivityTimeout"
+											  ng-model="editModel.property.sessionInactivityTimeout"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-sessionInactivityTimeout">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.sessionCookieHeaderName"
+											  ng-model="editModel.property.sessionCookieHeaderName"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-sessionCookieHeaderName">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmcVirtualProxyEditControl.qmcPropertyEditGroup.authentication" force-show="{{detached}}">
+				<qmc-property-edit-select-input label="qros.VirtualProxyConfig.anonymousAccessMode"
+												translation-prefix="qros.VirtualProxyConfig.anonymousAccessMode"
+												ng-model="editModel.property.anonymousAccessMode"
+												error-message-callback="errorMessageCallback"
+												no-empty-value="true"
+												id="qmc-virtual-proxy-edit-anonymousAccessMode">
+				</qmc-property-edit-select-input>
+				<qmc-property-edit-select-input label="qros.VirtualProxyConfig.authenticationMethod"
+												translation-prefix="qros.VirtualProxyConfig.authenticationMethod"
+												ng-model="editModel.property.authenticationMethod"
+												error-message-callback="errorMessageCallback"
+												no-empty-value="true"
+												id="qmc-virtual-proxy-edit-authenticationMethod">
+				</qmc-property-edit-select-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.headerAuthenticationHeaderName"
+											  ng-model="editModel.property.headerAuthenticationHeaderName"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-headerAuthenticationHeaderName">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.headerAuthenticationStaticUserDirectory"
+											  ng-model="editModel.property.headerAuthenticationStaticUserDirectory"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-headerAuthenticationStaticUserDirectory">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.headerAuthenticationDynamicUserDirectory"
+											  ng-model="editModel.property.headerAuthenticationDynamicUserDirectory"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-headerAuthenticationDynamicUserDirectory">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.windowsAuthenticationEnabledDevicePattern"
+											  ng-model="editModel.property.windowsAuthenticationEnabledDevicePattern"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-windowsAuthenticationEnabledDevicePatt">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.authenticationModuleRedirectUri"
+											  ng-model="editModel.property.authenticationModuleRedirectUri"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-authenticationModuleRedirectUri">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-bool-input label="qros.VirtualProxyConfig.samlSlo"
+											  ng-model="editModel.property.samlSlo"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-samlSlo">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.samlHostUri"
+											  ng-model="editModel.property.samlHostUri"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-samlHostUri">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.samlEntityId"
+											  ng-model="editModel.property.samlEntityId"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-samlEntityId">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-file-reader-input label="qros.VirtualProxyConfig.samlMetadataIdP"
+													 ng-model="editModel.property.samlMetadataIdP"
+													 error-message-callback="errorMessageCallback"
+													 resource-name="editModel.property.description.value || ''"
+													 display-data="displayData"
+													 id="qmc-virtual-proxy-edit-samlMetadataIdP">
+				</qmc-property-edit-file-reader-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.samlAttributeUserId"
+											  ng-model="editModel.property.samlAttributeUserId"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-samlAttributeUserId">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.samlAttributeUserDirectory"
+											  ng-model="editModel.property.samlAttributeUserDirectory"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-samlAttributeUserDirectory">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-select-input label="qros.VirtualProxyConfig.samlAttributeSigningAlgorithm"
+												translation-prefix="qros.VirtualProxyConfig.samlAttributeSigningAlgorithm"
+												ng-model="editModel.property.samlAttributeSigningAlgorithm"
+												error-message-callback="errorMessageCallback"
+												no-empty-value="true"
+												id="qmc-virtual-proxy-edit-samlAttributeSigningAlgorithm">
+				</qmc-property-edit-select-input>
+				<qmc-property-edit-list-input ng-model="editModel.property.samlAttributeMap"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-samlAttributeMap"
+											  text-list-type="samlAttributeMap"
+											  table-heading="qmcVirtualProxyEditControl.samlAttributeMap.table.heading"
+											  add-button-text="qmcVirtualProxyEditControl.samlAttributeMap.table.add.button.label"
+											  paired-resource="true"
+											  paired-label="pairedLabel"
+											  paired-mandatory="true">
+				</qmc-property-edit-list-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.jwtPublicKeyCertificate"
+											  ng-model="editModel.property.jwtPublicKeyCertificate"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-jwtPublicKeyCertificate"
+											  rows="5">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.jwtAttributeUserId"
+											  ng-model="editModel.property.jwtAttributeUserId"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-jwtAttributeUserId">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.jwtAttributeUserDirectory"
+											  ng-model="editModel.property.jwtAttributeUserDirectory"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-jwtAttributeUserDirectory">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.jwtAudience"
+											  ng-model="editModel.property.jwtAudience"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-jwtAudience">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-list-input ng-model="editModel.property.jwtAttributeMap"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-jwtAttributeMap"
+											  text-list-type="jwtAttributeMap"
+											  table-heading="qmcVirtualProxyEditControl.jwtAttributeMap.table.heading"
+											  add-button-text="qmcVirtualProxyEditControl.jwtAttributeMap.table.add.button.label"
+											  paired-resource="true"
+											  paired-label="jwtPairedLabel">
+				</qmc-property-edit-list-input>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmcVirtualProxyEditControl.qmcPropertyEditGroup.loadbalancing" force-show="{{detached}}">
+				<qmc-property-edit-bool-input label="qros.VirtualProxyConfig.useStickyLoadBalancing"
+												ng-model="editModel.property.useStickyLoadBalancing"
+												error-message-callback="errorMessageCallback"
+												id="qmc-virtual-proxy-edit-useStickyLoadBalancing"
+												ng-if="isStickyLoadBalancingEnabled==true">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-object-list-input ng-model="editModel.property.loadBalancingServerNodes"
+												error-message-callback="errorMessageCallback"
+												id="qmc-virtual-proxy-edit-loadBalancingServerNodes"
+												select-dialog-data="selectDialogData"
+												table-heading="qmcVirtualProxyEditControl.loadBalancingServerNodes.label"
+												column-heading="qmcVirtualProxyEditControl.loadBalancingServerNodes.column.label"
+												add-button-text="qmcVirtualProxyEditControl.loadBalancingServerNodes.add.label"
+												parent-selection-set="selectionSet"
+												table-service="tableService"
+												is-set="isSet"
+												warning-messages="warningMessages"
+												display-property="name",
+												list-type="ref">
+				</qmc-property-edit-object-list-input>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmcVirtualProxyEditControl.qmcPropertyEditGroup.advanced" force-show="{{detached}}">
+				<qmc-property-edit-bool-input label="qros.VirtualProxyConfig.extendedSecurityEnvironment"
+											  ng-model="editModel.property.extendedSecurityEnvironment"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-extendedSecurityEnvironment">
+				</qmc-property-edit-bool-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.sessionCookieDomain"
+											  ng-model="editModel.property.sessionCookieDomain"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-sessionCookieDomain">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.additionalResponseHeaders"
+											  ng-model="editModel.property.additionalResponseHeaders"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-additionalResponseHeaders"
+											  rows="5">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-list-input ng-model="editModel.property.websocketCrossOriginWhiteList"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-websocketCrossOriginWhiteList"
+											  text-list-type="qmcWebSocketCrossOriginWhiteList"
+											  table-heading="qmcWebSocketCrossOriginWhiteList.table.heading"
+											  add-button-text="qmcWebSocketCrossOriginWhiteList.table.add.button.label">
+				</qmc-property-edit-list-input>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmcVirtualProxyEditControl.qmcPropertyEditGroup.integration" force-show="{{detached}}">
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.sessionModuleBaseUri"
+											  ng-model="editModel.property.sessionModuleBaseUri"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-sessionModuleBaseUri">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.loadBalancingModuleBaseUri"
+											  ng-model="editModel.property.loadBalancingModuleBaseUri"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-loadBalancingModuleBaseUri">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmcVirtualProxyEditControl.qmcPropertyEditGroup.magicLink" force-show="{{detached}}">
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.magicLinkHostUri"
+											  ng-model="editModel.property.magicLinkHostUri"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-magicLinkHostUri">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.VirtualProxyConfig.magicLinkFriendlyName"
+											  ng-model="editModel.property.magicLinkFriendlyName"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-virtual-proxy-edit-magicLinkFriendlyName">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-generate-text-button label="qmc.VirtualProxyConfig.generateMagicLink"
+											  generate-text-function="generateTextFunction"
+											  disable="selectionSet.length > 1"
+											  disable-context-info="qmcVirtualProxyEditControl.generateMagicLink.disabled.contextualInfo"
+											  generated-text-model="generatedTextModel"
+											  id="qmc-virtual-proxy-edit-generateMagicLink">
+				</qmc-property-edit-generate-text-button>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.tags" force-show="{{detached}}">
+				<qmc-tag-control ng-model="editModel.property.tags"
+								 error-message-callback="errorMessageCallback"
+								 id="qmc-virtual-proxy-edit-tags"
+								 in-dialog="inDialog">
+				</qmc-tag-control>
+			</qmc-property-edit-group>
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.customProperties" force-show="{{detached}}">
+				<qmc-property-edit-custom-properties ng-model="editModel.property.customProperties"
+													 in-dialog="inDialog">
+				</qmc-property-edit-custom-properties>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar in-dialog="inDialog"></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-virtual-proxy-edit-actionbar" actions="actionDefinition" ng-if="inDialog!='true'"></qmc-actionbar>
+</form>

@@ -1,0 +1,36 @@
+﻿<qmc-popup width="{{dialogData.width || 600}}"
+		   maxheight="400"
+		   enable-draggable="true"
+		   popup-name="qmcRefLinkDialog">
+	<header>
+		<qmc-table-header table-header-icon="icon-qmc-VirtualProxyConfig"
+						  table-header-label="{{dialogData.headerText}}"
+						  table-controller="tableController"
+						  selection-set="selectionSet"
+						  column-selector="true"
+						  no-search="true"
+						  hide-counters="true">
+		</qmc-table-header>
+	</header>
+	<main>
+		<qmc-table table-controller="tableController" selection-set="selectionSet"></qmc-table>
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+	</main>
+	<mark>
+		<qmc-contextual-notifier ng-if="showWarningMessages" msg-type="warning" msg-string="warningMessages"></qmc-contextual-notifier>
+	</mark>
+	<footer>
+		<button id="qmc-ref-link-dialog-button-cancel"
+						class="dialog-button-qmc"
+						ng-click="refLinkDialogCancelClick( $event )"
+						ng-disabled="inProgress"
+						value="Cancel">{{dialogData.cancelText}}</button>
+
+		<button id="qmc-ref-link-dialog-button-add" 
+						class="dialog-button-qmc" 
+						ng-click="refLinkDialogAddClick( $event )" 
+						qmc-focus="true" 
+						value="Add" 
+						ng-disabled="inProgress || linkButtonDisabled()">{{dialogData.okText}}</button>
+	</footer>
+</qmc-popup>

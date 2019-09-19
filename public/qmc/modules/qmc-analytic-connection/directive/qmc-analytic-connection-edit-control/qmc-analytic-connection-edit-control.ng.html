@@ -1,0 +1,47 @@
+<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+		<qmc-property-edit-empty-warning url="/analyticconnections/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.AnalyticConnection.name"
+											  ng-model="editModel.property.name"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-analytic-connection-edit-name">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.AnalyticConnection.host"
+											  ng-model="editModel.property.host"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-analytic-connection-edit-host">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.AnalyticConnection.port"
+											  ng-model="editModel.property.port"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-analytic-connection-edit-port">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.AnalyticConnection.certificateFilePath"
+											  ng-model="editModel.property.certificateFilePath"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-analytic-connection-edit-certificateFilePath">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.AnalyticConnection.reconnectTimeout"
+											  ng-model="editModel.property.reconnectTimeout"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-analytic-connection-edit-reconnectTimeout">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.AnalyticConnection.requestTimeout"
+											  ng-model="editModel.property.requestTimeout"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-analytic-connection-edit-requestTimeout">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.customProperties" force-show="{{detached}}">
+				<qmc-property-edit-custom-properties ng-model="editModel.property.customProperties">
+				</qmc-property-edit-custom-properties>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-data-connection-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

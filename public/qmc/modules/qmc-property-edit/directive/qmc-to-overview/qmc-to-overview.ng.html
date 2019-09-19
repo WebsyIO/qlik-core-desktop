@@ -1,0 +1,11 @@
+﻿<div class="qmc-to-overview-div">
+	<div ng-show="hasSectionAccess && backToOverview">
+		<a class="qmc-to-overview-link qmc-to-overview-hover qmc-overview-link-enabled" id="{{'qmc.navigateToOverview.' + entityType}}" href="{{overviewLink}}">
+			<i class="icon-qmc-navigateBack icon-large"></i>
+			<div>
+				{{ locRef || 'qmc.resourceType.' + entityType | qmcTranslate}}
+			</div>
+		</a>
+	</div>
+	<div ng-show="!hasSectionAccess || !backToOverview" class="qmc-to-overview-link qmc-overview-link-disabled">{{ locRef || 'qmc.resourceType.' + entityType | qmcTranslate}}</div>
+</div>

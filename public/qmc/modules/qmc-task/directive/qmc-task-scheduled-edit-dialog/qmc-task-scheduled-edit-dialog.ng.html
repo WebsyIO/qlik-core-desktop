@@ -1,0 +1,218 @@
+﻿<qmc-popup width="750" maxheight="580" enable-draggable="true">
+	<header>{{ 'qmcTaskScheduledEditDialog.title' | qmcTranslate}}</header>
+	<main class="qmc-property-edit">
+		<form id="triggerSchemaForm" class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+			<div class="qmc-property-edit-groups">
+				<!-- Trigger name-->
+				<qmc-property-edit-text-input label="qmcTaskScheduledEditDialog.name.label"
+											  ng-model="editModel.property.name"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-trigger-edit-name">
+				</qmc-property-edit-text-input>
+
+				<!-- Enabled -->
+				<qmc-property-edit-bool-input label="qmcTaskScheduledEditDialog.enabled.label"
+											  ng-model="editModel.property.enabled"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-trigger-edit-enabled">
+				</qmc-property-edit-bool-input>
+				<hr/>
+
+				<qmc-property-edit-non-enum-select-input label="qmcTaskScheduledEditDialog.timeZone.label"
+											  ng-model="editModel.property.timeZone"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-trigger-edit-timeZone"
+											  options="options">
+				</qmc-property-edit-non-enum-select-input>
+
+				<qmc-property-edit-select-input label="qmcTaskScheduledEditDialog.daylightSavingTime.label"
+												translation-prefix="qmcTaskScheduledEditDialog.daylightSavingTime"
+												ng-model="editModel.property.daylightSavingTime"
+												error-message-callback="errorMessageCallback"
+												no-empty-value="true"
+												id="qmc-virtual-proxy-edit-daylightSavingTime">
+				</qmc-property-edit-select-input>
+				<hr/>
+
+				<!-- Start -->
+				<qmc-property-edit-datetime-input label="qmcTaskScheduledEditDialog.startDate.label"
+												  ng-model="editModel.property.startDate"
+												  error-message-callback="errorMessageCallback"
+												  time="true"
+												  date="true"
+												  id="qmc-trigger-edit-startDate"
+												  time-is-presented-in-utc="true">
+				</qmc-property-edit-datetime-input>
+				<hr/>
+
+				<!-- Schedule -->
+				<div class="qmc-property-edit-row qmc-property-edit-row-layout">
+					<div class="qmc-property-edit-row-label">
+						<label for="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.once"
+							   title="Schedule"
+							   label="qmcTaskScheduledEditDialog.schemaFilterDescription.label">
+							{{'qmcTaskScheduledEditDialog.incrementDescription.label' | qmcTranslate}}
+						</label>
+						<qmc-undo-button ng-click="schemaModel.reset()"
+										 ng-if="schemaModel.hasChanged()"></qmc-undo-button>
+					</div>
+					<br />
+
+					<div class="trigger-schema-repeat">
+						<div class="trigger-schema-repeat-container">
+							<div class="trigger-repeat-option">
+								<input type="radio"
+									   ng-model="schemaModel.selected"
+									   value="once"
+									   name="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption"
+									   id="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.once"
+									   value="0">
+								<label for="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.once">
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.once' | qmcTranslate}}
+								</label>
+								<br>
+								<input type="radio"
+									   ng-model="schemaModel.selected"
+									   value="hourly"
+									   name="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption"
+									   id="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.hourly"
+									   value="1">
+								<label for="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.hourly">
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.hourly' | qmcTranslate}}
+								</label>
+								<br>
+								<input type="radio"
+									   ng-model="schemaModel.selected"
+									   value="daily"
+									   name="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption"
+									   id="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.daily"
+									   value="2">
+								<label for="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.daily">
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.daily' | qmcTranslate}}
+								</label>
+								<br>
+								<input type="radio"
+									   ng-model="schemaModel.selected"
+									   value="weekly"
+									   name="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption"
+									   id="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.weekly"
+									   value="3">
+								<label for="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.weekly">
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.weekly' | qmcTranslate}}
+								</label>
+								<br>
+								<input type="radio"
+									   ng-model="schemaModel.selected"
+									   value="monthly"
+									   name="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption"
+									   id="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.monthly"
+									   value="4">
+								<label for="qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.monthly">
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.incrementOption.monthly' | qmcTranslate}}
+								</label>
+							</div>
+
+							<div class="trigger-repeat-details">
+								<div ng-if="schemaModel.selected == 'hourly'">
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.hourlyEveryHourMinuteLabel.label' | qmcTranslate}}
+									<br />
+									<input name="hourly.hours" type="number" min="0" max="600" ng-pattern="integerPattern" ng-model="schemaModel.hourly.hours" />
+									<br />
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.hourlyEveryHourMinuteHourPostLabel.label' | qmcTranslate}}
+									<br />
+									<input name="hourly.minutes" type="number" min="0" max="600" ng-pattern="integerPattern" ng-model="schemaModel.hourly.minutes" />
+									<br />
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.hourlyEveryHourMinuteMinutePostLabel.label' | qmcTranslate}}
+								</div>
+
+								<div ng-if="schemaModel.selected == 'daily'">
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.dailyEveryDayPreLabel.label' | qmcTranslate}}
+									<br />
+									<input name="daily" type="number" min="1" max="600" ng-pattern="integerPattern" ng-model="schemaModel.daily" />
+									<br />
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.dailyEveryDayPostLabel.label' | qmcTranslate}}
+								</div>
+
+								<div ng-if="schemaModel.selected == 'weekly'">
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.weeklyEveryWeekPreLabel.label' | qmcTranslate}}
+									<br />
+									<input name="weekly.every" type="number" min="1" max="600" ng-pattern="integerPattern" ng-model="schemaModel.weekly.every" />
+									<br />
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.weeklyEveryWeekPostLabel.label' | qmcTranslate}}
+									<br /><br />
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.weeklyOnTheseDays.label' | qmcTranslate}}
+									<br />
+									<qmc-matrix-toggler cols="7"
+														items="weekDays"
+														multiple="true"
+														checked="schemaModel.weekly.weekdays">
+									</qmc-matrix-toggler>
+								</div>
+
+								<div ng-if="schemaModel.selected == 'monthly'">
+									{{'qmcTaskScheduledEditDialog.schemaFilterDescription.monthlyAtTheseDates.label' | qmcTranslate}}
+									<br />
+									<qmc-matrix-toggler cols="7"
+														items="monthDays"
+														multiple="true"
+														checked="schemaModel.monthly">
+									</qmc-matrix-toggler>
+								</div>
+							</div>
+						</div>
+						<qmc-contextual-notifier ng-if="!schemaModel.isValid()"
+												 msg-type="error"
+												 msg-string="schemaModelErrors"
+												 class="ng-scope ng-isolate-scope">
+						</qmc-contextual-notifier>
+					</div>
+				</div>
+				<hr/>
+				<!-- End -->
+				<qmc-property-edit-datetime-input
+					label="qmcTaskScheduledEditDialog.expirationDate.label"
+					ng-model="editModel.property.expirationDate"
+					error-message-callback="errorMessageCallback"
+					time="true"
+					date="true"
+					id="qmc-trigger-edit-expirationDate"
+					time-is-presented-in-utc="true">
+				</qmc-property-edit-datetime-input>
+
+				<!-- Infinite checkbox -->
+				<div class="qmc-property-edit-row qmc-property-edit-row-layout">
+					<div class="qmc-property-edit-row-label"></div>
+					<div class="qmc-property-edit-row-input">
+						<label class="qmc-checkbox">
+							<input type="checkbox"
+								   id="qmc-trigger-edit-infinite-input"
+								   ng-checked="hasInfiniteExpiration()"
+								   ng-click="onInfiniteCheckbox($event)" />
+							<div class="check-wrap">
+								<span class="check"></span>
+								<span class="check-text ng-binding">{{'qmcTaskScheduledEditDialog.expirationDate.neverEnds' | qmcTranslate}}</span>
+							</div>
+						</label>
+					</div>
+				</div>
+			</div>
+
+
+		</form>
+	</main>
+	<footer>
+		<button id="qmc-task-trigger-event-cancel"
+				class="dialog-button-qmc"
+				ng-click="dialogCancelClick( $event )"
+				value="Cancel">
+			{{ 'qmcTaskScheduledEditDialog.button.cancel' | qmcTranslate}}
+		</button>
+		<button id="qmc-task-trigger-event-add"
+				class="dialog-button-qmc"
+				ng-click="dialogOkClick( $event )"
+				ng-disabled="editForm.$invalid || !schemaModel.isValid() || !(editModel.hasChanged || schemaModel.hasChanged())"
+				value="Add">
+			{{ 'qmcTaskScheduledEditDialog.button.ok' | qmcTranslate}}
+		</button>
+	</footer>
+</qmc-popup>

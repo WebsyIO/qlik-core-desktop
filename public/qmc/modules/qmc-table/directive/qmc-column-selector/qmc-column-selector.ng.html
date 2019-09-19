@@ -1,0 +1,27 @@
+﻿<qmc-popover class="qmc-column-selector" align-to="alignTo" position="bottom" collision="flipfit" toggle="closeColumnSelector($event)" spinner="inProgress">
+	<div class="qmc-popover-header">
+		<h1>
+			<qmc-button action-definition="resetAction" class="qmc-table-header resetButton" title="{{'qmcColumnSelector.resetColumnsTooltip' | qmcTranslate}}" ng-if="columnDef.defaultColumns"></qmc-button>
+			<span>{{'qmcColumnSelector.heading' | qmcTranslate}}</span>
+		</h1>
+	</div>
+	<div class="maincontent">
+		<table ng-if="!inProgress" class="attribute-table" data-ready="{{!inProgress}}">
+			<tbody>
+				<tr ng-repeat="col in columns" ng-if="columnDef[col].colDef.displayName && columnDef[col].displayType !== 'userAttribute'"
+					ng-click="disableCheckBoxes ? angular.noop: refresh(columnDef[col], col)"
+					ng-class="{disabled: isLastActiveCol(col)}">
+					<td class="column-active">
+						<input type="checkbox"
+							   ng-disabled="isLastActiveCol(col) || disableCheckBoxes"
+							   ng-checked="columnDef[col].data.isShown" id="{{'qmcColumnSelector.property.' + $index}}" />
+					</td>
+					<td class="column-name"
+						title="{{(columnDef[col].colDef.displayName | qmcTranslate) || columnDef[col].colDef.displayName}}">
+						<label>{{(columnDef[col].colDef.displayName | qmcTranslate) || columnDef[col].colDef.displayName}}</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</qmc-popover>

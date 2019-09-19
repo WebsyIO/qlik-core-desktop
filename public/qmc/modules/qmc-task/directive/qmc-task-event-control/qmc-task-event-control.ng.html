@@ -1,0 +1,14 @@
+﻿<div class="qmc-property-edit-row" ng-class="{emptyRows: tableController.tableModel.length == 0}">
+	<qmc-stage-header id="qmc.stageheader.trigger"
+					stage-header-label="qmcTaskEventTable.table.heading"
+					stage-header-action-label="qmcTaskEventTable.table.heading.actions"
+					stage-header-actions="stageHeaderActions"
+					stage-header-popover-width="200"
+					stage-header-toggle-callback="toggleEventActionsPopover">
+		<qmc-undo-button ng-disabled="ngModel.isDisabled" ng-click="reset()" ng-if="ngModel.hasChanged"></qmc-undo-button>
+	</qmc-stage-header>
+	<qmc-table style="height: 200px;"
+			   table-controller="tableController"
+			   selection-set="associationSelectionSet"
+			   single-select="true"></qmc-table>
+</div>

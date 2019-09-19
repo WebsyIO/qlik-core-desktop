@@ -1,0 +1,24 @@
+﻿<table>
+	<tr qmc-search-condition
+		ng-repeat-start="filter in group.items track by $index"
+		ng-if="$even"
+		entity="entity"
+		properties="properties"
+		selection-db-id="selectionDbId"
+		filter="filter"></tr>
+
+	<tr ng-repeat-end ng-if="$odd">
+		<td class="groupOperators" colspan="2">
+			<select ng-model="group.items[$index]"
+					ng-disabled="filter.isReadonly || ngDisabled"
+					ng-options="k as v for (k, v) in groupOperators"></select>
+		</td>
+		<td class="groupOperators" colspan="3">
+			<qmc-button disabled="condition.isReadonly || ngDisabled"
+						class="qmc-search-wizard-group rightAlign"
+						action="splitGroup(group, $index-1)">
+				{{'qmcExpressionBuilder.grouping.ungroup' | qmcTranslate}}
+			</qmc-button>
+		</td>
+	</tr>
+</table>

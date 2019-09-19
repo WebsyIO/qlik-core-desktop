@@ -1,0 +1,31 @@
+﻿<qmc-popup width="400" enable-draggable="true" popup-name="qmcNodeRegistrationPopup" ng-show="!isHidden" error-header="error">
+	<header>{{'qmcNodeRegistrationPopup.header' | qmcTranslate}}</header>
+	<main class="main">
+		<div class="maincontent" ng-if="inProgress">
+			<div class="infoHeader">{{'qmcNodeRegistrationPopup.passwordRequest' | qmcTranslate}}</div>
+		</div>
+		<div class="maincontent" ng-if="!inProgress && error===false && passWord">
+			<div class="infoHeader">{{'qmcNodeRegistrationPopup.info.header' | qmcTranslate}}</div>
+			<div class="password usertextselect">{{passWord}}</div>
+			<div class="message">
+				{{'qmcNodeRegistrationPopup.info.message1' | qmcTranslate}}
+				<br /><br /><div class="activationUri"><b class="usertextselect">{{hostName}}</b></div>
+				<br />{{'qmcNodeRegistrationPopup.info.message2' | qmcTranslate}}
+				<br /><br /><div class="activationUri"><b class="usertextselect">http://localhost:4570/certificateSetup</b></div>
+				<br />{{'qmcNodeRegistrationPopup.info.message3' | qmcTranslate}}
+			</div>
+		</div>
+		<div class="maincontent" ng-if="!inProgress && error===false && !passWord">
+			<div class="infoHeader">{{'qmcNodeRegistrationPopup.info.alreadyCertified' | qmcTranslate}}</div>
+		</div>
+		<div class="maincontent" ng-if="!inProgress && error!==false">
+			{{errorMessage}}
+		</div>
+		<qmc-spinner in-progress="inProgress" overlay-opacity="0.4" opacity="0.4"></qmc-spinner>
+	</main>
+	<footer>
+		<button type="button" class="dialog-button-qmc" ng-click="popupCloseClick( $event )" ng-disabled="inProgress" id="qmc-password-popup-button-close">
+			{{'qmcNodeRegistrationPopup.closeButton' | qmcTranslate}}
+		</button>
+	</footer>
+</qmc-popup>

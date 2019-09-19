@@ -1,0 +1,70 @@
+
+qmc-action-selector {
+  display: block;
+}
+qmc-action-selector .qmc-action-selector {
+  padding: 10px 0px 0px 0px;
+  right: 10px;
+  max-width: 250px;
+}
+qmc-action-selector .maincontent {
+  max-height: 26em;
+  min-width: 15em;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+qmc-action-selector .qmc-popover-header {
+  background-color: #404040;
+  color: #FFFFFF;
+  min-height: 32px;
+}
+qmc-action-selector .qmc-popover-header h1 {
+  font-size: 13px;
+  padding: 6px;
+}
+qmc-action-selector .qmc-popover-header h1 .resetButton {
+  float: right;
+  margin-top: -5px;
+}
+qmc-action-selector .qmc-popover-header h1 span {
+  padding: 1px 1px 1px 2px;
+  float: left;
+  cursor: pointer;
+}
+qmc-action-selector .attribute-table .column-active {
+  padding: 4px 2px 0px 8px;
+  width: 12px;
+}
+qmc-action-selector .attribute-table .column-name {
+  padding: 4px 8px 3px 4px;
+  white-space: nowrap;
+  max-width: 250px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+qmc-action-selector .attribute-table .column-name .legend {
+  padding-top: 2px;
+  border: 1px solid #595959;
+  width: 17px;
+  height: 15px;
+  display: inline-block;
+  text-align: center;
+  background-color: #398E39;
+  color: #FFFFFF;
+}
+qmc-action-selector .attribute-table tr {
+  height: 24px;
+  cursor: pointer;
+}
+qmc-action-selector .attribute-table tr td {
+  border-bottom: 1px solid #E6E6E6;
+}
+qmc-action-selector .attribute-table tr td label {
+  cursor: pointer;
+}
+qmc-action-selector .attribute-table .disabled {
+  pointer-events: none;
+}
+qmc-action-selector .attribute-table tr:hover {
+  background-color: #E6E6E6;
+}

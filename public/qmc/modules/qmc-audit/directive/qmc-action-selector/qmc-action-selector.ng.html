@@ -1,0 +1,23 @@
+﻿<qmc-popover class="qmc-column-selector" align-to="alignTo" position="bottom" collision="flipfit" toggle="closeColumnSelector($event)" spinner="inProgress">
+	<div class="qmc-popover-header">
+		<h1>
+			<qmc-button action-definition="resetAction" class="qmc-table-header resetButton" title="{{'qmcActionSelector.resetAction.tooltip' | qmcTranslate}}"></qmc-button>
+			<span>{{'qmcActionSelector.heading' | qmcTranslate}}</span>
+		</h1>
+	</div>
+	<div id="qmcActionSelector.main" class="maincontent">
+		<table class="attribute-table">
+			<tbody>
+				<tr ng-repeat="action in actions" ng-click="refresh(action)" ng-class="{disabled: isActive(action, true)}">
+					<td class="column-active">
+						<input type="checkbox" ng-disabled="isActive(action, true)" ng-checked="isActive(action)" id="{{'qmcActionSelector.action.' + action}}" />
+					</td>
+					<td class="column-name" title="{{'qros.SystemRule.actions.' + action | qmcTranslate}}">
+						<span class="legend">{{actionChar[action]}}</span>
+						<label>{{'qros.SystemRule.actions.' + resolveActionString(action) | qmcTranslate}}</label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</qmc-popover>

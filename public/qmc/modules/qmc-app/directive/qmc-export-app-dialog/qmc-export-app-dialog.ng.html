@@ -1,0 +1,26 @@
+﻿<qmc-popup enable-draggable="true" maxheight="300" width="400" class="qmc-export-app-dialog__qmc-popup">
+	<header>
+		{{ 'qmcExportAppDialog.heading' | qmcTranslate}}
+	</header>
+
+	<main>
+		<div>
+			<qmc-property-edit-bool-input
+				class="qmc-export-app-dialog__include-data"
+				ignore-undo="true"
+				label="qmcExportAppDialog.checkbox.message"
+				ng-model="exportModel.property.includeData">
+			</qmc-property-edit-bool-input>
+		</div>
+	</main>
+
+	<footer>
+		<button class="dialog-button-qmc" ng-click="onCancelClick($event)">
+			{{ 'qmc.common.cancel' | qmcTranslate}}
+		</button>
+
+		<button class="dialog-button-qmc" ng-click="onExportClick($event)">
+			{{ 'qmcExportAppDialog.export' | qmcTranslate}}
+		</button>
+	</footer>
+</qmc-popup>

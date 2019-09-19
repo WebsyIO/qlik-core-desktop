@@ -1,0 +1,61 @@
+﻿{
+	"_themeName": "Qlikview Example Font Change",
+	"_owner": "Nick Webster",
+	"fontFamily": "Disney",
+	"fontSize": "15px",
+	"fontWeight": "normal",
+	"color": "#FFAA00",
+	"axis": {
+		"label": {
+			"color": {
+				"default": "#FFFFFF",
+				"active": "#FFFFFF",
+				"inactive": "#FFFFFF",
+				"locked": "#FFFFFF",
+				"disabled": "#FFFFFF"
+			}
+		}
+	},
+	"item": {
+		"name": {
+			"color": "#FFAA00",
+			"fontFamily": "QlikView Sans",
+			"fontSize": "15px",
+			"fontWeight": "normal"
+		},
+		"value": {
+			"color": "#FFAA00",
+			"fontFamily": "QlikView Sans",
+			"fontSize": "14px"
+		}
+	},
+	"barChart": {
+		"shape": {
+			"border": {
+				"color": {
+					"default": "rgba(0,0,0,0.25)",
+					"selected": "#FFAA00"
+				},
+				"width": {
+					"default": 0,
+					"selected": 3
+				}
+			}
+		},
+		"value": {
+			"color": {
+				"default": "#FFAA00",
+				"dark": "#FFAA00",
+				"light": "#FFAA00"
+			},
+			"fontSize": {
+				"default": "14px",
+				"full": "14px",
+				"medium": "14px",
+				"small": "14px",
+				"xsmall": "14px",
+				"spark": "14px"
+			}
+		}
+	}
+}

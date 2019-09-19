@@ -1,0 +1,108 @@
+﻿<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+	<div class="qmc-property-edit-form-stage">
+		<qmc-spinner in-progress="inProgress"></qmc-spinner>
+		<qmc-property-edit-empty-warning url="/schedulers/" ng-if="emptyWarning"></qmc-property-edit-empty-warning>
+		<div class="qmc-property-edit-groups">
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.identification" force-show="true">
+				<qmc-property-edit-text-input label="qros.SchedulerService.name"
+											  ng-model="nodeNameProperty"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-scheduler-service-edit-node">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.logging" force-show="true">
+				<qmc-property-edit-loglevel label="qros.SchedulerService.logVerbosityAuditActivity"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityAuditActivity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Basic"
+											id="qmc-scheduler-service-edit-logVerbosityAuditActivity">
+				</qmc-property-edit-loglevel>
+				<!-- SecurityLog will be introduced later on SAG 20150519
+				<qmc-property-edit-loglevel label="qros.SchedulerService.logVerbosityAuditSecurity"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityAuditSecurity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Basic"
+											id="qmc-scheduler-service-edit-logVerbosityAuditSecurity">
+				</qmc-property-edit-loglevel> -->
+				<qmc-property-edit-loglevel label="qros.SchedulerService.logVerbosityService"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityService"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Error,Warning,Info"
+											id="qmc-scheduler-service-edit-logVerbosityService">
+				</qmc-property-edit-loglevel>
+				<h4 class="qmc-node-trace-log-heading">{{'qmcNode.trace.log.heading' | qmcTranslate}}</h4>
+				<qmc-property-edit-loglevel label="qros.SchedulerService.logVerbosityApplication"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityApplication"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-scheduler-service-edit-logVerbosityApplication">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.SchedulerService.logVerbosityAudit"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityAudit"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-scheduler-service-edit-logVerbosityAudit">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.SchedulerService.logVerbosityPerformance"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityPerformance"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-scheduler-service-edit-logVerbosityPerformance">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.SchedulerService.logVerbositySecurity"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbositySecurity"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-scheduler-service-edit-logVerbositySecurity">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.SchedulerService.logVerbositySystem"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbositySystem"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-scheduler-service-edit-logVerbositySystem">
+				</qmc-property-edit-loglevel>
+				<qmc-property-edit-loglevel label="qros.SchedulerService.logVerbosityTaskExecution"
+											ng-model="editModel.property.settings.property.logVerbosity.property.logVerbosityTaskExecution"
+											error-message-callback="errorMessageCallback"
+											log-levels="Off,Fatal,Error,Warning,Info,Debug"
+											id="qmc-scheduler-service-edit-logVerbosityTaskExecution">
+				</qmc-property-edit-loglevel>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmcSchedulerServiceEdit.qmcPropertyEditGroup.advanced" force-show="true">
+				<qmc-property-edit-select-input label="qros.SchedulerService.schedulerServiceType"
+												ng-model="editModel.property.settings.property.schedulerServiceType"
+												error-message-callback="errorMessageCallback"
+												translation-prefix="qros.SchedulerService.schedulerServiceType"
+												no-empty-value="true"
+												id="qmc-scheduler-service-edit-schedulerServiceType">
+				</qmc-property-edit-select-input>
+				<qmc-property-edit-text-input label="qros.SchedulerService.maxConcurrentEngines"
+											  ng-model="editModel.property.settings.property.maxConcurrentEngines"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-scheduler-service-edit-maxConcurrentEngines">
+				</qmc-property-edit-text-input>
+				<qmc-property-edit-text-input label="qros.SchedulerService.engineTimeout"
+											  ng-model="editModel.property.settings.property.engineTimeout"
+											  error-message-callback="errorMessageCallback"
+											  id="qmc-scheduler-service-edit-engineTimeout">
+				</qmc-property-edit-text-input>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.tags" force-show="{{detached}}">
+				<qmc-tag-control ng-model="editModel.property.tags"
+								 error-message-callback="errorMessageCallback"
+								 id="qmc-scheduler-service-edit-tags">
+				</qmc-tag-control>
+			</qmc-property-edit-group>
+
+			<qmc-property-edit-group heading="qmc.propertyGroup.common.customProperties" force-show="{{detached}}">
+				<qmc-property-edit-custom-properties ng-model="editModel.property.customProperties">
+				</qmc-property-edit-custom-properties>
+			</qmc-property-edit-group>
+		</div>
+	</div>
+	<qmc-action-alert-bar></qmc-action-alert-bar>
+	<qmc-actionbar id="qmc-scheduler-service-edit-actionbar" actions="actionDefinition"></qmc-actionbar>
+</form>

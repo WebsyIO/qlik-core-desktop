@@ -1,0 +1,25 @@
+﻿<qmc-popup width="950" height="300" enable-draggable="true" popup-name="qmcAuditExportDialog" in-progress="inProgress">
+	<header>{{ 'qmcAuditExportDialog.heading' | qmcTranslate}}</header>
+	<main>
+		<div>
+			<select id="qmcAuditExportDialog.formatSelector" ng-model="audit.format" ng-change="chooseFormat()"
+					title="{{'qmcAuditExportDialog.selectFormat.title' | qmcTranslate}}"
+					ng-options="auditFormat as auditFormat.display for auditFormat in auditFormats"></select>
+
+			<qmc-button action="switchFullData()"
+						id="qmcAuditExportDialog.action.switchFullData"
+						class="qmc-search-wizard"
+						title="{{'qmcAuditExportDialog.action.switchFullData.title' | qmcTranslate}}"
+						disabled="inProgress">
+				<input type="checkbox" ng-checked="fullData" />
+				{{'qmcAuditExportDialog.action.switchFullData.label' | qmcTranslate}}
+			</qmc-button>
+		</div>
+		<hr />
+		<div id="qmcAuditExportDialog-dataDiv"></div>
+	</main>
+	<footer>
+		<button id="qmcAuditExportDialog-button-copy" class="dialog-button-qmc" ng-click="copyClipBoard()" ng-disabled="audit.format.type==='HTML' || audit.format.type===''">{{'qmcAuditExportDialog.action.copyClipboard.label' | qmcTranslate}}</button>
+		<button id="qmcAuditExportDialog-button-cancel" class="dialog-button-qmc" ng-click="onCancel()" ng-disabled="inProgress">{{ 'qmc.common.cancel' | qmcTranslate}}</button>
+	</footer>
+</qmc-popup>

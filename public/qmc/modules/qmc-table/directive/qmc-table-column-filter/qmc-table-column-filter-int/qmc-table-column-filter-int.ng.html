@@ -1,0 +1,16 @@
+﻿<div class="qmc-search-wrapper">
+	<div class="qmc-filter-search-container">
+		<input ng-model="filter.value"
+			   ng-class="{'invalid-format': invalid}"
+			   ng-change="refresh()"
+			   ng-blur="refresh(invalid);"
+			   qmc-focus="true"
+			   placeholder="{{filter.type === 'GUID' ? 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx' : ''}}"
+			   class="qmc-filter-search-box"
+			   type="text"
+			   maxlength="200">
+		<span class="qmc-filter-search-icon-right" ng-class="{'invalid-format': invalid}">
+			<i class="icon-clear" ng-show="filter.value" ng-click="refresh(true)"></i>
+		</span>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+<button type="button" class="qmc-button" ng-click="!disabled && action({$event:$event})" ng-disabled="disabled">
+	<i ng-if="icon" class="button-icon {{'icon-qmc-'+icon}} icon-small"></i>
+	<div class="button-label" ng-transclude></div>
+	<i ng-if="rightIcon" class="button-icon {{'icon-qmc-'+rightIcon}} icon-small"></i>
+</button>
+<div ng-if="disabled" class="event-bubbler"></div>

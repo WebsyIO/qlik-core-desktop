@@ -1,0 +1,24 @@
+﻿<qmc-popup width="{{confirmPopupData.width || 350}}" maxheight="300" enable-draggable="true" popup-name="qmcConfirmPopup">
+	<header>
+		{{confirmPopupData.headerText}}
+	</header>
+	<main>
+		<i class="icon-qmc-warning qmc-flex-none"></i>
+		<div class="scrollWrapper qmc-flex-fill">
+			<div class="confirmMain">
+				<p ng-if="confirmPopupData.ignoreText">{{confirmPopupData.ignoreText}}</p>
+				<p ng-if="confirmPopupData.messageText">{{confirmPopupData.messageText}}</p>
+				<ul ng-if="confirmPopupData.selectedItems">
+					<li ng-repeat="item in confirmPopupData.selectedItems track by $index">{{item.name || item.description || ((item.type === 'VirtualProxyConfig') ? '':item)}}</li>
+				</ul>
+			</div>
+		</div>
+	</main>
+	<mark>
+		<qmc-contextual-notifier class="" ng-if="confirmPopupData.warningMessage" msg-type="warning" msg-string="confirmPopupData.warningMessage"></qmc-contextual-notifier>
+	</mark>
+	<footer>
+		<button id="qmc-confirm-button-cancel" class="dialog-button-qmc" ng-click="confirmPopupCancelClick( $event )" value="Cancel">{{confirmPopupData.cancelText}}</button>
+		<button id="qmc-confirm-button-ok" class="dialog-button-qmc" ng-click="confirmPopupOkClick( $event )" qmc-focus="true" value="Ok">{{confirmPopupData.okText}}</button>
+	</footer>
+</qmc-popup>

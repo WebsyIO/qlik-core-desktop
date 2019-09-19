@@ -1,0 +1,24 @@
+﻿<qmc-popover width="500" align-to="alignTo" position="bottom" collision="flipfit" toggle="closeActionsPopover($event)" spinner="inProgress">
+	<div class="qmc-popover-header">
+		<h1><span>{{'qmcRuleResourcePopover.header' | qmcTranslate}}</span></h1>
+	</div>
+	<div class="maincontent" style="padding: 10px">
+		<qmc-multiple-choice-input translation-prefix="qmc.resourceType."
+			ng-model="selectedModel"
+			disabled-choices="disabledTypes"
+			arr-choices="resourceTypes"
+			error-message-callback="errorMessageCallback"
+			ignore-edit-style="true"
+			ignore-undo="true"
+			id="qmc-custom-property-edit-objectTypes">
+		</qmc-multiple-choice-input>
+	</div>
+	<div class="footer">
+		<button type="button" class="dialog-button-qmc" ng-click="add($event)" id="qmc-rule-resource-popover-add">
+			{{'qmcRuleResourcePopover.add' | qmcTranslate}}
+		</button>
+		<button type="button" class="dialog-button-qmc" ng-click="close($event)" id="qmc-rule-resource-popover-close">
+			{{'qmcRuleResourcePopover.close' | qmcTranslate}}
+		</button>
+	</div>
+</qmc-popover>

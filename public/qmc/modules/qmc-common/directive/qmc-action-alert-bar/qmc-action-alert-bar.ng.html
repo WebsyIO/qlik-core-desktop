@@ -1,0 +1,3 @@
+﻿<div id="qmc-action-alert-bar-messageDiv" ng-show="show()">
+	<qmc-contextual-notifier ng-repeat="msg in messageList" msg-type="{{msg.msgType}}" msg-string="msg.msgString" close-callback="onCloseMsgCallback(msg)" show-close-button="false"></qmc-contextual-notifier>
+</div>

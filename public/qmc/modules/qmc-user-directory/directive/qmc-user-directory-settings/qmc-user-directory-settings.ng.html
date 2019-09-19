@@ -1,0 +1,20 @@
+﻿<qmc-property-edit-group ng-repeat="category in categories track by $index" heading="{{category.categoryName}}" ignore-localize="true" force-show="{{hasInvalidProperty(category.properties) || forceShow==='true' ? 'true' : null}}">
+	<div ng-repeat="property in category.properties track by $index">
+		<qmc-property-edit-text-input ng-if="property.type!=='Bool'"
+									  label="{{property.displayName}}"
+									  ignore-localize="true"
+									  ng-model="editModel.property[property.name]"
+									  error-message-callback="errorMessageCallback"
+									  password="{{property.type === 'EncryptedText' ? 'true' : ''}}"
+									  id="{{'qmc-user-directory-settings-' + property.name.replace(' ', '-')}}"
+									  rows="{{property.multiline !== undefined ? property.multiline: 0}}">
+		</qmc-property-edit-text-input>
+		<qmc-property-edit-bool-input ng-if="property.type==='Bool'"
+									  label="{{property.displayName}}"
+									  ignore-localize="true"
+									  ng-model="editModel.property[property.name]"
+									  error-message-callback="errorMessageCallback"
+									  id="{{'qmc-user-directory-settings-' + property.name.replace(' ', '-')}}">
+		</qmc-property-edit-bool-input>
+	</div>
+</qmc-property-edit-group>

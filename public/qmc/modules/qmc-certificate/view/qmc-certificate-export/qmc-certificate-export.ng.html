@@ -1,0 +1,54 @@
+﻿<div class="qmc-certificate-module stage qmc-property-edit">
+	<div class="qmc-property-edit-main" qmc-property-edit-handler>
+		<div class="qmc-property-edit-content">
+			<qmc-stage-header stage-header-icon="icon-qmc-Certificates"
+							  stage-header-label="qmcCertifaceExport.stageHeading"
+							  class="qmc-configure-system-section">
+			</qmc-stage-header>
+			<form class="qmc-property-edit-form" name="editForm" ng-model="editModel" data-ready="{{!inProgress}}">
+				<div class="qmc-property-edit-form-stage">
+					<qmc-spinner in-progress="inProgress"></qmc-spinner>
+					<div class="qmc-property-edit-groups">
+						<qmc-property-edit-group heading="qmcCertificateExport.qmcPropertyEditGroup.export" force-show="true">
+							<qmc-property-edit-list-input ng-model="editModel.property.machineNames"
+														  error-message-callback="errorMessageCallback"
+														  id="qmc-certificatee-edit-listenerPorts"
+														  text-list-type="qmcCertificateExport.machineName"
+														  table-heading="qmcCertificateExport.machineName.table.heading"
+														  add-button-text="qmcCertificateExport.machineName.table.add.button.label">
+							</qmc-property-edit-list-input>
+							<qmc-property-edit-text-input label="qmcCertificateExport.property.label.password1"
+														  ng-model="editModel.property.password1"
+														  error-message-callback="errorMessageCallback"
+														  id="qmc-certificate-export-password"
+														  password="true">
+							</qmc-property-edit-text-input>
+							<qmc-property-edit-text-input label="qmcCertificateExport.property.label.password2"
+														  ng-model="editModel.property.password2"
+														  error-message-callback="errorMessageCallback"
+														  id="qmc-certificate-export-password2"
+														  password="true">
+							</qmc-property-edit-text-input>
+							<qmc-property-edit-bool-input label="qmcCertificateExport.property.label.includeSecretsKey"
+							                              ng-model="editModel.property.includeSecretsKey"
+							                              error-message-callback="errorMessageCallback"
+							                              id="qmc-certificate-export-allowDataLineage">
+							</qmc-property-edit-bool-input>
+							<qmc-property-edit-select-input label="qmcCertificateExport.property.label.exportFormat"
+															translation-prefix="qmcCertificateExport.property.label.exportFormat.option"
+															ng-model="editModel.property.exportFormat"
+															error-message-callback="errorMessageCallback"
+															no-empty-value="true"
+															id="qmc-certificate-export-exportFormat">
+							</qmc-property-edit-select-input>
+						</qmc-property-edit-group>
+						<div class="usertextselect">{{('qmcCertificateExport.ExportPath.Label' | qmcTranslate) + exportCertificatesPath}}</div>
+					</div>
+				</div>
+				<qmc-action-alert-bar></qmc-action-alert-bar>
+				<qmc-actionbar id="qmc-certificate-export-actionbar" actions="actionDefinition"></qmc-actionbar>
+			</form>
+		</div>
+	</div>
+	<qmc-route-navigator header-key="navigatorHeader" routes="navigatorRoutes"></qmc-route-navigator>
+</div>

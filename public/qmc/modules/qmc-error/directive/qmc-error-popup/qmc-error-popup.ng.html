@@ -1,0 +1,14 @@
+﻿<qmc-popup width="350" maxheight="300" enable-draggable="true" error-header="errorPopupData.errorHeader" popup-name="qmcErrorPopup">
+	<header>{{errorPopupData.headerText}}</header>
+	<main class="qmc-error-popup-main">
+		<i class="icon-qmc-error qmc-flex-none"></i>
+		<div class="qmc-flex-fill">
+			<div ng-if="errorPopupData.htmlContent" ng-bind-html="errorPopupData.errorText"></div>
+			<div ng-if="!errorPopupData.htmlContent">{{errorPopupData.errorText}}</div>
+		</div>
+	</main>
+	<footer>
+		<button id="error-popup-close" class="dialog-button-qmc" ng-click="errorPopupClose()" ng-if="errorPopupData.showCancel" qmc-focus="errorPopupData.showCancel && !errorPopupData.showReload">{{errorPopupData.cancelButtonText | qmcTranslate}}</button>
+		<button id="error-popup-logout-and-reload" class="dialog-button-qmc" ng-click="errorPopupLogoutAndReload()" ng-if="errorPopupData.showReload" qmc-focus="errorPopupData.showReload">{{'qmcErrorPopup.restartButton' | qmcTranslate}}</button>
+	</footer>
+</qmc-popup>

@@ -1,0 +1,13 @@
+﻿<div ng-class="{ 'qmc-property-edit-row-layout': !ignoreEditStyle }"
+	 class="qmc-property-edit-row"
+	 ng-hide="ngModel.isHidden">
+
+	<div class="qmc-property-edit-row-label">
+		<label>{{label | qmcTranslate}}</label>
+	</div>
+	<div class="qmc-property-edit-row-input">
+		<div class="qmc-overview-body">
+			<qmc-table table-controller="tableController"></qmc-table>
+		</div>
+	</div>
+</div>

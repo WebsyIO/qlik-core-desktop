@@ -1,0 +1,11 @@
+﻿<div class="tableContainer" data-ready="{{!tableController.inProgress}}">
+	<table class="qmc-table-rows">
+		<colgroup></colgroup>
+		<tbody><tr><td></td></tr></tbody>
+	</table>
+	<div ng-if="showGetMore()"
+		 ng-disabled="tableController.inProgress"
+		 class="more-button" ng-click="getMore()">
+		{{'qmcTableRows.showMoreItems' | qmcTranslate}}
+	</div>
+</div>

@@ -1,0 +1,26 @@
+﻿<div class="qmc-license-module" ng-switch="directive">
+	<qmc-token-overview ng-switch-when="qmc-token-overview" class="stage"></qmc-token-overview>
+	<qmc-user-access-overview ng-switch-when="qmc-user-access-overview" class="stage" ng-style="view === 'gmc' ? {width: '100vw'} : {}"></qmc-user-access-overview>
+	<qmc-professional-access-overview ng-switch-when="qmc-professional-access-overview" class="stage" ng-style="view === 'gmc' ? {width: '100vw'} : {}"></qmc-professional-access-overview>
+	<qmc-analyzer-access-overview ng-switch-when="qmc-analyzer-access-overview" class="stage" ng-style="view === 'gmc' ? {width: '100vw'} : {}"></qmc-analyzer-access-overview>
+	<qmc-user-access-rule-overview ng-switch-when="qmc-user-access-rule-overview" class="stage" ng-style="view === 'gmc' ? {width: '100vw'} : {}"></qmc-user-access-rule-overview>
+	<qmc-professional-access-rule-overview ng-switch-when="qmc-professional-access-rule-overview" class="stage" ng-style="view === 'gmc' ? {width: '100vw'} : {}"></qmc-professional-access-rule-overview>
+	<qmc-analyzer-access-rule-overview ng-switch-when="qmc-analyzer-access-rule-overview" class="stage" ng-style="view === 'gmc' ? {width: '100vw'} : {}"></qmc-analyzer-access-rule-overview>
+
+	<qmc-login-access-overview ng-switch-when="qmc-login-access-overview" class="stage" ng-style="view === 'gmc' ? {width: '100vw'} : {}"></qmc-login-access-overview>
+	<div ng-switch-when="qmc-license-edit-control" class="qmc-property-edit-main" qmc-property-edit-handler>
+		<div class="qmc-property-edit-content">
+			<qmc-stage-header stage-header-icon="icon-qmc-License" stage-header-label="qmcLicenseEdit.stageHeading" class="qmc-manage-resources-section">
+			</qmc-stage-header>
+			<qmc-license-edit-control class="stage qmc-property-edit" ng-style="view === 'gmc' ? {width: '100vw'} : {}"></qmc-license-edit-control>
+		</div>
+	</div>
+	<div ng-switch-when="qmc-datamarket-edit-control" class="qmc-property-edit-main" qmc-property-edit-handler>
+		<div class="qmc-property-edit-content">
+			<qmc-stage-header stage-header-icon="icon-qmc-DataMarket" stage-header-label="qmcDataMarketEdit.stageHeading" class="qmc-manage-resources-section">
+			</qmc-stage-header>
+			<qmc-datamarket-edit-control class="stage qmc-property-edit"></qmc-datamarket-edit-control>
+		</div>
+	</div>
+	<qmc-route-navigator header-key="navigatorHeader" routes="navigatorRoutes" ng-hide="view === 'gmc'"></qmc-route-navigator>
+</div>

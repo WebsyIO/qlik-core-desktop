@@ -1,0 +1,13 @@
+﻿<qmc-edit id="qmc.stage" class="qmc-property-edit" selection-set="selectionSet" config="config" navigation-view="navigationView">
+	<qmc-system-rule-edit-control selection-set="selectionSet"
+								  class="qmc-property-edit-form"
+								  input-data="inputData"
+								  in-dialog="false"
+								  output="editControl"
+								  on-save-callback="onSave"
+								  on-load-callback="onLoad"
+								  ng-show="navigationView.value==='mainEdit'">
+	</qmc-system-rule-edit-control>
+	<qmc-property-edit-associations type-name="License.UserAccessRule" selection-set="resourceSelectionSet" navigation-view="navigationView" ng-show="navigationView.value!=='mainEdit'">
+	</qmc-property-edit-associations>
+</qmc-edit>

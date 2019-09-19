@@ -1,0 +1,83 @@
+﻿<fieldset name="">
+	<legend></legend>
+	<ol class="options">
+		<li class="item option">
+			<label>
+				<input type="checkbox" ng-true-value="'LastHour'" ng-model="filter.value" ng-change="tableController.refresh()">
+				<i ng-show="filter.value === 'LastHour'" class="icon icon-qmc-checkbox"></i>
+				<div>{{'qmcTableColumnFilterDatetime.lastHour' | qmcTranslate}}</div>
+			</label>
+		</li>
+		<li class="item option">
+			<label>
+				<input type="checkbox" ng-true-value="'Today'" ng-model="filter.value" ng-change="tableController.refresh()">
+				<i ng-show="filter.value === 'Today'" class="icon icon-qmc-checkbox"></i>
+				<div>{{'qmcTableColumnFilterDatetime.today' | qmcTranslate}}</div>
+			</label>
+		</li>
+		<li class="item option">
+			<label>
+				<input type="checkbox" ng-true-value="'LastWeek'" ng-model="filter.value" ng-change="tableController.refresh()">
+				<i ng-show="filter.value === 'LastWeek'" class="icon icon-qmc-checkbox"></i>
+				<div>{{'qmcTableColumnFilterDatetime.lastWeek' | qmcTranslate}}</div>
+			</label>
+		</li>
+		<li class="item option">
+			<label style="padding-right: 4px;display: inline-block;">
+				<input type="checkbox" ng-true-value="'Range'" ng-model="filter.value" ng-change="tableController.refresh()">
+				<i ng-show="filter.value === 'Range'" class="icon icon-qmc-checkbox"></i>
+				<div>{{'qmcTableColumnFilterDatetime.range' | qmcTranslate}}</div>
+			</label>
+			<div class="daterange">
+				<label for="{{'qmc-table-column-filter-datetime-from-' + $index }}">{{'qmcTableColumnFilterDatetime.from' | qmcTranslate}}</label>
+				<div class="qmc-filter-search-container">
+					<input id="{{'qmc-table-column-filter-datetime-from-' + $index }}" class="qmc-filter-search-box"
+						   type="text"
+						   ng-class="{'invalid-date': invalidStartRange}"
+						   maxlength="10"
+						   ng-blur="filter.startRange = invalidStartRange ? '' : filter.startRange; invalidStartRange=false;"
+						   placeholder="YYYY-MM-DD"
+						   ng-model="filter.startRange"
+						   ng-focus="updateRange()"
+						   ng-change="updateRange()"
+						   title="YYYY-MM-DD">
+					<span class="qmc-filter-search-icon-right" ng-class="{'invalid-date': invalidStartRange}">
+						<i class="icon-clear" ng-show="filter.startRange.length > 0" ng-click="filter.startRange = '';updateRange();"></i>
+					</span>
+				</div>
+				<label for="{{'qmc-table-column-filter-datetime-to-' + $index }}">{{'qmcTableColumnFilterDatetime.to' | qmcTranslate}}</label>
+				<div class="qmc-filter-search-container">
+					<input id="{{'qmc-table-column-filter-datetime-to-' + $index }}" class="qmc-filter-search-box"
+						   ng-class="{'invalid-date': invalidEndRange}"
+						   type="text"
+						   maxlength="10"
+						   ng-blur="filter.endRange = invalidEndRange ? '' : filter.endRange; invalidEndRange = false;"
+						   placeholder="YYYY-MM-DD"
+						   ng-model="filter.endRange"
+						   ng-focus="updateRange()"
+						   ng-change="updateRange()"
+						   title="YYYY-MM-DD">
+					<span class="qmc-filter-search-icon-right" ng-class="{'invalid-date': invalidEndRange}">
+						<i class="icon-clear" ng-show="filter.endRange.length > 0" ng-click="filter.endRange = '';updateRange();"></i>
+					</span>
+				</div>
+			</div>
+		</li>
+
+		<!-- Customizable Date selections -->
+		<li ng-if="filter.empty" class="item option">
+			<label>
+				<input type="checkbox" ng-true-value="'Empty'" ng-model="filter.value" ng-change="tableController.refresh()">
+				<i ng-show="filter.value === 'Empty'" class="icon icon-qmc-checkbox"></i>
+				<div>{{filter.empty}}</div>
+			</label>
+		</li>
+		<li ng-if="filter.all" class="item option">
+			<label>
+				<input type="checkbox" ng-true-value="'All'" ng-model="filter.value" ng-change="tableController.refresh()">
+				<i ng-show="filter.value === 'All'" class="icon icon-qmc-checkbox"></i>
+				<div>{{filter.all}}</div>
+			</label>
+		</li>
+	</ol>
+</fieldset>

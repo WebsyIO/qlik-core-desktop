@@ -1,0 +1,20 @@
+﻿<fieldset name="">
+	<legend></legend>
+	<ol class="options">
+		<li class="item option" ng-repeat="item in filter.enums">
+			<label ng-if="filter.multiple">
+				<input type="checkbox" ng-true-value="'{{item.value}}'" ng-model="filter.value[item.display]" ng-change="tableController.refresh()">
+				<i ng-style="{'visibility': filter.value[item.display] === item.value ? 'visible' : 'hidden' }" class="icon icon-qmc-checkbox"></i>
+				<i ng-if="item.icon" class="ng-class: item.icon; icon"></i>
+				<div>{{(item.display | qmcTranslate) || item.display }}</div>
+			</label>
+
+			<label ng-if="!filter.multiple">
+				<input type="checkbox" ng-true-value="'{{item.value}}'" ng-model="filter.value" ng-change="tableController.refresh()">
+				<i ng-style="{'visibility': filter.value === item.value ? 'visible' : 'hidden' }" class="icon icon-qmc-checkbox"></i>
+				<i ng-if="item.icon" class="ng-class: item.icon; icon"></i>
+				<div>{{(item.display | qmcTranslate) || item.display }}</div>
+			</label>
+		</li>
+	</ol>
+</fieldset>

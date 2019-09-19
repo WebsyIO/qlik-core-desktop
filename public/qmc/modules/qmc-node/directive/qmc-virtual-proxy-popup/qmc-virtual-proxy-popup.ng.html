@@ -1,0 +1,20 @@
+﻿<qmc-popup width="850" enable-draggable="true" popup-name="qmcVirtualProxyPopup" ng-show="!isHidden"
+		   help-link="{{inputData.routeMessage.isNew === true ? 'QmcSection_VirtualProxyConfig_Create' : 'QmcSection_VirtualProxyConfig_Edit'}}">
+	<header><i class="icon-qmc-VirtualProxyConfig"></i> {{inputData.header | qmcTranslate}}</header>
+	<main class="qmc-virtual-proxy-popup-main qmc-property-edit">
+		<div class="qmc-property-edit-main" qmc-property-edit-handler>
+			<div class="qmc-property-edit-content">
+				<qmc-virtual-proxy-edit-control selection-set="selectionSet" input-data="inputData" set-group="setGroup" in-dialog="true" output="editControl"></qmc-virtual-proxy-edit-control>
+			</div>
+			<qmc-navigator section-name="VirtualProxyConfig" navigation-view="navigationView" is-new="editModel.isNew" set-group-listener="setGroup" in-dialog="true" hide-associations="true"></qmc-navigator>
+		</div>
+	</main>
+	<footer>
+		<button type="button" class="dialog-button-qmc" ng-click="popupCancelClick( $event )" ng-disabled="editControl.inProgress" id="qmc-virtual-proxy-popup-button-cancel">
+			{{'qmcVirtualProxyPopup.cancelButton' | qmcTranslate}}
+		</button>
+		<button type="button" class="dialog-button-qmc" ng-click="popupOkClick( $event )" ng-disabled="!(editControl.model.hasChanged || editControl.model.isNew) || !editControl.model.isValid || !editControl.model.isReady || editControl.inProgress || editControl.model.isDisabled" id="qmc-virtual-proxy-popup-button-ok">
+			{{ 'qmcVirtualProxyPopup.okButton' | qmcTranslate}}
+		</button>
+	</footer>
+</qmc-popup>

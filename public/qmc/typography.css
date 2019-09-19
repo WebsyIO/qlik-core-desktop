@@ -1,0 +1,54 @@
+
+@font-face {
+  font-family: 'QlikView Sans';
+  src: url('../../../qmc/fonts/qlikview-sans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'QlikView Sans';
+  src: url('../../../qmc/fonts/qlikview-sans-bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'QlikView Sans';
+  src: url('../../../qmc/fonts/qlikview-sans-italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'QlikView Sans';
+  src: url('../../../qmc/fonts/qlikview-sans-bold-italic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'LUI icons';
+  src: url('../../../qmc/fonts/lui-icons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body,
+input,
+textarea,
+keygen,
+select,
+button,
+isindex {
+  font-family: "QlikView Sans", sans-serif;
+  font-size: 13px;
+  color: #595959;
+}
+.qv-preload-icons {
+  font-family: 'LUI icons';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}
+.qv-preload-font {
+  font-family: 'QlikView Sans';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+}

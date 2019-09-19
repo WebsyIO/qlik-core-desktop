@@ -1,0 +1,56 @@
+﻿<div class="qmc-property-edit-row" ng-hide="ngModel.isHidden">
+	<qmc-stage-header id="{{'qmc.stageheader.' + listType}}" stage-header-label="{{tableHeading}}">
+		<qmc-undo-button ng-disabled="ngModel.isDisabled" ng-click="ngModel.reset()" ng-if="ngModel.hasChanged && !ignoreUndo"></qmc-undo-button>
+	</qmc-stage-header>
+	<div class="qmc-table inline">
+		<div class="qmc-table-header-container">
+			<table class="qmc-table-header">
+				<thead>
+					<tr>
+						<th class="qmc-table-th">
+							<div id="{{'qmc.tablehead.' + textListType}}">
+								<div class="th-heading">{{columnHeading | qmcTranslate}}</div>
+							</div>
+						</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div class="qmc-table-body-container" style="height: auto;">
+			<table class="qmc-table-body">
+				<tbody ng-if="!newMode && !hideButtons">
+					<tr class="qmc-property-edit-object-list-add qmc-table-row">
+						<td><qmc-button id="qmc-property-edit-object-list-add" icon="add" disabled="ngModel.isDisabled || ngModel.isReadonly" action="openSelectTool()">{{addButtonText | qmcTranslate}}</qmc-button>
+						<qmc-button ng-if="showDeleteButton" id="qmc-property-edit-object-list-delete" icon="delete" disabled="ngModel.isDisabled || ngModel.isReadonly" action="deleteItems()">{{deleteButtonText | qmcTranslate}}</qmc-button></td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr ng-if="hideButtons && ngModel.models.length === 0" class="qmc-table-row qmc-placeholder-row">
+						<td class="qmc-maincol">
+							<div class="row-div">
+								<span>{{noValuesStringKey | qmcTranslate}}</span>
+							</div>
+						</td>
+					</tr>
+					<tr class="qmc-table-row" ng-repeat="model in ngModel.models|qmcEditModelListFilterSorter">
+						<td class="qmc-maincol">
+							<div class="row-div">
+								<span>{{displayValue(model)}}</span><span ng-if="model.value.$count">{{' (' + model.value.$count.toString()  +')'}}</span>
+								<qmc-button ng-if="!hideButtons"
+											id="{{'qmc-property-edit-object-list-delete-' + model.value.id}}"
+											icon="delete"
+											class="qmc-property-edit-object-list-delete"
+											type="button"
+											action="model.remove()"
+											disabled="ngModel.isDisabled || ngModel.isReadonly"></qmc-button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<qmc-contextual-notifier ng-if="!ngModel.isValid && !ignoreInvalid" msg-type="error" msg-string="errorMessages"></qmc-contextual-notifier>
+		<qmc-contextual-notifier ng-if="isSet === false" msg-type="warning" msg-string="warningMessages"></qmc-contextual-notifier>
+		<qmc-contextual-notifier ng-if="ngModel.information" msg-type="info" msg-string="infoMessages"></qmc-contextual-notifier>
+	</div>
+</div>

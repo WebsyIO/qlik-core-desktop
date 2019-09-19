@@ -1,0 +1,25 @@
+﻿<div class="qmc-actionbar-buttons">
+	<qmc-button id="{{idBase + action.id}}" ng-repeat="action in actions" class="qmc-actionbuttons" data-actiontype="{{action.id}}" icon="{{action.icon}}" right-icon="{{action.rightIcon}}" action="actionbarClickHandler(action, $event)" disabled="action.isDisabled" ng-if="!action.isHidden">
+		{{action.label}}
+	</qmc-button>
+	<qmc-popover ng-repeat="popover in popovers" align-to="alignToActorActions" position="{{popover.position}}" collision="flipfit" ng-if="popover.show" toggle="popover.toggle($event)" id="{{idBase}}.popover">
+		<ul>
+			<li ng-repeat=" option in popover.clickOptions" ng-class="{ 'qmc-trigger-action-disabled': option.isDisabled }">
+				<span id="{{idBase}}.{{option.id}}" data-actiontype="{{option.id}}" ng-click="option.event($event)">{{(option.label | qmcTranslate) || option.label}}</span>
+			</li>
+		</ul>
+	</qmc-popover>
+
+	<div class="qmc-actionbar-more" ng-if="moreActions.length>0">
+		<qmc-button id="qmc.actionbar.more" class="qmc-actionbuttons" data-actiontype="more" right-icon="asc" action="toggleActionPopover($event)">
+			{{ 'qmc.actionbar.moreActions' | qmcTranslate}}
+		</qmc-button>
+		<qmc-popover align-to="alignToActorActions" position="bottom" collision="flipfit" ng-if="showActionPopover" toggle="toggleActionPopover($event)">
+			<ul>
+				<li ng-repeat="action in moreActions" ng-class="{'qmc-actionbar-moreaction-disabled' : action.isDisabled}">
+					<a id="{{idBase + action.id}}" ng-click="runAction(action.isDisabled, action.onClick)">{{action.label}}</a>
+				</li>
+			</ul>
+		</qmc-popover>
+	</div>
+</div>

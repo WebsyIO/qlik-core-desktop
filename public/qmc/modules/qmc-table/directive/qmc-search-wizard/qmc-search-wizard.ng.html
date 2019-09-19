@@ -1,0 +1,42 @@
+﻿<div ng-disabled="ngDisabled">
+	<div ng-if="topgroups != null">
+		<div ng-if="$even" class="topGroup" ng-repeat-start="groups in topgroups.items track by $index">
+			<div ng-if="$even" class="boolGroup" ng-repeat-start="group in groups.items track by $index">
+				<qmc-search-group entity="entity"
+								  properties="properties"
+								  selection-db-id="selectionDbId"
+								  group="group">
+				</qmc-search-group>
+			</div>
+			<div ng-if="$odd" ng-repeat-end class="groupOperators">
+				<div class="rightAlign">
+					<qmc-button disabled="condition.isReadonly || ngDisabled"
+								class="qmc-search-wizard-group"
+								action="mergeGroups(groups, $index+1)">
+						{{'qmcExpressionBuilder.grouping.group' | qmcTranslate}}
+					</qmc-button>
+					<qmc-button disabled="condition.isReadonly || ngDisabled"
+								class="qmc-search-wizard-group"
+								action="splitGroup(groups, $index-1)">
+						{{'qmcExpressionBuilder.grouping.split' | qmcTranslate}}
+					</qmc-button>
+				</div>
+				<select ng-model="groups.items[$index]"
+						ng-disabled="condition.isReadonly || ngDisabled"
+						ng-options="k as v for (k, v) in groupOperators"></select>
+			</div>
+		</div>
+		<div ng-if="$odd" ng-repeat-end class="groupOperators">
+			<div class="rightAlign">
+				<qmc-button disabled="condition.isReadonly || ngDisabled"
+							class="qmc-search-wizard-group"
+							action="mergeGroups(topgroups, $index+1)">
+					{{'qmcExpressionBuilder.grouping.join' | qmcTranslate}}
+				</qmc-button>
+			</div>
+			<select ng-model="topgroups.items[$index]"
+					ng-disabled=" condition.isreadonly || ngdisabled"
+					ng-options="k as v for (k, v) in groupOperators"></select>
+		</div>
+	</div>
+</div>

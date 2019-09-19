@@ -1,0 +1,37 @@
+﻿<div class="tableContainer" data-ready="{{!tableController.inProgress}}">
+	<div class="nodata" ng-if="!hasData && !auditConfig.inProgress">
+		<div>{{'qmcTableRows.noDataFound' | qmcTranslate}}</div>
+	</div>
+	<table ng-if="hasData" class="qmc-audit-grid-header" ng-style="{'width': labelSize+(2+nActions*20)*columns.length + 'px'}">
+		<tr class="header-row">
+			<td class="transpose" ng-click="clearSelection($event)">
+				<div class="legend">
+					<span ng-class="{'access_pre' : auditConfig.preview}" ng-repeat="action in actions" title="{{'qros.SystemRule.actions.' + action | qmcTranslate}}">{{actionChar[action]}}</span>
+				</div>
+				<qmc-button id="qmcAuditGrid.transpose.button" icon="zoom" action="transpose()">
+					{{'qmcAuditGrid.transpose.label' | qmcTranslate}}
+				</qmc-button>
+				<div title="{{(transposed ? 'qmcAuditGrid.axisLabel.target.title' : 'qmcAuditGrid.axisLabel.source.title') | qmcTranslate}}" class="axisLabel colLabel">
+					{{(transposed ? 'qmcAuditGrid.axisLabel.target' : 'qmcAuditGrid.axisLabel.source') | qmcTranslate}}
+				</div>
+				<div title="{{(!transposed ? 'qmcAuditGrid.axisLabel.target.title' : 'qmcAuditGrid.axisLabel.source.title') | qmcTranslate}}" class="axisLabel rowLabel">
+					{{(!transposed ? 'qmcAuditGrid.axisLabel.target' : 'qmcAuditGrid.axisLabel.source') | qmcTranslate}}
+				</div>
+			</td>
+			<td class="columnCells"
+				ng-repeat="col in columns"
+				ng-class="{ 'selected': col.selected }"
+				ng-style="{'width': nActions*20-1 + 'px', 'white-space': nActions<2 ? 'nowrap' : 'normal'}"
+				title="{{transposed ? col[displayPropCol] : col[displayPropCol] + ' (' + col.userDirectory + '\\' + col.userId + ')'}}">
+				<div class="columnLabels" ng-style="{'transform-origin': (37+3.5*nActions) + 'px ' + (35+3.5*nActions) +'px', 'height': (14*nActions) +'px'}">{{col[displayPropCol]}}</div>
+			</td>
+		</tr>
+	</table>
+	<div ng-show="hasData" style="white-space: nowrap">
+		<table class="qmc-audit-grid" ng-style="{'width': labelSize+(2+nActions*20)*columns.length + 'px'}">
+			<tr><td></td></tr>
+		</table>
+		<div ng-show="grid.scrollYSize > 0" class="scrollBarYContainer" ng-style="{'height': grid.scrollYSize + 'px', 'margin-top': grid.scrollY +'px'}"><div class="scrollBarY"></div></div>
+	</div>
+	<div ng-show="hasData && grid.scrollXSize > 0" class="scrollBarXContainer" ng-style="{'width': grid.scrollXSize + 'px', 'margin-left': labelSize + grid.scrollX +'px'}"><div class="scrollBarX"></div></div>
+</div>

@@ -1,0 +1,30 @@
+﻿<div id="qmc.toolbar" class="qmc-flex-row qmc-flex-fill">
+	<div class="qmc-button-bar qmc-flex-none">
+		<div class="qmc-button-segment">
+			<qmc-button id="qmc.toolbar.start" class="qmc-toolbar" icon="home" action="navigateToStart()">{{'qmcToolbar.start' | qmcTranslate}}</qmc-button>
+			<qmc-button id="qmc.toolbar.navigate" class="qmc-toolbar" right-icon="asc" action="togglePrimNavPopover($event)"></qmc-button>
+		</div>
+		<qmc-popover class="primary-navigation-popover" align-to="alignToPrimNav" position="bottom" collision="flipfit" ng-if="showPrimNavPopover" width="200" height="520" toggle="togglePrimNavPopover($event)">
+			<qmc-primary-navigation></qmc-primary-navigation>
+		</qmc-popover>
+	</div>
+	<div class="qmc-button-bar qmc-flex-fill"></div>
+	<div class="qmc-button-bar qmc-flex-none">
+		<div class="qmc-button-segment">
+			<qmc-button id="qmc.toolbar.help" class="qmc-toolbar" icon="help" action="showHelp()">{{'qmcToolbar.help' | qmcTranslate}}</qmc-button>
+			<qmc-button id="qmc.toolbar.helpNavigate" class="qmc-toolbar" right-icon="asc" action="toggleHelpPopup($event)"></qmc-button>
+		</div>
+		<qmc-popover align-to="alignToHelpActions" position="bottom" collision="flipfit" ng-if="showHelpPopover" toggle="toggleHelpPopup($event)">
+			<ul class="qmc-help-menu">
+				<li><a ng-click="showHelp('QmcSection_Setup');toggleShowHelpPopover();">{{ 'qmcToolbar.helpPopover.helpActions.setup' | qmcTranslate}}</a></li>
+				<li><a ng-click="showHelp('QmcSection_Shortcuts');toggleShowHelpPopover();">{{ 'qmcToolbar.helpPopover.helpActions.shortcuts' | qmcTranslate}}</a></li>
+			</ul>
+		</qmc-popover>
+		<qmc-button id="qmc.toolbar.logout" class="qmc-toolbar" right-icon="asc" action="toggleLogoutPopup($event)">{{currentUser}}</qmc-button>
+		<qmc-popover align-to="alignToActorActions" position="bottom" collision="flipfit" ng-if="showLogoutPopover" width="150" toggle="toggleLogoutPopup($event)">
+			<ul>
+				<li><a ng-click="toggleShowLogoutPopover(); logout()" >{{ 'qmcToolbar.logoutPopover.actorActions.logout' | qmcTranslate}}</a></li>
+			</ul>
+		</qmc-popover>
+	</div>
+</div>

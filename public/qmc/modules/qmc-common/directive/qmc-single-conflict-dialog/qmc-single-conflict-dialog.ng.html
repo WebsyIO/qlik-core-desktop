@@ -1,0 +1,9 @@
+﻿<qmc-popup width="500" maxheight="300" enable-draggable="true" remote-user="singleConflictDialogData.remoteUser" error-header="singleConflictDialogData.errorHeader">
+	<header>{{ 'qmcSingleConflictDialog.heading' | qmcTranslate}}</header>
+	<main><i class="conflict-dialog-icon icon-large icon-qmc-error"></i><div class="conflict-dialog-text">{{ 'qmcSingleConflictDialog.text' | qmcTranslate: singleConflictDialogData.entityName : singleConflictDialogData.remoteUser}}</div></main>
+	<footer>
+		<button class="dialog-button-qmc" ng-click="dialogCancelClick( $event )" value="Cancel">{{ 'qmcSingleConflictDialog.button.cancel' | qmcTranslate}}</button>
+		<button class="dialog-button-qmc" ng-click="localSettingsActionClick( $event )" value="Local">{{ 'qmcSingleConflictDialog.button.localSettings' | qmcTranslate}}</button>
+		<button class="dialog-button-qmc" ng-click="serverSettingsActionClick( $event )" value="Remote">{{ 'qmcSingleConflictDialog.button.serverSettings' | qmcTranslate: singleConflictDialogData.remoteUser}}</button>
+	</footer>
+</qmc-popup>

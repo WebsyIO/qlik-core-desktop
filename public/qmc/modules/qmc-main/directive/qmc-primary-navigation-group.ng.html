@@ -1,0 +1,6 @@
+﻿<h6 class="qmc-primary-navigation-group-label">{{item.label | qmcTranslate}}</h6>
+<ol class="qmc-primary-navigation-group-list">
+	<li class="qmc-primary-navigation-group-list-item {{sectionClass}}" ng-repeat="item in items" ng-class="{'primary-navigation-item-disabled' : item.disabled}">
+		<qmc-primary-navigation-item></qmc-primary-navigation-item>
+	</li>
+</ol>
