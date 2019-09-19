@@ -7,4 +7,4 @@ services:
       - "19076:9076"
       - "19090:9090"
     volumes:
-      - ./data:/data
+      - ../../Data:/data

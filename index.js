@@ -98,8 +98,8 @@ app.get('/api/hub/v1/privileges', (req, res) => {
 						"schemas": [],
 						"routes": [],
 						"installation": "enterprise",
-						"qvVersion": "25.15.2.0"
 					}
+						"qvVersion": "25.15.2.0"
 				}
 			}]
 		}
@@ -109,13 +109,41 @@ app.get('/api/hub/v1/privileges', (req, res) => {
 const server = http.createServer(app)
 const wsServer = new WebSocket.Server({server})
 
-
 wsServer.on('connection', (ws, req) => {
 	console.log(req.url);
 	wsServer.ws = ws
 	ws.on('message', message => {
 		console.log('message', message)
 		ws.send(`thanks for the message ${message}`)
+	let clientOpen = false
+	let wsQueue = []
+	const wsClient = new WebSocket(`ws://localhost:19076/${req.url}`)
+	wsClient.onopen = function () {
+		clientOpen = true
+		console.log('queue', wsQueue);
+		for (let i = 0; i < wsQueue.length; i++) {
+			wsClient.send(wsQueue[i])
+		}
+	}
+	wsClient.onerror = function (err) {
+		console.log(err);
+	}
+	wsClient.onclose = function () {
+		console.log('closed');
+	}
+	wsClient.onmessage = function (event) {
+		console.log('from qlik', event.data);
+		ws.send(event.data)
+	}
+
+	ws.on('message', message => {
+		console.log('from client', message);
+		if (clientOpen === false) {
+			wsQueue.push(message)
+		}
+		else {
+			wsClient.send(message)
+		}
 	})
 	ws.on('uncaughtException', err => {
 		console.log('uncaught error', err)
