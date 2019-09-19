@@ -113,7 +113,7 @@ const wsServer = new WebSocket.Server({server})
 wsServer.on('connection', (ws, req) => {
 	console.log(req.url);
 	wsServer.ws = ws
-	ws.on('message', message => {		
+	ws.on('message', message => {
 		console.log('message', message)
 		ws.send(`thanks for the message ${message}`)
 	})
@@ -128,6 +128,6 @@ wsServer.on('connection', (ws, req) => {
 	})
 })
 
-server.listen(4848, () => {	
-	console.log(`listening on port ${process.env.PORT || 4848}`)
+server.listen(8000, () => {
+	console.log(`listening on port ${process.env.PORT || 8000}`)
 })
