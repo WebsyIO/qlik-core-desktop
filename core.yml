@@ -4,7 +4,7 @@ services:
     image: qlikcore/engine:12.429.0
     command: -S AcceptEULA=yes -S DocumentDirectory=/data
     ports:
-      - "19076:9076"
+      - "8000:9076"
       - "19090:9090"
     volumes:
       - ./data:/data
