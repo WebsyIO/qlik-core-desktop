@@ -77,15 +77,15 @@ app.get('/api/hub/v1/streams', (req, res) => {
 })
 
 app.get('/api/hub/v1/reports', (req, res) => {
-	res.send(`{"data": []}`)
+	res.send(`{"links":{"self":"/reports/"},"data":[],"included":[]}`)
 })
 
 app.get('/api/hub/v1/qvdocuments', (req, res) => {
-	res.send(`{"data": []}`)
+	res.send(`{"links":{"self":"/qvdocuments/"},"data":[],"included":[]}`)
 })
 
 app.get('/api/hub/v1/properties', (req, res) => {
-	res.send(`{"data": []}`)
+	res.send(`{"links":{"self":"/properties/"},"data":[]}`)
 })
 
 app.get('/qps/user', (req, res) => {
