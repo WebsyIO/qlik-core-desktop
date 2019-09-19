@@ -3,6 +3,10 @@ const app = express()
 const WebSocket = require('ws')
 const http = require('http')
 
+app.get('/', (req, res) => {
+	res.send('welcome to qlik core desktop')
+})
+
 app.use('/resources', express.static(__dirname+'/public'))
 
 app.use('/sense/resources', express.static(__dirname+'/public'))
@@ -109,30 +113,18 @@ const wsServer = new WebSocket.Server({server})
 wsServer.on('connection', (ws, req) => {
 	console.log(req.url);
 	wsServer.ws = ws
-	ws.on('message', message => {
-		logger.log({
-			level: 'info',
-			message: message
-		})
+	ws.on('message', message => {		
+		console.log('message', message)
 		ws.send(`thanks for the message ${message}`)
 	})
 	ws.on('uncaughtException', err => {
-		logger.log({
-			level: 'error',
-			message: err
-		})
+		console.log('uncaught error', err)
 	})
 	ws.on('error', err => {
-		logger.log({
-			level: 'error',
-			message: err
-		})
+		console.log('error', err)
 	})
 	ws.on('close', () => {
-		logger.log({
-			level: 'info',
-			message: 'socket closed'
-		})
+		console.log('ws closed')
 	})
 })
 
