@@ -15,6 +15,10 @@ app.get('/hub', function(req, res){
   res.sendFile(__dirname+'/public/hub.html');
 });
 
+app.get('/single', function(req, res){
+  res.sendFile(__dirname+'/public/single.html');
+});
+
 app.get('/sense/app/*', function(req, res){
   res.sendFile(__dirname+'/public/client.html');
 });
@@ -57,7 +61,7 @@ app.get('/sense/api/v0/features', (req, res) => {
 })
 
 app.get('/api/hub/v1/user/info', (req, res) => {
-	res.send(`{"data":[{"type":"User","id":"7b13f7d5-97dd-4502-9ab5-1a3ffae7f07b","attributes":{"name":"sense","userId":"sense","userDirectory":"MYSERVER","privileges":["create","read","update","delete","changerole"]}}],"links":{"self":"/user/info/"}}`)
+	res.send(`{"data":[{"type":"User","id":"7b13f7d5-97dd-4502-9ab5-1a3ffae7f07b","attributes":{"name":"me","userId":"me","userDirectory":"Personal","privileges":["create","read","update","delete","changerole"]}}],"links":{"self":"/user/info/"}}`)
 })
 
 app.get('/api/hub/v1/desktoplink', (req, res) => {
@@ -85,7 +89,7 @@ app.get('/api/hub/v1/properties', (req, res) => {
 })
 
 app.get('/qps/user', (req, res) => {
-	res.send(`{"userDirectory": "MYSERVER", "userId": "sense", "userName": "sense", "logoutUri": "http://10.211.55.3/qps/user"}`)
+	res.send(`{"userDirectory": "Personal", "userId": "me", "userName": "me", "logoutUri": "http://10.211.55.3/qps/user"}`)
 })
 
 app.get('/api/hub/v1/privileges', (req, res) => {
