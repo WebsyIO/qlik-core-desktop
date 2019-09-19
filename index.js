@@ -1,5 +1,7 @@
-var express = require('express'),
-    app = express();
+const express = require('express')
+const app = express()
+const WebSocket = require('ws')
+const http = require('http')
 
 app.use('/resources', express.static(__dirname+'/public'))
 
@@ -100,6 +102,40 @@ app.get('/api/hub/v1/privileges', (req, res) => {
 	`)
 })
 
-app.listen(8000, function(){
-  console.log('listening on port 8000');
-});
+const server = http.createServer(app)
+const wsServer = new WebSocket.Server({server})
+
+
+// wsServer.on('connection', (ws, req) => {
+	console.log(req.url);
+	wsServer.ws = ws
+	ws.on('message', message => {
+		logger.log({
+			level: 'info',
+			message: message
+		})
+		ws.send(`thanks for the message ${message}`)
+	})
+	ws.on('uncaughtException', err => {
+		logger.log({
+			level: 'error',
+			message: err
+		})
+	})
+	ws.on('error', err => {
+		logger.log({
+			level: 'error',
+			message: err
+		})
+	})
+	ws.on('close', () => {
+		logger.log({
+			level: 'info',
+			message: 'socket closed'
+		})
+	})
+})
+
+server.listen(4848, () => {	
+	console.log(`listening on port ${process.env.PORT || 4848}`)
+})
