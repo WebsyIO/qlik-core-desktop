@@ -106,7 +106,7 @@ const server = http.createServer(app)
 const wsServer = new WebSocket.Server({server})
 
 
-// wsServer.on('connection', (ws, req) => {
+wsServer.on('connection', (ws, req) => {
 	console.log(req.url);
 	wsServer.ws = ws
 	ws.on('message', message => {
