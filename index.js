@@ -53,7 +53,7 @@ app.get('/api/capability/v1/list', (req, res) => {
 })
 
 app.get('/sense/api/v0/features', (req, res) => {
-	res.send([])
+	res.send(`{"basic-publishing":true,"CAO":true,"CLIENT_METRICS":true,"self-publishing":true,"app-properties":true,"CAO_ENABLE_PUBLISHED":true,"CE_PRECEDENTS":true,"INSIGHT_LIGHT_EDITING":true,"preview-privileges":true,"SPA":true,"GEO_BACKGROUND_WMS":true,"SELECTION_INSIGHTS":true,"GEO_BACKGROUND_IMAGE":true,"REBRAND2018":true,"SINGLE_CONFIG":true,"BDI_CONNECTOR":true,"DROP_ZONES":true,"DUPLICATE_SHEET_BUTTON":true,"GEO_SIZE_LEGEND":true,"QMC_EXCESS":true,"SYSTEM_NOTIFICATIONS":true,"GEO_EXPLORATION_MENU":true,"BARCHART":true,"HAS_QRS":true,"THEME_CARDS":true,"BC_XAXIS_MODE":true,"BC_STYLE_EDITOR":true,"CONTAINER_OBJECT":true,"MOBILE_GRID":true,"INSIGHT_BOT":true}`)
 })
 
 app.get('/api/hub/v1/user/info', (req, res) => {
