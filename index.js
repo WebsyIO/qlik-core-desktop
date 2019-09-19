@@ -41,10 +41,18 @@ app.get('/api/hub/about', (req, res) => {
 })
 
 app.get('/api/about/v1/language', (req, res) => {
-	res.send([])
+	res.send({accept-language: "en-GB,en;q=0.9,es;q=0.8,en-US;q=0.7"})
+})
+
+app.get('/sense/api/about/v1/language', (req, res) => {
+	res.send({accept-language: "en-GB,en;q=0.9,es;q=0.8,en-US;q=0.7"})
 })
 
 app.get('/api/capability/v1/list', (req, res) => {
+	res.send([])
+})
+
+app.get('/sense/api/v0/features', (req, res) => {
 	res.send([])
 })
 
