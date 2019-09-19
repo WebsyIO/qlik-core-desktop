@@ -111,10 +111,6 @@ const wsServer = new WebSocket.Server({server})
 
 wsServer.on('connection', (ws, req) => {
 	console.log(req.url);
-	wsServer.ws = ws
-	ws.on('message', message => {
-		console.log('message', message)
-		ws.send(`thanks for the message ${message}`)
 	let clientOpen = false
 	let wsQueue = []
 	const wsClient = new WebSocket(`ws://localhost:19076/${req.url}`)
