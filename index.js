@@ -11,6 +11,8 @@ app.use('/resources', express.static(__dirname+'/public'))
 
 app.use('/sense/resources', express.static(__dirname+'/public'))
 
+app.use('/dataloadeditor/resources', express.static(__dirname+'/public'))
+
 app.get('/hub', function(req, res){
   res.sendFile(__dirname+'/public/hub.html');
 });
@@ -21,6 +23,10 @@ app.get('/single', function(req, res){
 
 app.get('/sense/app/*', function(req, res){
   res.sendFile(__dirname+'/public/client.html');
+});
+
+app.get('/dataloadeditor/app/*', function(req, res){
+  res.sendFile(__dirname+'/public/dataloadeditor.html');
 });
 
 app.get('/api/hub/about', (req, res) => {
@@ -54,6 +60,10 @@ app.get('/sense/api/about/v1/language', (req, res) => {
 
 app.get('/api/capability/v1/list', (req, res) => {
 	res.send(`[{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"basic-publishing","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"CAO","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"CLIENT_METRICS","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"self-publishing","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"app-properties","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"CAO_ENABLE_PUBLISHED","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"CE_PRECEDENTS","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"INSIGHT_LIGHT_EDITING","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"preview-privileges","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"SPA","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"GEO_BACKGROUND_WMS","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"SELECTION_INSIGHTS","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"GEO_BACKGROUND_IMAGE","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"REBRAND2018","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"SINGLE_CONFIG","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"BDI_CONNECTOR","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"DROP_ZONES","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"DUPLICATE_SHEET_BUTTON","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"GEO_SIZE_LEGEND","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"QMC_EXCESS","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"SYSTEM_NOTIFICATIONS","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"GEO_EXPLORATION_MENU","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"BARCHART","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"HAS_QRS","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"THEME_CARDS","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"BC_XAXIS_MODE","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"BC_STYLE_EDITOR","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"CONTAINER_OBJECT","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"MOBILE_GRID","enabled":true},{"contentHash":"10159d595f5fa3bd250e90f30b1b7bf3","originalClassName":"FeatureToggle","flag":"INSIGHT_BOT","enabled":true}]`)
+})
+
+app.get('/api/v0/features', (req, res) => {
+	res.send(`{"basic-publishing":true,"CAO":true,"CLIENT_METRICS":true,"self-publishing":true,"app-properties":true,"CAO_ENABLE_PUBLISHED":true,"CE_PRECEDENTS":true,"INSIGHT_LIGHT_EDITING":true,"preview-privileges":true,"SPA":true,"GEO_BACKGROUND_WMS":true,"SELECTION_INSIGHTS":true,"GEO_BACKGROUND_IMAGE":true,"REBRAND2018":true,"SINGLE_CONFIG":true,"BDI_CONNECTOR":true,"DROP_ZONES":true,"DUPLICATE_SHEET_BUTTON":true,"GEO_SIZE_LEGEND":true,"QMC_EXCESS":true,"SYSTEM_NOTIFICATIONS":true,"GEO_EXPLORATION_MENU":true,"BARCHART":true,"HAS_QRS":true,"THEME_CARDS":true,"BC_XAXIS_MODE":true,"BC_STYLE_EDITOR":true,"CONTAINER_OBJECT":true,"MOBILE_GRID":true,"INSIGHT_BOT":true}`)
 })
 
 app.get('/sense/api/v0/features', (req, res) => {
@@ -125,7 +135,7 @@ wsServer.on('connection', (ws, req) => {
 	console.log(req.url);
 	let clientOpen = false
 	let wsQueue = []
-	const wsClient = new WebSocket(`ws://10.211.55.3/${req.url}`)
+	const wsClient = new WebSocket(`ws://localhost:19076/${req.url}`)
 	wsClient.onopen = function () {
 		clientOpen = true
 		console.log('queue', wsQueue);
